@@ -27,7 +27,7 @@
 !.config/compton.conf
 !.config/nvim/
 .config/nvim/autoload/
-.config/nvim/seesion/
+.config/nvim/session/
 .config/nvim/backup/
 .config/nvim/undodir/
 .config/nvim/plugged/
@@ -38,4 +38,5 @@
 !.fzf.zsh
 !.gitignore
 !.pylintrc
+!readme.md
 #---[ ignore list ]---

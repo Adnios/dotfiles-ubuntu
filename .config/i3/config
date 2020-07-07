@@ -277,7 +277,7 @@ bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 #自己配置快捷键
 bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F3 exec nautilus
-bindsym $mod+Ctrl+p exec flameshot gui
+bindsym $mod+Ctrl+a exec flameshot gui
 # exec --no-startup-id xautolock -time 10 -locker "i3-msg exit"
 
 # exec --no-startup-id ibus-daemon -xdr

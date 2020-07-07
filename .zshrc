@@ -8,7 +8,10 @@ export ZSH="/home/scrutiny/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="steeef"
+# ZSH_THEME="steeef"
+# ZSH_THEME="dpoggi"
+ZSH_THEME="gnzh"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,6 +111,7 @@ alias r=ranger
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
 # gitignore会导致报错
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# 通过这个解决
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 export FZF_COMPLETION_TRIGGER='\'
 
