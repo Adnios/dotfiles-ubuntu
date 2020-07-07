@@ -106,7 +106,9 @@ export TF_CPP_MIN_LOG_LEVEL=2
 alias r=ranger
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# gitignore会导致报错
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 export FZF_COMPLETION_TRIGGER='\'
 
 

@@ -4,30 +4,33 @@
 /*
 /*/
 #---[ consider list ]---
-!.congig/
-!.congig/*
-# !.config/i3/
+# 这两行很重要，不然下面的都无效
+!.config/
+.config/*
+!.config/i3/
 
-# !.config/polybar/
+!.config/polybar/
 
-# !.config/ranger/
-# .config/ranger/plugins/__pycache__/*
-# .config/ranger/colorschemes/__pycache__/*
-# .config/ranger/colorschemes/__init__.pyo
-# .config/ranger/colorschemes/default.pyo
-# .config/ranger/plugins/__init__.pyo
-# .config/ranger/plugins/devicons.pyo
-# .config/ranger/plugins/devicons_linemode.pyo
+!.config/rofi/
 
-# !.config/alacritty/
+!.config/ranger/
+.config/ranger/plugins/__pycache__/*
+.config/ranger/colorschemes/__pycache__/*
+.config/ranger/colorschemes/__init__.pyo
+.config/ranger/colorschemes/default.pyo
+.config/ranger/plugins/__init__.pyo
+.config/ranger/plugins/devicons.pyo
+.config/ranger/plugins/devicons_linemode.pyo
 
-# !.config/compton.conf
-# !.config/nvim/
-# .config/nvim/autoload/
-# .config/nvim/seesion/
-# .config/nvim/backup/
-# .config/nvim/undodir/
-# .config/nvim/plugged/
+!.config/alacritty/
+
+!.config/compton.conf
+!.config/nvim/
+.config/nvim/autoload/
+.config/nvim/seesion/
+.config/nvim/backup/
+.config/nvim/undodir/
+.config/nvim/plugged/
 
 
 
