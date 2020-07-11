@@ -112,8 +112,12 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 # gitignore会导致报错
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # 通过这个解决
+# export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+# export FZF_DEFAULT_COMMAND='rg --files --hidden'
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --glob '!.git/**''
 export FZF_COMPLETION_TRIGGER='\'
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
 KEYTIMEOUT=1
