@@ -15,10 +15,11 @@ call plug#begin('~/.config/nvim/plugged')
     " n|sudo n stable 更新 npm, 解决：checkhealth 的 npm 报错
     " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " nodejs apt 安装 npm 等，sudo npm cache clean -f|sudo npm install -g
     " 状态栏
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Plug 'dense-analysis/ale'
+    Plug 'dense-analysis/ale'
     Plug 'yggdroot/indentline'
     let g:indentLine_setColors = 0
     Plug 'easymotion/vim-easymotion'
@@ -34,7 +35,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'cocopon/iceberg.vim'
     " Plug 'junegunn/seoul256.vim'
     Plug 'ajmwagar/vim-deus'
-    Plug 'hardcoreplayers/oceanic-material'
     " Plug 'joshdick/onedark.vim'
     " Plug 'drewtempelmeyer/palenight.vim'
     " syntax
@@ -82,6 +82,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/goyo.vim'
     " 中文排版
     Plug 'hotoo/pangu.vim'
+    " clipboard
+    Plug 'junegunn/vim-peekaboo'
+    " Plug 'junegunn/vim-slash'
+    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'zchee/deoplete-jedi'
     call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -102,3 +107,12 @@ aug end
 
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
+" vim-slash
+" noremap <plug>(slash-after) zz
+" if has('timers')
+"   " Blink 2 times with 50ms interval
+"   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+" endif
+
+" Use deoplete.
+" let g:deoplete#enable_at_startup = 1

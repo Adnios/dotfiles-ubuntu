@@ -6,10 +6,13 @@ let g:maplocalleader = "\<Space>" "vimtex 被修改
 map <F12> :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>q :q!<CR>
 "复制粘贴的斗争
-vnoremap <C-c> "+y
-vnoremap <C-x> "+c
+" vnoremap <C-c> "+y
+" vnoremap <C-x> "+c
 " nnoremap <leader>v :set paste<CR>a<C-R>+<ESC>:set nopaste<CR>
-inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
+" inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
+" inoremap <C-v> <C-S-v>
+noremap <C-s> :w<CR>
+" inoremap <C-v> <C-R>+
 noremap <leader>c :bd!<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>

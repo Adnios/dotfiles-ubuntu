@@ -4,7 +4,7 @@ map  ' <Plug>(easymotion-bd-f)
 nmap ' <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap " <Plug>(easymotion-overwin-f2)
+" nmap " <Plug>(easymotion-overwin-f2)
 
 " Gif config
 " map  / <Plug>(easymotion-sn)

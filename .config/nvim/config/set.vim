@@ -64,7 +64,7 @@ autocmd FileChangedShellPost *
 " let g:gruvbox_contrast_light='soft'
 " let g:gruvbox_italicize_strings=1
 " let g:gruvbox_hls_cursor='blue'
-" colorscheme gruvbox
+colorscheme gruvbox
 " colorscheme oceanic_material
 " colorscheme iceberg
 " colorscheme srcery
@@ -73,7 +73,7 @@ autocmd FileChangedShellPost *
 " colorscheme onedark
 " colorscheme palenight
 " colorscheme zenburn
-colorscheme deus
+" colorscheme deus
 
 set formatoptions+=mM
 set iskeyword+=_,$,@,%,#,-
@@ -187,3 +187,5 @@ set virtualedit=block
 
 set wildmenu
 set wildmode=longest:list,full
+" set paste
+set clipboard=unnamedplus

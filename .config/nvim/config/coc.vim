@@ -49,3 +49,5 @@ let g:coc_explorer_global_presets = {
 \ }
 " nmap <leader>e :CocCommand explorer --preset floating<CR>
 nmap <leader>e :CocCommand explorer<CR>
+" coc-yank
+" nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
