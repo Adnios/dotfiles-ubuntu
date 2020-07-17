@@ -189,3 +189,5 @@ set wildmenu
 set wildmode=longest:list,full
 " set paste
 set clipboard=unnamedplus
+
+exec "nohlsearch"

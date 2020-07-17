@@ -19,7 +19,7 @@ call plug#begin('~/.config/nvim/plugged')
     " 状态栏
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'dense-analysis/ale'
+    " Plug 'dense-analysis/ale'
     Plug 'yggdroot/indentline'
     let g:indentLine_setColors = 0
     Plug 'easymotion/vim-easymotion'
