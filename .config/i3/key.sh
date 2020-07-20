@@ -3,7 +3,7 @@
 # This script is called on startup.
 
 # Increase key speed via a rate change
-xset r rate 300 50
+# xset r rate 300 50
 
 # Map the caps lock key to control...
 setxkbmap -layout us -option ctrl:nocaps

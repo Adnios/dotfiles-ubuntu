@@ -4,7 +4,7 @@
 let g:mapleader = ";"
 let g:maplocalleader = "\<Space>" "vimtex 被修改
 map <F12> :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>q :wq!<CR>
+nnoremap <leader>q :q!<CR>
 "复制粘贴的斗争
 " vnoremap <C-c> "+y
 " vnoremap <C-x> "+c

@@ -31,6 +31,7 @@ call plug#begin('~/.config/nvim/plugged')
     " colorscheme
     Plug 'kristijanhusak/vim-hybrid-material'
     Plug 'morhetz/gruvbox'
+    Plug 'sainnhe/gruvbox-material'
     " Plug 'srcery-colors/srcery-vim'
     Plug 'cocopon/iceberg.vim'
     " Plug 'junegunn/seoul256.vim'

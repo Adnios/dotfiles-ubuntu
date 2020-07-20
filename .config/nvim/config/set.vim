@@ -64,7 +64,7 @@ autocmd FileChangedShellPost *
 " let g:gruvbox_contrast_light='soft'
 " let g:gruvbox_italicize_strings=1
 " let g:gruvbox_hls_cursor='blue'
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme oceanic_material
 " colorscheme iceberg
 " colorscheme srcery
@@ -74,6 +74,33 @@ colorscheme gruvbox
 " colorscheme palenight
 " colorscheme zenburn
 " colorscheme deus
+
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+
+" For dark version.
+set background=dark
+
+" For light version.
+" set background=light
+
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_enable_bold = 1
+" let g:gruvbox_material_enable_italic = 1
+" let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_disable_italic_comment = 1
+let g:gruvbox_material_visual = 'reverse'
+let g:gruvbox_material_menu_selection_background = 'green'
+let g:gruvbox_material_sign_column_background = 'none'
+let g:gruvbox_material_diagnostic_line_highlight = 1
+" let g:gruvbox_material_current_word = 'bold'
+let g:gruvbox_material_better_performance = 1
+colorscheme gruvbox-material
 
 set formatoptions+=mM
 set iskeyword+=_,$,@,%,#,-
@@ -181,7 +208,6 @@ let g:terminal_color_12 = '#CAA9FA'
 let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
 
-set nofoldenable
 
 set virtualedit=block
 
@@ -193,3 +219,7 @@ set clipboard=unnamedplus
 exec "nohlsearch"
 
 set formatoptions-=cro                  " Stop newline continution of comments
+
+set nofoldenable
+" 有时间好好研究fold
+" set foldmethod=marker                   " 折叠方式为按照marker折叠
