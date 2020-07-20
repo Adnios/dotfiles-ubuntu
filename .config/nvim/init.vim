@@ -15,8 +15,7 @@ let s:MyVimConfigFiles = [
             \'easymotion.vim',
             \'signify.vim',
             \'goyo.vim',
-            \'start.vim',
-            \'nerdtree.vim'
+            \'start.vim'
             \]
 for s:path in s:MyVimConfigFiles
     exe 'source ' .'~/.config/nvim/config/'.s:path

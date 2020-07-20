@@ -3,11 +3,11 @@ call plug#begin('~/.config/nvim/plugged')
     "Keep and restore fcitx state for each buffer
     Plug 'vim-scripts/fcitx.vim'
     " 文件树 coc-explore 代替，coc-explore 太卡
-    Plug 'scrooloose/nerdtree'          " File tree manager
-    Plug 'jistr/vim-nerdtree-tabs'      " enhance nerdtree's tabs
+    " Plug 'scrooloose/nerdtree'          " File tree manager
+    " Plug 'jistr/vim-nerdtree-tabs'      " enhance nerdtree's tabs
     Plug 'ryanoasis/vim-devicons'       " add beautiful icons besides files
-    Plug 'Xuyuanp/nerdtree-git-plugin'  " display git status within Nerdtree
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " enhance devicons
+    " Plug 'Xuyuanp/nerdtree-git-plugin'  " display git status within Nerdtree
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " enhance devicons
     " 括号匹配
     Plug 'jiangmiao/auto-pairs'
     " 需要手动在 coc.nvim 目录下 yarn install
@@ -29,13 +29,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'mhinz/vim-startify'
     " colorscheme
-    " Plug 'kristijanhusak/vim-hybrid-material'
+    Plug 'kristijanhusak/vim-hybrid-material'
     Plug 'morhetz/gruvbox'
-    Plug 'srcery-colors/srcery-vim'
+    " Plug 'srcery-colors/srcery-vim'
     Plug 'cocopon/iceberg.vim'
     " Plug 'junegunn/seoul256.vim'
     Plug 'ajmwagar/vim-deus'
-    " Plug 'joshdick/onedark.vim'
+    Plug 'joshdick/onedark.vim'
     " Plug 'drewtempelmeyer/palenight.vim'
     " syntax
     Plug 'sheerun/vim-polyglot' "有点卡，coc 的原因

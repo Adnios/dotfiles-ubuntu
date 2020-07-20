@@ -17,32 +17,32 @@
     "suggest.triggerCompletionWait": 100,
     "suggest.echodocSupport": true,
     "suggest.completionItemKindLabels": {
-		"class": "\uf0e8",
-		"color": "\ue22b",
-		"constant": "\uf8fe",
-		"default": "\uf29c",
-		"enum": "\uf435",
-		"enumMember": "\uf02b",
-		"event": "\ufacd",
-		"field": "\uf93d",
-		"file": "\uf723",
-		"folder": "\uf115",
-		"function": "\u0192",
-		"interface": "\uf417",
-		"keyword": "\uf1de",
-		"method": "\uf6a6",
-		"module": "\uf40d",
-		"operator": "\uf915",
-		"property": "\ue624",
-		"reference": "\ufa46",
-		"snippet": "\ue60b",
-		"struct": "\ufb44",
-		"text": "\ue612",
-		"typeParameter": "\uf728",
-		"unit": "\uf475",
-		"value": "\uf89f",
-		"variable": "\ue71b"
-	},
+        "class": "\uf0e8",
+        "color": "\ue22b",
+        "constant": "\uf8fe",
+        "default": "\uf29c",
+        "enum": "\uf435",
+        "enumMember": "\uf02b",
+        "event": "\ufacd",
+        "field": "\uf93d",
+        "file": "\uf723",
+        "folder": "\uf115",
+        "function": "\u0192",
+        "interface": "\uf417",
+        "keyword": "\uf1de",
+        "method": "\uf6a6",
+        "module": "\uf40d",
+        "operator": "\uf915",
+        "property": "\ue624",
+        "reference": "\ufa46",
+        "snippet": "\ue60b",
+        "struct": "\ufb44",
+        "text": "\ue612",
+        "typeParameter": "\uf728",
+        "unit": "\uf475",
+        "value": "\uf89f",
+        "variable": "\ue71b"
+},
 
     "diagnostic.signOffset": 1,
     "diagnostic.errorSign": "×",
@@ -57,7 +57,7 @@
     "diagnostic.virtualText": true,
 
     "codeLens.enable": true,
-	"list.previewHighlightGroup": "Statement",
+    "list.previewHighlightGroup": "Statement",
 
     "python.jediEnabled": false,
 
@@ -67,6 +67,23 @@
     "python.autoComplete.extraPaths": [
       "${env:SPARK_HOME}/python",
       "${env:SPARK_HOME}/python/pyspark"
-    ]
-
+    ],
+    "explorer.width": 38,
+        "explorer.quitOnOpen": true,
+        "explorer.sources": [
+            {
+                "name": "buffer",
+                "expand": false
+            },
+            {
+                "name": "file",
+                "expand": true
+            }
+        ],
+        "explorer.file.column.indent.indentLine": true,
+        "explorer.file.showHiddenFiles": true,
+        "explorer.icon.enableNerdfont": true,
+        "explorer.file.column.git.showIgnored": true,
+        "explorer.keyMappingMode": "none",
+        "explorer.buffer.showHiddenBuffers": false
 }

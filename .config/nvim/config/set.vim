@@ -88,7 +88,7 @@ set iskeyword+=_,$,@,%,#,-
 set showbreak=↳\ \ \ 
 set breakindent
 set breakindentopt=sbr
-" hi NonText ctermfg=gray guifg=pink10
+hi NonText ctermfg=gray guifg=gray
 
 " hi! link NonText Cursor
 " 这行从最左端开始，间接模拟首行缩进
@@ -191,3 +191,5 @@ set wildmode=longest:list,full
 set clipboard=unnamedplus
 
 exec "nohlsearch"
+
+set formatoptions-=cro                  " Stop newline continution of comments
