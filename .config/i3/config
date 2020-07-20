@@ -295,5 +295,6 @@ assign [class="picgo"] $ws8
 assign [class="(?i)virtualbox"] $ws8
 # assign [class = "Kazam"] $ws9
 exec_always python ~/.config/i3/i3layout.py
+exec_always sh ~/.config/i3/key.sh
 bindsym $mod+g exec sh /mnt/c/Users/scrutiny/Desktop/config-mark/git.sh
 bindsym $mod+c exec "cd /mnt/d/temp/Brain2/tutorials/ && jupyter notebook"

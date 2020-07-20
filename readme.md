@@ -24,7 +24,8 @@
 
 ## 交换 esc 和 caps
 
-最简单的方法： nvim /etc/default/keyboard 将改行修改为这样即可 XKBOPTIONS="caps:swapescape"
+1. 最简单的方法： nvim /etc/default/keyboard 将改行修改为这样即可 XKBOPTIONS="caps:swapescape"
+2. apt 安装 xcape，通过 key.sh 脚本实现，按一次 cpas 为 esc，长按为 ctrl
 
 ## 解决风扇问题
 
