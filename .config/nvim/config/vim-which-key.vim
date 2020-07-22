@@ -112,3 +112,5 @@ nmap <localleader>t :TagbarToggle<CR>
 "       \ 's' : [':%s/\s\+$//e'                  , 'space'],
 "       \ 'f' : [':Autoformat'                  , 'format'],
 "       \ }
+
+let g:which_key_map.p = 'picture'

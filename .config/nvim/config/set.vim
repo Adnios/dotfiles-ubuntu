@@ -223,3 +223,5 @@ set formatoptions-=cro                  " Stop newline continution of comments
 set nofoldenable
 " 有时间好好研究fold
 " set foldmethod=marker                   " 折叠方式为按照marker折叠
+" harcode for reducing startup time
+let g:python3_host_prog='/usr/bin/python3'

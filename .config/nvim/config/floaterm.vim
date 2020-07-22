@@ -34,6 +34,8 @@ augroup END
 
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.5
+" don't use floating
+let g:floaterm_wintype = 'normal'
 let g:floaterm_position = 'bottom'
 let g:floaterm_gitcommit = 'split'
 let g:floaterm_autoclose = v:true

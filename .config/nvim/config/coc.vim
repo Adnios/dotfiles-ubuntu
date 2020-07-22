@@ -1,4 +1,14 @@
 " if hidden is not set, TextEdit might fail.
+let g:coc_global_extensions = [
+            \ 'coc-python',
+            \ 'coc-tabnine',
+            \ 'coc-json',
+            \ 'coc-highlight',
+            \ 'coc-yank',
+            \ 'coc-explorer',
+            \ 'coc-ultisnips',
+            \ 'coc-vimlsp'
+            \ ]
 set hidden
 
 set nobackup
