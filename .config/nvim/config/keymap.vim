@@ -10,7 +10,7 @@ nnoremap <leader>q :q!<CR>
 " vnoremap <C-x> "+c
 " nnoremap <leader>v :set paste<CR>a<C-R>+<ESC>:set nopaste<CR>
 inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
-noremap <C-s> :w<CR>
+" noremap <C-s> :w<CR>
 noremap <leader>c :bd!<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
