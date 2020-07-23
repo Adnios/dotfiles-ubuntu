@@ -209,6 +209,7 @@ mode "resize" {
 }
 
 # Autostart applications
+exec_always killall compton
 exec_always compton
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -291,8 +292,7 @@ bindsym $mod+Ctrl+a exec flameshot gui
 # auto move the application to assigned window
 assign [class="netease-cloud-music"] $ws7
 assign [class="picgo"] $ws8
-assign [class="qq"] $ws7
-assign [class="Qq"] $ws7
+# assign [class="Qq"] $ws7
 # assign [class="VirtualBox Machine"] $ws8
 assign [class="(?i)virtualbox"] $ws8
 # assign [class = "Kazam"] $ws9

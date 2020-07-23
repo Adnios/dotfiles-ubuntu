@@ -69,21 +69,21 @@
       "${env:SPARK_HOME}/python/pyspark"
     ],
     "explorer.width": 38,
-        "explorer.quitOnOpen": true,
-        "explorer.sources": [
-            {
-                "name": "buffer",
-                "expand": false
-            },
-            {
-                "name": "file",
-                "expand": true
-            }
-        ],
-        "explorer.file.column.indent.indentLine": true,
-        "explorer.file.showHiddenFiles": true,
-        "explorer.icon.enableNerdfont": true,
-        "explorer.file.column.git.showIgnored": true,
-        "explorer.keyMappingMode": "none",
-        "explorer.buffer.showHiddenBuffers": false
+    "explorer.quitOnOpen": true,
+    "explorer.sources": [
+        {
+            "name": "buffer",
+            "expand": false
+        },
+        {
+            "name": "file",
+            "expand": true
+        }
+    ],
+    "explorer.file.column.indent.indentLine": true,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.file.column.git.showIgnored": true,
+    "explorer.keyMappingMode": "none",
+    "explorer.buffer.showHiddenBuffers": false
 }

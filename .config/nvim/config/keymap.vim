@@ -85,4 +85,7 @@ nnoremap <leader>T :GenTocGFM<CR>
 " nnoremap gj j
 " nnoremap gk k
 
-nnoremap <localleader>ss :set spell spelllang=en_us,cjk<CR>
+nnoremap <localleader>l :set spell spelllang=en_us,cjk<CR>
+
+nmap <silent> <Leader>s <Plug>SearchNormal
+vmap <silent> <Leader>s <Plug>SearchVisual

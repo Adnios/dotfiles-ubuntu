@@ -19,10 +19,10 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 
-nnoremap <leader>sl :SLoad<CR>
-nnoremap <leader>ss :SSave<CR>
-nnoremap <leader>sd :SDelete<CR>
-nnoremap <leader>sc :SClose<CR>
+nnoremap <localleader>sl :SLoad<CR>
+nnoremap <localleader>ss :SSave<CR>
+nnoremap <localleader>sd :SDelete<CR>
+nnoremap <localleader>sc :SClose<CR>
 
 function! StartifyEntryFormat()
     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'

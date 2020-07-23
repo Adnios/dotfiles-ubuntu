@@ -88,6 +88,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'junegunn/vim-slash'
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'zchee/deoplete-jedi'
+    Plug 'voldikss/vim-browser-search'
     call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -117,3 +118,4 @@ autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing(
 
 " Use deoplete.
 " let g:deoplete#enable_at_startup = 1
+

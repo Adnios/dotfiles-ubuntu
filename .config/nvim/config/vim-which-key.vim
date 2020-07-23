@@ -36,9 +36,9 @@ autocmd! User vim-which-key call which_key#register(';', 'g:which_key_map')
 "       \ }
 
 let g:which_key_map[','] = [ 'Startify'                   , 'Startify' ]
-let g:which_key_map.s = {
-      \ 'name' : '+session' ,
-      \ }
+" let g:which_key_map.s = {
+"       \ 'name' : '+session' ,
+"       \ }
 let g:which_key_map['1'] = [ '<Plug>AirlineSelectTab1', 'buffer1' ]
 let g:which_key_map['2'] = [ '<Plug>AirlineSelectTab2', 'buffer2' ]
 let g:which_key_map['3'] = [ '<Plug>AirlineSelectTab3', 'buffer3' ]
@@ -114,3 +114,4 @@ nmap <localleader>t :TagbarToggle<CR>
 "       \ }
 
 let g:which_key_map.p = 'picture'
+
