@@ -89,7 +89,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'zchee/deoplete-jedi'
     Plug 'voldikss/vim-browser-search'
-    call plug#end()
+call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
