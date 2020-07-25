@@ -1,8 +1,7 @@
-let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   Files']            },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ ]
+" let g:startify_lists = [
+"           \ { 'type': 'files',     'header': ['   Files']            },
+"           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+"           \ ]
 
 let g:startify_bookmarks = [
             \ { 'c': '~/.config/i3/config' },
@@ -11,7 +10,7 @@ let g:startify_bookmarks = [
             \ { 't': '/mnt/d/temp/GitHub/config-mark/todo.md' },
             \ ]
 let g:startify_files_number = 20
-let g:startify_session_dir = '~/.config/nvim/session'
+" let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_enable_special = 0
 let g:startify_session_autoload = 1
 let g:startify_session_delete_buffers = 1
@@ -19,10 +18,10 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 
-nnoremap <localleader>sl :SLoad<CR>
-nnoremap <localleader>ss :SSave<CR>
-nnoremap <localleader>sd :SDelete<CR>
-nnoremap <localleader>sc :SClose<CR>
+" nnoremap <localleader>sl :SLoad<CR>
+" nnoremap <localleader>ss :SSave<CR>
+" nnoremap <localleader>sd :SDelete<CR>
+" nnoremap <localleader>sc :SClose<CR>
 
 function! StartifyEntryFormat()
     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'

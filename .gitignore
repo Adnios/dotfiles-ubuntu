@@ -42,3 +42,5 @@
 !.tmux.conf.local
 !.tmux.conf
 #---[ ignore list ]---
+
+.config/nvim/config/Session.vim

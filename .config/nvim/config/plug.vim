@@ -30,7 +30,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mhinz/vim-startify'
     " colorscheme
     Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
+    " Plug 'morhetz/gruvbox'
     Plug 'sainnhe/gruvbox-material'
     " Plug 'srcery-colors/srcery-vim'
     Plug 'cocopon/iceberg.vim'
@@ -88,7 +89,10 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'junegunn/vim-slash'
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'zchee/deoplete-jedi'
+
     Plug 'voldikss/vim-browser-search'
+    Plug 'tpope/vim-obsession'
+    Plug 'lambdalisue/suda.vim'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -109,13 +113,4 @@ aug end
 
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
-" vim-slash
-" noremap <plug>(slash-after) zz
-" if has('timers')
-"   " Blink 2 times with 50ms interval
-"   noremap <expr> <plug>(slash-after) slash#blink(2, 50)
-" endif
-
-" Use deoplete.
-" let g:deoplete#enable_at_startup = 1
 

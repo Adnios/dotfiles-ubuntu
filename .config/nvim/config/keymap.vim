@@ -78,14 +78,21 @@ nnoremap Y y$
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+" don't work in neovim
+" command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 nnoremap <leader>T :GenTocGFM<CR>
 " nnoremap j gj
 " nnoremap k gk
 " nnoremap gj j
 " nnoremap gk k
 
+nnoremap <leader>W :w suda://%<CR>
 nnoremap <localleader>l :set spell spelllang=en_us,cjk<CR>
 
 nmap <silent> <Leader>s <Plug>SearchNormal
 vmap <silent> <Leader>s <Plug>SearchVisual
+
+nnoremap <leader>S :Obsession!<CR>
+
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')

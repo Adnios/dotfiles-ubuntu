@@ -8,7 +8,7 @@
 "airline=======================================
 " set t_Co=256      "在windows中用xshell连接打开vim可以显示色彩
 let g:airline#extensions#tabline#enabled = 1   " 是否打开tabline
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 " set laststatus=2  "永远显示状态栏
 let g:airline_theme='deus' "选择主题
 " let g:airline_theme='gruvbox_material' "选择主题

@@ -61,4 +61,4 @@ let g:coc_explorer_global_presets = {
 nmap <leader>e :CocCommand explorer<CR>
 " coc-yank
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+nnoremap <leader>C :CocCommand 

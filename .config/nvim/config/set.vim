@@ -22,7 +22,6 @@ set history=200     "ex commond history
 " Jump to last position in the file, see <url:vimhelp:last-position-jump>
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 set termguicolors
-set background=dark
 " how to do 90% of what plugins do(with just vim)
 filetype plugin on
 set path+=**
@@ -102,8 +101,9 @@ let g:gruvbox_material_diagnostic_line_highlight = 1
 let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
 
-set formatoptions+=mM
-set iskeyword+=_,$,@,%,#,-
+
+
+set iskeyword+=_,$,@,%,#
 " set iskeyword+="，"
 " set linebreak
 " 折行后缩进
@@ -113,12 +113,13 @@ set iskeyword+=_,$,@,%,#,-
 " let &showbreak = '↳ '
 " set showbreak=↳↳↳↳
 set showbreak=↳\ \ \ 
+" 一起缩进
 set breakindent
 set breakindentopt=sbr
 hi NonText ctermfg=gray guifg=gray
 
 " hi! link NonText Cursor
-" 这行从最左端开始，间接模拟首行缩进
+" 这行从最左端开始
 set cpo+=n
 set completeopt=menuone,preview
 " set linebreak
@@ -130,20 +131,6 @@ set linespace=0
 " let &showbreak='  '                   " Indent amount
 autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us,cjk
 autocmd FileType tex set linebreak
-
-" Also break at a multi-byte character above 255
-set formatoptions+=m
-set formatoptions+=B
-" Where it makes sense, remove a comment leader when joining lines Where it makes sense, remove a comment leader when joining lines
-
-set formatoptions+=j
-" When formatting text, recognize numbered lists
-set formatoptions+=n
-
-set formatoptions+=1         " Don't break lines after a one-letter word
-set formatoptions-=t         " Don't auto-wrap text
-set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
-
 
 set wrap " Wrap lines
 
@@ -167,8 +154,7 @@ set smartcase
 
 " Optimize for fast terminal connections
 set ttyfast
-" 浮动效果失效
-" set wildmode=longest,list,full
+
 if has('syntax')
     set synmaxcol=2500              " Limit syntax highlighting (this
                                     " avoids the very slow redrawing
@@ -218,10 +204,28 @@ set clipboard=unnamedplus
 
 exec "nohlsearch"
 
-set formatoptions-=cro                  " Stop newline continution of comments
 
 set nofoldenable
 " 有时间好好研究fold
 " set foldmethod=marker                   " 折叠方式为按照marker折叠
 " harcode for reducing startup time
 let g:python3_host_prog='/usr/bin/python3'
+
+set inccommand=nosplit
+
+" Also break at a multi-byte character above 255
+set formatoptions+=m
+set formatoptions+=B
+" Where it makes sense, remove a comment leader when joining lines Where it makes sense, remove a comment leader when joining lines
+
+set formatoptions+=j
+" When formatting text, recognize numbered lists
+set formatoptions+=n
+
+set formatoptions+=1         " Don't break lines after a one-letter word
+set formatoptions-=t         " Don't auto-wrap text
+set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
+set formatoptions+=mM
+set formatoptions-=cro                  " Stop newline continution of comments
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
