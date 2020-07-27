@@ -30,8 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mhinz/vim-startify'
     " colorscheme
     Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'gruvbox-community/gruvbox'
-    " Plug 'morhetz/gruvbox'
+    Plug 'morhetz/gruvbox'
     Plug 'sainnhe/gruvbox-material'
     " Plug 'srcery-colors/srcery-vim'
     Plug 'cocopon/iceberg.vim'
