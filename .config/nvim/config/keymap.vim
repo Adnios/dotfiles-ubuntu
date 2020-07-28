@@ -21,8 +21,8 @@ cnoremap <C-n> <Down>
 " nnoremap K 5k
 " nnoremap H ^
 " nnoremap L $
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+" nnoremap <C-d> <C-d>zz
+" nnoremap <C-u> <C-u>zz
 vnoremap > >gv
 vnoremap < <gv
 nnoremap <leader><CR> :nohl<CR>
@@ -87,7 +87,7 @@ nnoremap <leader>T :GenTocGFM<CR>
 " nnoremap gk k
 
 nnoremap <leader>W :w suda://%<CR>
-nnoremap <localleader>l :set spell spelllang=en_us,cjk<CR>
+nnoremap <localleader>s :set spell spelllang=en_us,cjk<CR>
 
 nmap <silent> <Leader>s <Plug>SearchNormal
 vmap <silent> <Leader>s <Plug>SearchVisual
@@ -96,3 +96,13 @@ nnoremap <leader>S :Obsession!<CR>
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
+
+" m - toggle mark
+" [ - prev mark
+" ] - next mark
+
+noremap <silent><LEADER>m :BookmarkToggle<CR>
+noremap <silent><LEADER>[ :BookmarkNext<CR>
+noremap <silent><LEADER>] :BookmarkPrev<CR>

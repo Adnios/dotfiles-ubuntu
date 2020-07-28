@@ -92,8 +92,18 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'voldikss/vim-browser-search'
     Plug 'tpope/vim-obsession'
     Plug 'lambdalisue/suda.vim'
+    Plug 'luochen1990/rainbow'
+    let g:rainbow_active = 1
+    Plug 'rhysd/accelerated-jk'
+    let g:accelerated_jk_acceleration_table = [2, 4]
+    Plug 'MattesGroeger/vim-bookmarks'
+    let g:bookmark_no_default_key_mappings = 1
+    highlight BookmarkSign ctermbg=NONE ctermfg=160
+    highlight BookmarkLine ctermbg=194 ctermfg=NONE
+    let g:bookmark_sign = '♥'
+    let g:bookmark_highlight_lines = 1
+    Plug 'psliwka/vim-smoothie'
 call plug#end()
-
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
@@ -111,5 +121,3 @@ aug end
 
 
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
-
-
