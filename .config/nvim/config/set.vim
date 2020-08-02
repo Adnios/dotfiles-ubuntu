@@ -2,7 +2,7 @@
 " setting
 " -------------------------------------------------
 set number
-" set scrolloff=10
+set scrolloff=7
 set relativenumber
 set nocompatible
 filetype plugin on
@@ -12,7 +12,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set mouse=a   "Ubuntu 上中文不能准确地光标移动"
-set smartindent
+" set smartindent
 set updatetime=100  " save automatically when text is changed
 au CursorHold * silent! update
 set history=200     "ex commond history
@@ -165,7 +165,7 @@ endif
 set conceallevel=0
 set noswapfile
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+" set so=99999
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw

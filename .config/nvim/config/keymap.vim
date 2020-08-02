@@ -21,8 +21,6 @@ cnoremap <C-n> <Down>
 " nnoremap K 5k
 " nnoremap H ^
 " nnoremap L $
-" nnoremap <C-d> <C-d>zz
-" nnoremap <C-u> <C-u>zz
 vnoremap > >gv
 vnoremap < <gv
 nnoremap <leader><CR> :nohl<CR>
@@ -65,11 +63,14 @@ nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+
+nnoremap <C-d> :set scrolloff=0<CR><C-d>zz:set scrolloff=7<CR>
+nnoremap <C-u> :set scrolloff=0<CR><C-u>zz:set scrolloff=7<CR>
+nnoremap <C-j> 5j
+nnoremap <C-k> 5k
+nnoremap <C-h> ^
+nnoremap <C-l> $
+
 nnoremap <leader>w <C-w>w
 tnoremap <leader>w <C-\><C-N><C-w>w
 nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
@@ -96,8 +97,6 @@ nnoremap <leader>S :Obsession!<CR>
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
 
 " m - toggle mark
 " [ - prev mark
