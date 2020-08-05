@@ -52,10 +52,10 @@ func! Run()
 endfunc
 
 " Buffer
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
+nnoremap <silent> <S-tab> :bprevious<CR>
+nnoremap <silent> <tab> :bnext<CR>
+" nnoremap <silent> [B :bfirst<CR>
+" nnoremap <silent> ]B :blast<CR>
 
 " Disable arrow movement, resize splits instead.
 nnoremap <Up>    :resize +2<CR>

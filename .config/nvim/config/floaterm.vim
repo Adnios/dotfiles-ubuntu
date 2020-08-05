@@ -29,7 +29,7 @@ augroup UserTermSettings " neovim only
     \ setlocal modifiable |
     \ nmap <silent><buffer> <Esc> <Cmd>hide<CR>|
     \ nmap <silent><buffer> q :q<CR> |
-    \ hi TermCursor guifg=yellow |
+    \ hi TermCursor guifg= #ff5555 |
 augroup END
 
 let g:floaterm_width = 1.0

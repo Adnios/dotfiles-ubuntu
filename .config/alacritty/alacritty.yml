@@ -83,7 +83,7 @@ draw_bold_text_with_bright_colors: true
 #     magenta: '0xd3869b'
 #     cyan:    '0x8ec07c'
 #     white:   '0xebdbb2'
-background_opacity: 0.95
+background_opacity: 0.85
 
 # Colors (Dracula)
 colors:
@@ -106,8 +106,7 @@ colors:
   # the cursor color will be the inverse of the cell color.
   cursor:
     text: '0x44475a'
-    cursor: '0xf8f8f2'
-
+    cursor: '0xff5555'
   # Normal colors
   normal:
     black:   '0x000000'
