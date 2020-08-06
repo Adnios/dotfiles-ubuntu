@@ -39,15 +39,15 @@ let g:which_key_map[','] = [ 'Startify'                   , 'Startify' ]
 " let g:which_key_map.s = {
 "       \ 'name' : '+session' ,
 "       \ }
-let g:which_key_map['1'] = [ '<Plug>AirlineSelectTab1', 'buffer1' ]
-let g:which_key_map['2'] = [ '<Plug>AirlineSelectTab2', 'buffer2' ]
-let g:which_key_map['3'] = [ '<Plug>AirlineSelectTab3', 'buffer3' ]
-let g:which_key_map['4'] = [ '<Plug>AirlineSelectTab4', 'buffer4' ]
-let g:which_key_map['5'] = [ '<Plug>AirlineSelectTab5', 'buffer5' ]
-let g:which_key_map['6'] = [ '<Plug>AirlineSelectTab6', 'buffer6' ]
-let g:which_key_map['7'] = [ '<Plug>AirlineSelectTab7', 'buffer7' ]
-let g:which_key_map['8'] = [ '<Plug>AirlineSelectTab8', 'buffer8' ]
-let g:which_key_map['9'] = [ '<Plug>AirlineSelectTab9', 'buffer9' ]
+" let g:which_key_map['1'] = [ '<Plug>AirlineSelectTab1', 'buffer1' ]
+" let g:which_key_map['2'] = [ '<Plug>AirlineSelectTab2', 'buffer2' ]
+" let g:which_key_map['3'] = [ '<Plug>AirlineSelectTab3', 'buffer3' ]
+" let g:which_key_map['4'] = [ '<Plug>AirlineSelectTab4', 'buffer4' ]
+" let g:which_key_map['5'] = [ '<Plug>AirlineSelectTab5', 'buffer5' ]
+" let g:which_key_map['6'] = [ '<Plug>AirlineSelectTab6', 'buffer6' ]
+" let g:which_key_map['7'] = [ '<Plug>AirlineSelectTab7', 'buffer7' ]
+" let g:which_key_map['8'] = [ '<Plug>AirlineSelectTab8', 'buffer8' ]
+" let g:which_key_map['9'] = [ '<Plug>AirlineSelectTab9', 'buffer9' ]
 
 let g:which_key_map.e = 'coc-explore'
 

@@ -41,3 +41,7 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 let g:airline#extensions#whitespace#enabled = 0
+
+
+" 关掉最后面的多余东西
+" let g:airline_skip_empty_sections = 1

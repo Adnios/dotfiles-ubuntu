@@ -52,10 +52,11 @@ func! Run()
 endfunc
 
 " Buffer
-nnoremap <silent> <S-tab> :bprevious<CR>
-nnoremap <silent> <tab> :bnext<CR>
 " nnoremap <silent> [B :bfirst<CR>
 " nnoremap <silent> ]B :blast<CR>
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+nnoremap <silent> <Leader>bc :Bonly<CR>
 
 " Disable arrow movement, resize splits instead.
 nnoremap <Up>    :resize +2<CR>
@@ -105,3 +106,14 @@ nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent><LEADER>m :BookmarkToggle<CR>
 noremap <silent><LEADER>[ :BookmarkNext<CR>
 noremap <silent><LEADER>] :BookmarkPrev<CR>
+
+nmap <localleader>1 <Plug>BuffetSwitch(1)
+nmap <localleader>2 <Plug>BuffetSwitch(2)
+nmap <localleader>3 <Plug>BuffetSwitch(3)
+nmap <localleader>4 <Plug>BuffetSwitch(4)
+nmap <localleader>5 <Plug>BuffetSwitch(5)
+nmap <localleader>6 <Plug>BuffetSwitch(6)
+nmap <localleader>7 <Plug>BuffetSwitch(7)
+nmap <localleader>8 <Plug>BuffetSwitch(8)
+nmap <localleader>9 <Plug>BuffetSwitch(9)
+nmap <localleader>0 <Plug>BuffetSwitch(10)

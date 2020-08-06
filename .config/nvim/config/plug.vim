@@ -17,8 +17,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " nodejs apt 安装 npm 等，sudo npm cache clean -f|sudo npm install -g
     " 状态栏
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
     " Plug 'dense-analysis/ale'
     Plug 'yggdroot/indentline'
     let g:indentLine_setColors = 0
@@ -100,6 +100,9 @@ call plug#begin('~/.config/nvim/plugged')
     highlight BookmarkLine ctermbg=194 ctermfg=NONE
     let g:bookmark_sign = '♥'
     let g:bookmark_highlight_lines = 1
+    Plug 'hardcoreplayers/spaceline.vim'
+    " Plug 'hardcoreplayers/vim-buffet'
+    Plug 'bagrat/vim-buffet'
 call plug#end()
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -118,3 +121,18 @@ aug end
 
 
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+
+" vim-buffet
+let g:buffet_always_show_tabline = 1
+" let g:buffet_powerline_separators = 1
+let g:buffet_show_index = 1
+let g:buffet_max_plug = 10
+let g:buffet_use_devicons = 0
+let g:buffet_hidden_buffers = ["terminal", "quickfix"]
+function! g:BuffetSetCustomColors()
+    hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#b8bb26 guifg=#000000
+    hi! BuffetTrunc cterm=bold ctermbg=10 ctermfg=8 guibg=##999999 guifg=#999999
+    hi! BuffetTab cterm=NONE ctermbg=203 ctermfg=8 guibg=#555555 guifg=#999999
+    hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#504945 guifg=#000000
+    hi! BuffetBuffer cterm=NONE  ctermfg=10 guibg=buffermidcolor guifg=#999999
+endfunction

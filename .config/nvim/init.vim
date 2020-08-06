@@ -11,7 +11,6 @@ let s:MyVimConfigFiles = [
             \'vm.vim',
             \'bullet.vim',
             \'vim-illuminate.vim',
-            \'airline.vim',
             \'easymotion.vim',
             \'signify.vim',
             \'goyo.vim',
