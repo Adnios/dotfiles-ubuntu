@@ -12,8 +12,6 @@ let s:MyVimConfigFiles = [
             \'bullet.vim',
             \'vim-illuminate.vim',
             \'easymotion.vim',
-            \'signify.vim',
-            \'goyo.vim',
             \'start.vim'
             \]
 for s:path in s:MyVimConfigFiles

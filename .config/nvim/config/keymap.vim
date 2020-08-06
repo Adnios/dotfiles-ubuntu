@@ -65,8 +65,8 @@ nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
 
-nnoremap <C-d> :set scrolloff=0<CR><C-d>zz:set scrolloff=7<CR>
-nnoremap <C-u> :set scrolloff=0<CR><C-u>zz:set scrolloff=7<CR>
+nnoremap <silent><C-d> :set scrolloff=0<CR><C-d>zz:set scrolloff=7<CR>
+nnoremap <silent><C-u> :set scrolloff=0<CR><C-u>zz:set scrolloff=7<CR>
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
 nnoremap <C-h> ^
@@ -98,14 +98,6 @@ nnoremap <leader>S :Obsession!<CR>
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
-
-" m - toggle mark
-" [ - prev mark
-" ] - next mark
-
-noremap <silent><LEADER>m :BookmarkToggle<CR>
-noremap <silent><LEADER>[ :BookmarkNext<CR>
-noremap <silent><LEADER>] :BookmarkPrev<CR>
 
 nmap <localleader>1 <Plug>BuffetSwitch(1)
 nmap <localleader>2 <Plug>BuffetSwitch(2)

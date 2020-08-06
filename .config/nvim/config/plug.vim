@@ -29,14 +29,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'mhinz/vim-startify'
     " colorscheme
-    Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'morhetz/gruvbox'
+    " Plug 'kristijanhusak/vim-hybrid-material'
+    " Plug 'morhetz/gruvbox'
     Plug 'sainnhe/gruvbox-material'
     " Plug 'srcery-colors/srcery-vim'
-    Plug 'cocopon/iceberg.vim'
+    " Plug 'cocopon/iceberg.vim'
     " Plug 'junegunn/seoul256.vim'
-    Plug 'ajmwagar/vim-deus'
-    Plug 'joshdick/onedark.vim'
+    " Plug 'ajmwagar/vim-deus'
+    " Plug 'joshdick/onedark.vim'
     " Plug 'drewtempelmeyer/palenight.vim'
     " syntax
     Plug 'sheerun/vim-polyglot' "有点卡，coc 的原因
@@ -75,12 +75,12 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'justinmk/vim-sneak' "; cannot work
     " Plug 'unblevable/quick-scope'
     " git
-    Plug 'mhinz/vim-signify'
+    " Plug 'mhinz/vim-signify'
     " Plug 'airblade/vim-gitgutter'
     " Plug 'tpope/vim-fugitive'
     " Plug 'tpope/vim-rhubarb'
     " Plug 'junegunn/gv.vim'
-    Plug 'junegunn/goyo.vim'
+    " Plug 'junegunn/goyo.vim'
     " 中文排版
     Plug 'hotoo/pangu.vim'
     " clipboard
@@ -92,14 +92,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'voldikss/vim-browser-search'
     Plug 'tpope/vim-obsession'
     Plug 'lambdalisue/suda.vim'
-    Plug 'luochen1990/rainbow'
-    let g:rainbow_active = 1
-    Plug 'MattesGroeger/vim-bookmarks'
-    let g:bookmark_no_default_key_mappings = 1
-    highlight BookmarkSign ctermbg=NONE ctermfg=160
-    highlight BookmarkLine ctermbg=194 ctermfg=NONE
-    let g:bookmark_sign = '♥'
-    let g:bookmark_highlight_lines = 1
+    " Plug 'luochen1990/rainbow'
+    " let g:rainbow_active = 1
+    " Plug 'MattesGroeger/vim-bookmarks'
+    " let g:bookmark_no_default_key_mappings = 1
+    " highlight BookmarkSign ctermbg=NONE ctermfg=160
+    " highlight BookmarkLine ctermbg=194 ctermfg=NONE
+    " let g:bookmark_sign = '♥'
+    " let g:bookmark_highlight_lines = 1
     Plug 'hardcoreplayers/spaceline.vim'
     " Plug 'hardcoreplayers/vim-buffet'
     Plug 'bagrat/vim-buffet'
