@@ -1,21 +1,14 @@
-let s:MyVimConfigFiles = [
-            \'plug.vim',
-            \'keymap.vim',
-            \'fzf.vim',
-            \'coc.vim',
-            \'set.vim',
-            \'floaterm.vim',
-            \'markdown.vim',
-            \'latex.vim',
-            \'vim-which-key.vim',
-            \'vm.vim',
-            \'bullet.vim',
-            \'vim-illuminate.vim',
-            \'easymotion.vim',
-            \'start.vim'
-            \]
-for s:path in s:MyVimConfigFiles
-    exe 'source ' .'~/.config/nvim/config/'.s:path
-endfor
-
-" au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+source ~/.config/nvim/config/plug.vim
+source ~/.config/nvim/config/keymap.vim
+source ~/.config/nvim/config/fzf.vim
+source ~/.config/nvim/config/coc.vim
+source ~/.config/nvim/config/set.vim
+source ~/.config/nvim/config/floaterm.vim
+source ~/.config/nvim/config/markdown.vim
+source ~/.config/nvim/config/latex.vim
+source ~/.config/nvim/config/vim-which-key.vim
+source ~/.config/nvim/config/vm.vim
+source ~/.config/nvim/config/bullet.vim
+source ~/.config/nvim/config/vim-illuminate.vim
+source ~/.config/nvim/config/easymotion.vim
+source ~/.config/nvim/config/start.vim

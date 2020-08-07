@@ -72,6 +72,11 @@ nnoremap <C-k> 5k
 nnoremap <C-h> ^
 nnoremap <C-l> $
 
+vnoremap <C-j> 5j
+vnoremap <C-k> 5k
+vnoremap <C-h> ^
+vnoremap <C-l> $
+
 nnoremap <leader>w <C-w>w
 tnoremap <leader>w <C-\><C-N><C-w>w
 nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
