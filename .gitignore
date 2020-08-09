@@ -32,7 +32,11 @@
 .config/nvim/undodir/
 .config/nvim/plugged/
 
-
+!.local/
+.local/*
+!.local/share/
+.local/share/*
+!.local/share/autojump/
 
 !.zshrc
 !.fzf.zsh

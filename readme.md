@@ -74,6 +74,7 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 - 其他见 install.sh 文件，参考 https://github.com/unix121/i3wm-themer
 - smplayer 视频播放器自带，[  ], 可以倍速减速
 - sudo apt install network-manager,nmtui 连接 wlan,nmtui Ubuntu 自带
+- autojump, apt 安装，添加 zsh 插件 autojump，跳转目录必须是之前访问过的。
 
 ## 配置
 

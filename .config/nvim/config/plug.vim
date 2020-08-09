@@ -21,7 +21,10 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'vim-airline/vim-airline-themes'
     " Plug 'dense-analysis/ale'
     Plug 'yggdroot/indentline'
-    let g:indentLine_setColors = 0
+        " let g:indentLine_setColors = 0
+        let g:indentLine_setConceal = 0
+        let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
     Plug 'easymotion/vim-easymotion'
     " Plug 'tpope/vim-surround'
     Plug '~/.fzf'
@@ -92,15 +95,11 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'voldikss/vim-browser-search'
     Plug 'tpope/vim-obsession'
+    Plug 'tpope/vim-surround'
+    " Plug 'tpope/vim-repeat'
     Plug 'lambdalisue/suda.vim'
     " Plug 'luochen1990/rainbow'
     " let g:rainbow_active = 1
-    " Plug 'MattesGroeger/vim-bookmarks'
-    " let g:bookmark_no_default_key_mappings = 1
-    " highlight BookmarkSign ctermbg=NONE ctermfg=160
-    " highlight BookmarkLine ctermbg=194 ctermfg=NONE
-    " let g:bookmark_sign = '♥'
-    " let g:bookmark_highlight_lines = 1
     Plug 'hardcoreplayers/spaceline.vim'
         let g:spaceline_custom_diff_icon= ['+','-','*']
     Plug 'bagrat/vim-buffet'
@@ -136,6 +135,3 @@ aug end
 
 
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
-
-" vim-buffet
-

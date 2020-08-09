@@ -79,7 +79,7 @@ vnoremap <C-l> $
 
 nnoremap <leader>w <C-w>w
 tnoremap <leader>w <C-\><C-N><C-w>w
-nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
+" nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
 
 nnoremap Y y$
 
@@ -94,7 +94,7 @@ nnoremap <leader>T :GenTocGFM<CR>
 " nnoremap gk k
 
 nnoremap <leader>W :w suda://%<CR>
-nnoremap <localleader>s :set spell spelllang=en_us,cjk<CR>
+nnoremap <localleader>s :set spell! spelllang=en_us,cjk<CR>
 
 nmap <silent> <Leader>s <Plug>SearchNormal
 vmap <silent> <Leader>s <Plug>SearchVisual

@@ -82,6 +82,7 @@ zsh-autosuggestions
 vi-mode
 zsh-syntax-highlighting
 colored-man-pages
+autojump
 )
 source $ZSH/oh-my-zsh.sh
 

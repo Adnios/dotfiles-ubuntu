@@ -12,6 +12,7 @@ noremap <leader>h :History<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>a :Ag<CR>
 noremap <leader>R :Rg<CR>
+noremap <leader>m :Marks<CR>
 
 " Empty value to disable preview window altogether
 let g:fzf_preview_window = ''
@@ -24,7 +25,7 @@ let g:fzf_preview_window = 'right:40%'
 
 let g:fzf_buffers_jump = 1
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
+" let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
 " let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 
 " oceanic_material异常

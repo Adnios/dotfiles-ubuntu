@@ -100,7 +100,7 @@ set background=dark
 " " let g:gruvbox_material_current_word = 'bold'
 " let g:gruvbox_material_better_performance = 1
 " colorscheme gruvbox-material
-" let g:oceanic_material_transparent_background = 1
+let g:oceanic_material_transparent_background = 1
 let g:oceanic_material_allow_bold = 1
 " let g:oceanic_material_allow_italic = 1
 " let g:oceanic_material_allow_underline = 1
@@ -119,7 +119,6 @@ set iskeyword+=_,$,@,%,#
 
 " let &showbreak = '↳ '
 " set showbreak=↳↳↳↳
-set showbreak=↳\ \ \ 
 " 一起缩进
 set breakindent
 set breakindentopt=sbr
@@ -127,6 +126,7 @@ hi NonText ctermfg=gray guifg=gray
 
 " hi! link NonText Cursor
 " 这行从最左端开始
+set showbreak=↳\ \ \ 
 set cpo+=n
 set completeopt=menuone,preview
 " set linebreak
