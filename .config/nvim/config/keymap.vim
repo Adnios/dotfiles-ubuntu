@@ -114,3 +114,6 @@ nmap <localleader>7 <Plug>BuffetSwitch(7)
 nmap <localleader>8 <Plug>BuffetSwitch(8)
 nmap <localleader>9 <Plug>BuffetSwitch(9)
 nmap <localleader>0 <Plug>BuffetSwitch(10)
+
+nmap <Plug>(table-mode-tableize) <Nop>
+nmap <Plug>(table-mode-tableize-delimiter) <Nop>

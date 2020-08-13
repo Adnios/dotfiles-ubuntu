@@ -8,7 +8,11 @@
 14.142135623730951	/mnt/d/temp/GitHub/CS231n-2017-Summary/assignment/assignment1
 10.0	/mnt/d/temp/GitHub/CS231n-2017-Summary/assignment/assignment1/cs231n/datasets
 10.0	/mnt/c/Users/scrutiny/Desktop/Class
-14.142135623730951	/mnt/d/temp/GitHub/config-mark
+20.0	/mnt/d/temp/GitHub/config-mark
 10.0	/home/scrutiny/GitHub/classic-convolution-network
-14.142135623730951	/home/scrutiny/Documents
+24.49489742783178	/home/scrutiny/Documents
 10.0	/home/scrutiny/Documents/lotion
+20.0	/home/scrutiny/Documents/emacs-27.1
+14.142135623730951	/home/scrutiny/.emacs.d
+10.0	/home/scrutiny/.emacs.d/bin
+10.0	/home/scrutiny/.doom.d

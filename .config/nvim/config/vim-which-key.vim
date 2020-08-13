@@ -106,7 +106,7 @@ let g:which_key_map.l = {
 nnoremap <localleader>fs :%s/\s\+$//e<CR>:nohl<CR>
 nnoremap <localleader>ff :Autoformat<CR>
 
-nmap <localleader>t :TagbarToggle<CR>
+nmap <localleader>T :TagbarToggle<CR>
 " let g:which_key_map.o= {
 "     \ 'name' : "+others",
 "       \ 's' : [':%s/\s\+$//e'                  , 'space'],

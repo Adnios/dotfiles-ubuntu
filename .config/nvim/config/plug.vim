@@ -53,6 +53,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dkarter/bullets.vim'
     Plug 'mzlogin/vim-markdown-toc'
     Plug 'ferrine/md-img-paste.vim'
+    Plug 'dhruvasagar/vim-table-mode'
+        " let g:table_mode_disable_mappings = 1
+        " let g:table_mode_disable_tableize_mappings = 1
+        let g:table_mode_map_prefix = "<localleader>t"
     " latex
     Plug 'lervag/vimtex'
     " Plug 'dhruvasagar/vim-table-mode'
