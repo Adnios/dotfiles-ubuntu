@@ -12,3 +12,4 @@ source ~/.config/nvim/config/bullet.vim
 source ~/.config/nvim/config/vim-illuminate.vim
 source ~/.config/nvim/config/easymotion.vim
 source ~/.config/nvim/config/start.vim
+" source ~/.config/nvim/config/rnvimr.vim

@@ -1,4 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
+    " vim-which-key
+    Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     "Keep and restore fcitx state for each buffer
     Plug 'vim-scripts/fcitx.vim'
@@ -72,8 +74,6 @@ call plug#begin('~/.config/nvim/plugged')
     " ranger
     " Plug 'rbgrouleff/bclose.vim' "neovim 加上，否则 ranger 存在 buffer 内，对 floaterm 也有效
     " Plug 'francoiscabrol/ranger.vim'
-    " vim-which-key
-    Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " highlight
     Plug 'RRethy/vim-illuminate'
     " tabs
@@ -120,6 +120,14 @@ call plug#begin('~/.config/nvim/plugged')
             hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#504945 guifg=#000000
             hi! BuffetBuffer cterm=NONE  ctermfg=10 guibg=buffermidcolor guifg=#999999
         endfunction
+    Plug 'kevinhwang91/rnvimr'
+        let g:rnvimr_enable_ex = 1
+        let g:rnvimr_enable_bw = 1
+        " let g:rnvimr_draw_border = 0
+        " let g:rnvimr_hide_gitignore = 1
+        let g:rnvimr_border_attr = {'fg': 3}
+        let g:rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
+        highlight link RnvimrNormal CursorLine
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'

@@ -2,7 +2,7 @@
 " setting
 " -------------------------------------------------
 set number
-set scrolloff=7
+" set scrolloff=7
 set relativenumber
 set nocompatible
 filetype plugin on
@@ -136,7 +136,7 @@ set completeopt=menuone,preview
 set linespace=0
 " set breakindent                         " Indent wrapped lines
 " let &showbreak='  '                   " Indent amount
-" autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us,cjk
+" autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us,cjk autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us,cjk
 " autocmd FileType tex set linebreak
 
 set wrap " Wrap lines
