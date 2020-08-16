@@ -1,8 +1,6 @@
 " -------------------------------------------------
 " keymap
 " -------------------------------------------------
-let g:mapleader = ";"
-let g:maplocalleader = "\<Space>" "vimtex 被修改
 map <F12> :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>q :q!<CR>
 "复制粘贴的斗争
@@ -119,6 +117,5 @@ nmap <Plug>(table-mode-tableize) <Nop>
 nmap <Plug>(table-mode-tableize-delimiter) <Nop>
 
 
-tnoremap <silent> <localleader>i <C-\><C-n>:RnvimrResize<CR>
+tnoremap <silent> <Up> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <localleader>r :RnvimrToggle<CR>
-tnoremap <silent> <localleader>r <C-\><C-n>:RnvimrToggle<CR>

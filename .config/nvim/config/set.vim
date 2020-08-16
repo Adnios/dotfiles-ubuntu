@@ -1,8 +1,4 @@
-" -------------------------------------------------
-" setting
-" -------------------------------------------------
 set number
-" set scrolloff=7
 set relativenumber
 set nocompatible
 filetype plugin on
@@ -37,9 +33,9 @@ set ruler
 set undofile
 set undodir=~/.config/nvim/undodir
 
-autocmd FileType json let g:indentLine_conceallevel=0
+" autocmd FileType json let g:indentLine_conceallevel=0
 " autocmd FileType json,markdown let g:indentLine_conceallevel=0
-autocmd FileType javascript,python,c,cpp,java,vim,shell let g:indentLine_conceallevel=2
+" autocmd FileType javascript,python,c,cpp,java,vim,shell let g:indentLine_conceallevel=2
 
 " 多个 vim 打开一个文件，则文件变为只读
 au SwapExists * let v:swapchoice = 'o'
@@ -127,6 +123,7 @@ hi NonText ctermfg=gray guifg=gray
 " hi! link NonText Cursor
 " 这行从最左端开始
 set showbreak=↳\ \ \ 
+" set showbreak=╰─➤
 set cpo+=n
 set completeopt=menuone,preview
 " set linebreak

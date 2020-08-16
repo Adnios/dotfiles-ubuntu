@@ -8,7 +8,7 @@
 " tnoremap   <silent>   <leader>th   <C-\><C-n>:FloatermHide<CR>
 nnoremap   <silent>   <leader>t   :FloatermToggle<CR>
 tnoremap   <silent>   <leader>t   <C-\><C-n>:FloatermToggle<CR>
-nnoremap   <silent>   <leader>r   :FloatermNew ranger<CR>
+" nnoremap   <silent>   <leader>r   :FloatermNew ranger<CR>
 nnoremap   <silent>   <leader>g   :FloatermNew lazygit<CR>
 " nnoremap   <silent>   <leader>tf   :FloatermNew fzf<CR>
 

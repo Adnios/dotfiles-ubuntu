@@ -1,3 +1,5 @@
+let g:mapleader = ";"
+let g:maplocalleader = "\<Space>" "vimtex 被修改
 call plug#begin('~/.config/nvim/plugged')
     " vim-which-key
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
@@ -22,15 +24,22 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'vim-airline/vim-airline'
     " Plug 'vim-airline/vim-airline-themes'
     " Plug 'dense-analysis/ale'
-    Plug 'yggdroot/indentline'
+    Plug 'yggdroot/indentline',{ 'for': ['c', 'h', 'cpp', 'py', 'json', 'go', 'java', 'vim', 'md'] }
+        " autocmd InsertEnter *.json setlocal concealcursor=
+        " autocmd InsertLeave *.json setlocal concealcursor=inc
         " let g:indentLine_setColors = 0
-        let g:indentLine_setConceal = 0
-        let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+        " " let g:indentLine_setConceal = 0
+        " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+        let g:indentLine_enabled = 1
+        let g:indentLine_char='┆'
+        let g:indentLine_fileTypeExclude = ['defx', 'denite','startify','tagbar','vista_kind','vista','coc-explorer','dashboard']
+        let g:indentLine_concealcursor = 'niv'
+        let g:indentLine_showFirstIndentLevel =1
 
     Plug 'easymotion/vim-easymotion'
     " Plug 'tpope/vim-surround'
-    Plug '~/.fzf'
-    Plug 'junegunn/fzf.vim'
+    Plug '~/.fzf', {'on':['Files', 'History', 'Colors', 'Rg', 'Marks', 'Ag', 'Buffers']}
+    Plug 'junegunn/fzf.vim', {'on':['Files', 'History', 'Colors', 'Rg', 'Marks', 'Ag', 'Buffers']}
     Plug 'tpope/vim-commentary'
     Plug 'mhinz/vim-startify'
     " colorscheme
@@ -48,28 +57,30 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'sheerun/vim-polyglot' "有点卡，coc 的原因
     Plug 'mboughaba/i3config.vim' "i3
     " markdown
-    Plug 'godlygeek/tabular'
-    Plug 'plasticboy/vim-markdown'
-    Plug 'iamcco/mathjax-support-for-mkdp'
+    Plug 'godlygeek/tabular', { 'for': 'markdown' }
+    Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+    Plug 'iamcco/mathjax-support-for-mkdp', { 'for': 'markdown' }
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-    Plug 'dkarter/bullets.vim'
-    Plug 'mzlogin/vim-markdown-toc'
-    Plug 'ferrine/md-img-paste.vim'
-    Plug 'dhruvasagar/vim-table-mode'
+    Plug 'dkarter/bullets.vim', { 'for': 'markdown' }
+    Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+    Plug 'ferrine/md-img-paste.vim', { 'for': 'markdown' }
+    Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
         " let g:table_mode_disable_mappings = 1
         " let g:table_mode_disable_tableize_mappings = 1
         let g:table_mode_map_prefix = "<localleader>t"
+
     " latex
-    Plug 'lervag/vimtex'
+    Plug 'lervag/vimtex', { 'for': 'tex' }
+    Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
     " Plug 'dhruvasagar/vim-table-mode'
     " Plug 'ron89/thesaurus_query.vim'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'majutsushi/tagbar'
-    Plug 'jszakmeister/markdown2ctags'
-    Plug 'voldikss/vim-floaterm'
+    Plug 'SirVer/ultisnips', { 'for': 'markdown' }
+    Plug 'honza/vim-snippets', { 'for': 'markdown' }
+    Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
+    Plug 'jszakmeister/markdown2ctags', { 'for': 'markdown' }
+    Plug 'voldikss/vim-floaterm', { 'on':['FloatermNew', 'FloatermToggle']}
     " code
-    Plug 'Chiel92/vim-autoformat'
+    Plug 'Chiel92/vim-autoformat', {'on':'Autoformat'}
     Plug 'airblade/vim-rooter'
     " ranger
     " Plug 'rbgrouleff/bclose.vim' "neovim 加上，否则 ranger 存在 buffer 内，对 floaterm 也有效
@@ -97,14 +108,15 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'zchee/deoplete-jedi'
 
-    Plug 'voldikss/vim-browser-search'
-    Plug 'tpope/vim-obsession'
+    Plug 'voldikss/vim-browser-search', {'on':['<Plug>SearchNormal', '<Plug>SearchVisual']}
+    Plug 'tpope/vim-obsession', {'on':'Obsession'}
     Plug 'tpope/vim-surround'
     " Plug 'tpope/vim-repeat'
     Plug 'lambdalisue/suda.vim'
     " Plug 'luochen1990/rainbow'
     " let g:rainbow_active = 1
     Plug 'hardcoreplayers/spaceline.vim'
+        let g:spaceline_seperate_style= 'arrow'
         let g:spaceline_custom_diff_icon= ['+','-','*']
     Plug 'bagrat/vim-buffet'
         let g:buffet_always_show_tabline = 1
@@ -123,11 +135,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kevinhwang91/rnvimr'
         let g:rnvimr_enable_ex = 1
         let g:rnvimr_enable_bw = 1
+        let g:rnvimr_enable_picker = 1
         " let g:rnvimr_draw_border = 0
         " let g:rnvimr_hide_gitignore = 1
         let g:rnvimr_border_attr = {'fg': 3}
         let g:rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
         highlight link RnvimrNormal CursorLine
+
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'

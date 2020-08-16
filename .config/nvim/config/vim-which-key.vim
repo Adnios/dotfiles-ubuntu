@@ -114,4 +114,3 @@ nmap <localleader>T :TagbarToggle<CR>
 "       \ }
 
 let g:which_key_map.p = 'picture'
-

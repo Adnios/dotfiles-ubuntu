@@ -69,6 +69,7 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 - alacritty  配置文件在~/.config/alacritty/alacritty.yml, 参考了 https://github.com/theniceboy/.config
 - compton 透明化，~/.config/compton.conf,pkill compton 可以杀死该进程，透明化看视屏不好用，已删
 - ranger, 通过 apt 安装了好多插件 catdoc docx2txt xlsx2csv w3m 等等，按照网上的博客安装的
+    * trash 一个python文件，需要pip install trash-cli
 - feh
 - xfce4, xfce4-volumed, xfce4-power-manager, 音量亮度调整，通知气泡
 - 其他见 install.sh 文件，参考 https://github.com/unix121/i3wm-themer

@@ -1,6 +1,8 @@
 " if hidden is not set, TextEdit might fail.
 let g:coc_global_extensions = [
             \ 'coc-python',
+            \ 'coc-git',
+            \ 'coc-gitignore',
             \ 'coc-tabnine',
             \ 'coc-json',
             \ 'coc-highlight',
