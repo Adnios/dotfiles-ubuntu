@@ -4,7 +4,6 @@
     "coc.preferences.snippetStatusText": "Ⓢ ",
     "coc.preferences.extensionUpdateCheck": "daily",
 
-
     "suggest.detailMaxLength": 60,
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
@@ -42,7 +41,7 @@
         "unit": "\uf475",
         "value": "\uf89f",
         "variable": "\ue71b"
-},
+    },
     //diagnostic
     "diagnostic.signOffset": 9999999,
     "diagnostic.highlightOffset": 9999999,
@@ -72,27 +71,9 @@
     "yank.enableCompletion": false,
 
     "python.autoComplete.extraPaths": [
-      "${env:SPARK_HOME}/python",
-      "${env:SPARK_HOME}/python/pyspark"
+        "${env:SPARK_HOME}/python",
+        "${env:SPARK_HOME}/python/pyspark"
     ],
-    "explorer.width": 38,
-    "explorer.quitOnOpen": true,
-    "explorer.sources": [
-        {
-            "name": "buffer",
-            "expand": false
-        },
-        {
-            "name": "file",
-            "expand": true
-        }
-    ],
-    "explorer.file.column.indent.indentLine": true,
-    "explorer.file.showHiddenFiles": true,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.file.column.git.showIgnored": true,
-    //"explorer.keyMappingMode": "none",
-    "explorer.buffer.showHiddenBuffers": true,
     //git
     "git.enableGutters": true,
     "git.addGBlameToBufferVar": true,
@@ -107,5 +88,9 @@
     "git.changedSign.text": "▋",
     "git.removedSign.text": "▋",
     "git.topRemovedSign.text": "▔",
-    "git.changeRemovedSign.text": "▋"
+    "git.changeRemovedSign.text": "▋",
+    "snippets.ultisnips.directories": [
+        //"$HOME/.config/nvim/Ultisnips/",
+        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+    ]
 }

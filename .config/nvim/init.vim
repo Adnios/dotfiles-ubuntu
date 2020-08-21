@@ -1,15 +1,8 @@
-source ~/.config/nvim/config/plug.vim
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ";" "vimtex 被修改
 source ~/.config/nvim/config/keymap.vim
-source ~/.config/nvim/config/fzf.vim
-source ~/.config/nvim/config/coc.vim
+source ~/.config/nvim/config/plug.vim
+source ~/.config/nvim/config/plug_set.vim
 source ~/.config/nvim/config/set.vim
-source ~/.config/nvim/config/floaterm.vim
-source ~/.config/nvim/config/markdown.vim
-source ~/.config/nvim/config/latex.vim
-source ~/.config/nvim/config/vm.vim
-source ~/.config/nvim/config/bullet.vim
-source ~/.config/nvim/config/vim-illuminate.vim
-source ~/.config/nvim/config/easymotion.vim
-source ~/.config/nvim/config/start.vim
-" source ~/.config/nvim/config/rnvimr.vim
+source ~/.config/nvim/config/coc.vim
 source ~/.config/nvim/config/vim-which-key.vim

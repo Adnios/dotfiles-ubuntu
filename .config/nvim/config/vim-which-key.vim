@@ -1,116 +1,138 @@
-" -------------------------------------------------
-" vim-which-key
-" -------------------------------------------------
 set timeoutlen=500 "设置为 100 会导致 floaterm,gcc 问题
-nnoremap <silent> <leader> :silent <c-u> :silent WhichKey ';'<CR>
-vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual ';'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey ';'<CR>
+vnoremap <silent> <localleader> :<c-u>WhichKey ';'<CR>
 
-let g:which_key_use_floating_win = 0
+" let g:which_key_use_floating_win = 0
 " Hide status line
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+" autocmd! FileType which_key
+" autocmd  FileType which_key set laststatus=0 noshowmode noruler
+"             \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 let g:which_key_map = {}
 
-" autocmd VimEnter * call which_key#register(';', "g:which_key_map")
-autocmd! User vim-which-key call which_key#register(';', 'g:which_key_map')
+autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
 
-" You can pass a descriptive text to an existing mapping.
-
-" let g:which_key_map.f = { 'name' : '+file' }
-
-" nnoremap <silent> <leader>fs :update<CR>
-" let g:which_key_map.f.s = 'save-file'
-
-" nnoremap <silent> <leader>fd :e $MYVIMRC<CR>
-" let g:which_key_map.f.d = 'open-vimrc'
-
-" nnoremap <silent> <leader>oq  :copen<CR>
-" nnoremap <silent> <leader>ol  :lopen<CR>
-" let g:which_key_map.o = {
-"       \ 'name' : '+open',
-"       \ 'q' : 'open-quickfix'    ,
-"       \ 'l' : 'open-locationlist',
-"       \ }
-
-let g:which_key_map[','] = [ 'Startify'                   , 'Startify' ]
-" let g:which_key_map.s = {
-"       \ 'name' : '+session' ,
-"       \ }
-" let g:which_key_map['1'] = [ '<Plug>AirlineSelectTab1', 'buffer1' ]
-" let g:which_key_map['2'] = [ '<Plug>AirlineSelectTab2', 'buffer2' ]
-" let g:which_key_map['3'] = [ '<Plug>AirlineSelectTab3', 'buffer3' ]
-" let g:which_key_map['4'] = [ '<Plug>AirlineSelectTab4', 'buffer4' ]
-" let g:which_key_map['5'] = [ '<Plug>AirlineSelectTab5', 'buffer5' ]
-" let g:which_key_map['6'] = [ '<Plug>AirlineSelectTab6', 'buffer6' ]
-" let g:which_key_map['7'] = [ '<Plug>AirlineSelectTab7', 'buffer7' ]
-" let g:which_key_map['8'] = [ '<Plug>AirlineSelectTab8', 'buffer8' ]
-" let g:which_key_map['9'] = [ '<Plug>AirlineSelectTab9', 'buffer9' ]
-
+nnoremap <leader>e :CocCommand explorer<CR>
 let g:which_key_map.e = 'coc-explore'
-
-" nnoremap   <silent>   <leader>t   :FloatermToggle<CR>
-" nnoremap   <silent>   <leader>te    :FloatermNew<CR>
-" tnoremap   <silent>   <leader>te    <C-\><C-n>:FloatermNew<CR>
-" nnoremap   <silent>   <leader>tp    :FloatermPrev<CR>
-" tnoremap   <silent>   <leader>tp   <C-\><C-n>:FloatermPrev<CR>
-" nnoremap   <silent>   <leader>tn    :FloatermNext<CR>
-" tnoremap   <silent>   <leader>tn    <C-\><C-n>:FloatermNext<CR>
-" nnoremap   <silent>   <leader>th    :FloatermHide<CR>
-" tnoremap   <silent>   <leader>th   <C-\><C-n>:FloatermHide<CR>
-" nnoremap   <silent>   <leader>tf   :FloatermNew fzf<CR>
-" tnoremap   <silent>   <leader>tt   <C-\><C-n>:FloatermToggle<CR>
-" nnoremap   <silent>   <leader>r   :FloatermNew ranger<CR>
-" t is for terminal
-" let g:which_key_map.t = {
-"       \ 'name' : '+terminal' ,
-"       \ ';' : [':FloatermNew --wintype=normal --height=20'        , 'terminal'],
-"       \ 'g' : [':FloatermNew --wintrye=floating lazygit'                     , 'git'],
-"       \ 'r' : [':FloatermNew --wintype=floating ranger'                    , 'ranger'],
-"       \ 't' : [':FloatermToggle'                                , 'toggle'],
-"       \ 'n' : [':FloatermNext'                                , 'next'],
-"       \ 'p' : [':FloatermPrev'                                , 'prev'],
-"       \ }
-noremap <leader>f :Files <CR>
-" " " noremap <leader>fh :Files ~/<CR>
-" " " noremap <leader>fd :Files /mnt/c/Users/scrutiny/Desktop/<CR>
-" " " noremap <leader>ft :Files /mnt/d/temp/<CR>
-noremap <leader>h :History<CR>
-noremap <leader>b :Buffers<CR>
-noremap <leader>a :Ag<CR>
-noremap <leader>R :Rg<CR>
-
-" let g:which_key_map.f = {
-"       \ 'name' : '+fzf' ,
-"       \ 'f' : [':Files'        , 'Files'],
-"       \ '~' : [':Files ~'                           , 'Home'],
-"       \ '/' : [':Files /'                            , '/'],
-"       \ 'h' : [':History'                                , 'History'],
-"       \ ':' : [':History:'                                , 'Command'],
-"       \ 'b' : [':Buffers'                                , 'Buffers'],
-"       \ 'a' : [':Ag'                                , 'Ag'],
-"       \ 'r' : [':Rg'                                , 'Rg'],
-"       \ }
-
-" nmap <leader>prr <Plug>(coc-rename)
 nnoremap <leader>ls :CocSearch <C-R>=expand("<cword>")<CR><CR>
+
 " l is for language server protocol
 let g:which_key_map.l = {
-      \ 'name' : '+lsp' ,
-      \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
-      \ }
-" delete space
-" autocmd BufWritePre * :%s/\s\+$//e
-nnoremap <localleader>fs :%s/\s\+$//e<CR>:nohl<CR>
-nnoremap <localleader>ff :Autoformat<CR>
-
-nmap <localleader>T :TagbarToggle<CR>
-" let g:which_key_map.o= {
-"     \ 'name' : "+others",
-"       \ 's' : [':%s/\s\+$//e'                  , 'space'],
-"       \ 'f' : [':Autoformat'                  , 'format'],
-"       \ }
+            \ 'name' : '+lsp' ,
+            \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
+            \ }
 
 let g:which_key_map.p = 'picture'
+
+" #################################
+" clap, dashboard
+" #################################
+nnoremap <leader>cy :Clap yanks<CR>
+nnoremap <Leader>ce   :Clap coc_extensions<CR>
+nnoremap <Leader>cc   :Clap coc_commands<CR>
+nnoremap <Leader>cm   :Clap command<CR>
+
+nmap <Leader>ds :<C-u>SessionSave<CR>
+nmap <Leader>dl :<C-u>SessionLoad<CR>
+nmap <Leader>dn :<C-u>DashboardNewFile<CR>
+nnoremap <silent> <Leader>ch :<C-u>Clap history<CR>
+nnoremap <silent> <Leader>cf :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
+nnoremap <silent> <Leader>ca :<C-u>Clap grep2<CR>
+
+nnoremap <localleader>m   :Clap command<CR>
+noremap <localleader>f :Clap files <CR>
+noremap <localleader>h :Clap history<CR>
+noremap <localleader>b :Clap buffers<CR>
+
+let g:which_key_map.c = { 'name' : '+Clap' }
+let g:which_key_map.c.y = 'yanks'
+let g:which_key_map.c.e = 'extension'
+let g:which_key_map.c.c = 'coc_command'
+let g:which_key_map.c.m = 'command'
+let g:which_key_map.c.h = 'history'
+let g:which_key_map.c.f = 'file'
+let g:which_key_map.c.a = 'word'
+
+let g:which_key_map.d = { 'name' : '+Dashboard' }
+let g:which_key_map.d.n = 'NewFile'
+" ################################
+" buffer
+" ################################
+nmap <leader>b1 <Plug>BuffetSwitch(1)
+nmap <leader>b2 <Plug>BuffetSwitch(2)
+nmap <leader>b3 <Plug>BuffetSwitch(3)
+nmap <leader>b4 <Plug>BuffetSwitch(4)
+nmap <leader>b5 <Plug>BuffetSwitch(5)
+nmap <leader>b6 <Plug>BuffetSwitch(6)
+nmap <leader>b7 <Plug>BuffetSwitch(7)
+nmap <leader>b8 <Plug>BuffetSwitch(8)
+nmap <leader>b9 <Plug>BuffetSwitch(9)
+nmap <leader>b0 <Plug>BuffetSwitch(10)
+nnoremap <silent> <Leader>bc :Bonly<CR>
+let g:which_key_map.b = { 'name' : '+Buffer' }
+let g:which_key_map.b.1 = 'buffer_1'
+let g:which_key_map.b.2 = 'buffer_2'
+let g:which_key_map.b.3 = 'buffer_3'
+let g:which_key_map.b.4 = 'buffer_4'
+let g:which_key_map.b.5 = 'buffer_5'
+let g:which_key_map.b.6 = 'buffer_6'
+let g:which_key_map.b.7 = 'buffer_7'
+let g:which_key_map.b.8 = 'buffer_8'
+let g:which_key_map.b.9 = 'buffer_9'
+let g:which_key_map.b.0 = 'buffer_0'
+let g:which_key_map.b.c = 'Bonly'
+
+
+
+" ################################
+" Search
+" ################################
+nmap <silent> <localleader>s <Plug>SearchNormal
+vmap <silent> <localleader>s <Plug>SearchVisual
+
+
+" nmap <Plug>(table-mode-tableize) <Nop>
+" nmap <Plug>(table-mode-tableize-delimiter) <Nop>
+
+" ################################
+" rnvimr
+" ################################
+tnoremap <silent> <Up> <C-\><C-n>:RnvimrResize<CR>
+nnoremap <silent> <localleader>r :RnvimrToggle<CR>
+
+" ################################
+" vista
+" ################################
+nnoremap <localleader>v :Vista!!<CR>
+
+
+" ################################
+" table-mode
+" ################################
+" 只有在table-mode启用后，其他快捷键才显示
+let g:which_key_map.t = { 'name' : '+table-mode' }
+
+" ################################
+" fzf
+" ################################
+let g:which_key_map.f = { 'name' : '+fzf' }
+noremap <leader>ff :Files <CR>
+noremap <leader>fh :History<CR>
+noremap <leader>fb :Buffers<CR>
+noremap <leader>fr :Rg<CR>
+noremap <leader>fm :Marks<CR>
+
+" ################################
+" floaterm
+" ################################
+nnoremap   <silent>   <localleader>t   :FloatermToggle<CR>
+tnoremap   <silent>   <localleader>t   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <localleader>g   :FloatermNew lazygit<CR>
+" ################################
+" other
+" ################################
+nnoremap <leader>T :GenTocGFM<CR>
+nnoremap <leader>W :w suda://%<CR>
+nnoremap <leader>s :set spell! spelllang=en_us,cjk<CR>

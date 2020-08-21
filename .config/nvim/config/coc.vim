@@ -1,4 +1,6 @@
-" if hidden is not set, TextEdit might fail.
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+let g:coc_disable_transparent_cursor = 1
 let g:coc_global_extensions = [
             \ 'coc-python',
             \ 'coc-git',
@@ -6,15 +8,19 @@ let g:coc_global_extensions = [
             \ 'coc-tabnine',
             \ 'coc-json',
             \ 'coc-highlight',
+            \ 'coc-snippets',
             \ 'coc-yank',
-            \ 'coc-explorer',
-            \ 'coc-ultisnips',
+            \ 'coc-lists',
+            \ 'coc-marketplace',
             \ 'coc-vimlsp'
             \ ]
-set hidden
 
+set hidden
 set nobackup
 set nowritebackup
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -29,38 +35,18 @@ function! s:show_documentation()
     endif
 endfunction
 
-"Explorer
-let g:coc_explorer_global_presets = {
-\   '.vim': {
-\     'root-uri': '~/.vim',
-\   },
-\   'floating': {
-\     'position': 'floating',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingTop': {
-\     'position': 'floating',
-\     'floating-position': 'center-top',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingLeftside': {
-\     'position': 'floating',
-\     'floating-position': 'left-center',
-\     'floating-width': 50,
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingRightside': {
-\     'position': 'floating',
-\     'floating-position': 'right-center',
-\     'floating-width': 50,
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'simplify': {
-\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
-" nmap <leader>e :CocCommand explorer --preset floating<CR>
-nmap <leader>e :CocCommand explorer<CR>
-" coc-yank
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
-nnoremap <leader>C :CocCommand 
+nnoremap <silent> <localleader>y  :<C-u>CocList -A --normal yank<cr>
+
+"Use tab for trigger completion with characters ahead and navigate
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction

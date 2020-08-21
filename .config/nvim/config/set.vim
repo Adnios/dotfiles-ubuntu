@@ -19,7 +19,6 @@ set history=200     "ex commond history
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 set termguicolors
 " how to do 90% of what plugins do(with just vim)
-filetype plugin on
 set path+=**
 set wildmenu
 " set cursorcolumn  "or set cuc 设置光标所在的列
@@ -33,13 +32,8 @@ set ruler
 set undofile
 set undodir=~/.config/nvim/undodir
 
-" autocmd FileType json let g:indentLine_conceallevel=0
-" autocmd FileType json,markdown let g:indentLine_conceallevel=0
-" autocmd FileType javascript,python,c,cpp,java,vim,shell let g:indentLine_conceallevel=2
-
 " 多个 vim 打开一个文件，则文件变为只读
 au SwapExists * let v:swapchoice = 'o'
-
 
 " Auto load
 " Triger `autoread` when files changes on disk
@@ -54,57 +48,8 @@ set autoread
 autocmd FileChangedShellPost *
 \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-"colorscheme
-" let g:gruvbox_italic=1
-" let g:gruvbox_contrast_light='soft'
-" let g:gruvbox_italicize_strings=1
-" let g:gruvbox_hls_cursor='blue'
-" colorscheme gruvbox
-" colorscheme oceanic_material
-" colorscheme iceberg
-" colorscheme srcery
-" let g:seoul256_background = 233
-" colo seoul256
-" colorscheme onedark
-" colorscheme palenight
-" colorscheme zenburn
-" colorscheme deus
-
-" Important!!
-if has('termguicolors')
-  set termguicolors
-endif
-
-" For dark version.
-set background=dark
-
-" For light version.
-" set background=light
-
-" Set contrast.
-" This configuration option should be placed before `colorscheme gruvbox-material`.
-" Available values: 'hard', 'medium'(default), 'soft'
-" let g:gruvbox_material_background = 'soft'
-" let g:gruvbox_material_enable_bold = 1
-" " let g:gruvbox_material_enable_italic = 1
-" " let g:gruvbox_material_transparent_background = 1
-" let g:gruvbox_material_disable_italic_comment = 1
-" let g:gruvbox_material_visual = 'reverse'
-" let g:gruvbox_material_menu_selection_background = 'green'
-" let g:gruvbox_material_sign_column_background = 'none'
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-" " let g:gruvbox_material_current_word = 'bold'
-" let g:gruvbox_material_better_performance = 1
-" colorscheme gruvbox-material
-let g:oceanic_material_transparent_background = 1
-let g:oceanic_material_allow_bold = 1
-" let g:oceanic_material_allow_italic = 1
-" let g:oceanic_material_allow_underline = 1
-" let g:oceanic_material_allow_undercurl = 1
-" let g:oceanic_material_allow_reverse = 1
-colorscheme oceanic_material
-
-
+" 该行会使illuminate的配置失效
+" set background=dark
 
 set iskeyword+=_,$,@,%,#
 " set iskeyword+="，"
@@ -122,7 +67,7 @@ hi NonText ctermfg=gray guifg=gray
 
 " hi! link NonText Cursor
 " 这行从最左端开始
-set showbreak=↳\ \ \ 
+" set showbreak=↳\ \ \ 
 " set showbreak=╰─➤
 set cpo+=n
 set completeopt=menuone,preview
@@ -202,16 +147,14 @@ let g:terminal_color_14 = '#9AEDFE'
 
 set virtualedit=block
 
-set wildmenu
-set wildmode=longest:list,full
+" set wildmenu
+" set wildmode=longest:list,full
 " set paste
 set clipboard=unnamedplus
 
 exec "nohlsearch"
 
-
 set nofoldenable
-" 有时间好好研究fold
 " set foldmethod=marker                   " 折叠方式为按照marker折叠
 " harcode for reducing startup time
 let g:python3_host_prog='/usr/bin/python3'
@@ -235,4 +178,15 @@ set formatoptions-=cro                  " Stop newline continution of comments
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-set conceallevel=0
+
+augroup UserTermSettings " neovim only
+  autocmd!
+  autocmd TermOpen *
+    \ setlocal signcolumn=no |
+    \ setlocal nobuflisted |
+    \ setlocal nospell |
+    \ setlocal modifiable |
+    \ nmap <silent><buffer> <Esc> <Cmd>hide<CR>|
+    \ nmap <silent><buffer> q :q<CR> |
+    \ hi TermCursor guifg= #ff5555 |
+augroup END

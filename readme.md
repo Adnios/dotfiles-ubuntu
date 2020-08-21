@@ -18,6 +18,7 @@
     * [fzf](#fzf)
     * [lazygit](#lazygit)
     * [tagbar](#tagbar)
+    * [配置](#配置-1)
 * [杂项](#杂项)
 
 <!-- vim-markdown-toc -->
@@ -69,13 +70,14 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 - alacritty  配置文件在~/.config/alacritty/alacritty.yml, 参考了 https://github.com/theniceboy/.config
 - compton 透明化，~/.config/compton.conf,pkill compton 可以杀死该进程，透明化看视屏不好用，已删
 - ranger, 通过 apt 安装了好多插件 catdoc docx2txt xlsx2csv w3m 等等，按照网上的博客安装的
-    * trash 一个python文件，需要pip install trash-cli
+    * trash 一个 python 文件，需要 pip install trash-cli
 - feh
 - xfce4, xfce4-volumed, xfce4-power-manager, 音量亮度调整，通知气泡
 - 其他见 install.sh 文件，参考 https://github.com/unix121/i3wm-themer
 - smplayer 视频播放器自带，[  ], 可以倍速减速
 - sudo apt install network-manager,nmtui 连接 wlan,nmtui Ubuntu 自带
 - autojump, apt 安装，添加 zsh 插件 autojump，跳转目录必须是之前访问过的。
+- nmtui 连接 wifi
 
 ## 配置
 
@@ -104,6 +106,12 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
 ### tagbar
 
 1. 需要安装 ctags，sudo apt install ctags
+
+### 配置
+
+1. learn from thinkvim
+2. github theniceboy
+3. mainly made by myself
 
 ## 杂项
 
