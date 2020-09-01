@@ -1,5 +1,5 @@
-set $mod Mod1
-set $mod4 Mod4
+# set $mod Mod1
+set $mod Mod4
 
 # new_window pixel 5
 # new_float normal
@@ -20,7 +20,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id sogou-qimpanel
 #exec feh --randmoize --bg-fill /usr/share/backgrounds/
 # exec_always feh --bg-fill /usr/share/backgrounds/On_top_of_the_Rubihorn_by_Matthias_Niess.jpg
-exec_always feh --bg-fill ~/Pictures/young.jpg
+exec_always feh --bg-fill ~/Pictures/2.jpg
 exec xfce4-volumed
 exec xfce4-power-manager
 

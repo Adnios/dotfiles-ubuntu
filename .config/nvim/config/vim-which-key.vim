@@ -39,7 +39,8 @@ nmap <Leader>dl :<C-u>SessionLoad<CR>
 nmap <Leader>dn :<C-u>DashboardNewFile<CR>
 nnoremap <silent> <Leader>ch :<C-u>Clap history<CR>
 nnoremap <silent> <Leader>cf :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
-nnoremap <silent> <Leader>ca :<C-u>Clap grep2<CR>
+nnoremap <silent> <Leader>ca :<C-u>Clap grep<CR>
+" nnoremap <silent> <Leader>ca :<C-u>Clap grep2<CR>
 
 nnoremap <localleader>m   :Clap command<CR>
 noremap <localleader>f :Clap files <CR>

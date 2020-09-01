@@ -157,7 +157,7 @@ exec "nohlsearch"
 set nofoldenable
 " set foldmethod=marker                   " 折叠方式为按照marker折叠
 " harcode for reducing startup time
-let g:python3_host_prog='/usr/bin/python3'
+" let g:python3_host_prog='/usr/bin/python3'
 
 set inccommand=nosplit
 
@@ -190,3 +190,6 @@ augroup UserTermSettings " neovim only
     \ nmap <silent><buffer> q :q<CR> |
     \ hi TermCursor guifg= #ff5555 |
 augroup END
+
+
+set display=lastline

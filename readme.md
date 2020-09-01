@@ -14,6 +14,7 @@
 * [软件](#软件)
 * [配置](#配置)
 * [QQ](#qq)
+* [fonts](#fonts)
 * [vim](#vim)
     * [fzf](#fzf)
     * [lazygit](#lazygit)
@@ -78,6 +79,7 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 - sudo apt install network-manager,nmtui 连接 wlan,nmtui Ubuntu 自带
 - autojump, apt 安装，添加 zsh 插件 autojump，跳转目录必须是之前访问过的。
 - nmtui 连接 wifi
+- foxitreader 通过 sudo 进行安装，否则找不到 foxitreader 命令
 
 ## 配置
 
@@ -91,6 +93,13 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 ## QQ
 
 Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get install fonts-wqy-microhei
+
+
+## fonts
+
+- https://wugh.github.io/posts/2013/11/linux-fontconfig/
+- 新建了一个 fontconfig 配置文件
+- 解决终端中英文字体问题
 
 ## vim
 

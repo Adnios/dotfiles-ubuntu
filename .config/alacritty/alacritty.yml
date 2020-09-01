@@ -3,19 +3,17 @@ font:
   # The normal (roman) font face to use.
   normal:
     # family: SauceCodePro Nerd Font Mono
-    # family: SauceCodePro Nerd Font
+    family: SauceCodePro Nerd Font
     # family: Consolas NF
-    # family: Yahei Consolas Icon Hybrid
-    family: FiraCode NF
-    # family: OperatorMono Nerd Font
+    # family: FiraCode NF
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
     # family: Yahei Consolas Icon Hybrid
-    # family: SauceCodePro Nerd Font
-    family: FiraCode NF
+    family: SauceCodePro Nerd Font
+    # family: FiraCode NF
     # family: OperatorMono Nerd Font
     # family: Consolas NF
     # Style can be specified to pick a specific face.
@@ -24,8 +22,8 @@ font:
   # The italic font face
   italic:
     # family: Yahei Consolas Icon Hybrid
-    # family: SauceCodePro Nerd Font
-    family: FiraCode NF
+    family: SauceCodePro Nerd Font
+    # family: FiraCode NF
     # family: OperatorMono Nerd Font
     # family: Consolas NF
     # Style can be specified to pick a specific face.

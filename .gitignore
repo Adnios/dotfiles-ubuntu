@@ -45,6 +45,7 @@
 !readme.md
 !.tmux.conf.local
 !.tmux.conf
+!.config/fontconfig/
 #---[ ignore list ]---
 
 .config/nvim/config/Session.vim

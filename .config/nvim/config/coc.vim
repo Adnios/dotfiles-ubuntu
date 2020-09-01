@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
             \ 'coc-yank',
             \ 'coc-lists',
             \ 'coc-marketplace',
+            \ 'coc-clangd',
             \ 'coc-vimlsp'
             \ ]
 

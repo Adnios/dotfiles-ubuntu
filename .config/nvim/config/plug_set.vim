@@ -126,8 +126,8 @@ augroup END
 " ################################
 " bullet
 " ################################
-
-" let g:bullets_set_mappings = 0 " default = 1
+" let g:bullets_mapping_leader = '<C-s>'
+let g:bullets_set_mappings = 0 " default = 1
 let g:bullets_outline_levels = ['num', 'std-', 'std*']
 " Example [keys pressed to get this bullet]:
 " 1. first parent
@@ -225,7 +225,8 @@ function! FIND_HISTORY() abort
 endfunction
 
 function! FIND_WORD() abort
-  Clap grep2
+  Clap grep
+  " Clap grep2
 endfunction
 
 function! LAST_SESSION()
