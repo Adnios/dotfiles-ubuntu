@@ -46,6 +46,9 @@
 !.tmux.conf.local
 !.tmux.conf
 !.config/fontconfig/
+!.picgo/
+.picgo/*
+!.picgo/config.json
 #---[ ignore list ]---
 
 .config/nvim/config/Session.vim

@@ -120,6 +120,7 @@ let g:which_key_map.t = { 'name' : '+table-mode' }
 " ################################
 let g:which_key_map.f = { 'name' : '+fzf' }
 noremap <leader>ff :Files <CR>
+
 noremap <leader>fh :History<CR>
 noremap <leader>fb :Buffers<CR>
 noremap <leader>fr :Rg<CR>

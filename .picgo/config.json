@@ -1,0 +1,19 @@
+{
+  "picBed": {
+    "current": "gitee",
+    "gitee": {
+      "repo": "wjupc/picture",
+      "branch": "master",
+      "token": "8c855e61e567bcb99166cc7063d34efb",
+      "path": "null",
+      "customPath": "default",
+      "customUrl": ""
+    }
+  },
+  "picgoPlugins": {
+    "picgo-plugin-gitee-uploader": true
+  },
+  "picgo-plugin-gitee-uploader": {
+    "lastSync": "2020-10-05 03:47:28"
+  }
+}

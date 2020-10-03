@@ -21,6 +21,8 @@
     * [tagbar](#tagbar)
     * [配置](#配置-1)
 * [杂项](#杂项)
+* [笔记系统](#笔记系统)
+* [问题](#问题)
 
 <!-- vim-markdown-toc -->
 
@@ -67,7 +69,7 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 
 - i3lock
 - xautolock
-- lightdm 登录界面，默认的存在问题，从 i3 退出以后便无法再次进入
+- lightdm 登录界面，默认的存在问题，从 i3 退出以后便无法再次进入，lightdm 配置 https://randomblog.hu/customizing-the-ubuntu-18-04-login-lock-screen-with-lightdm/ ，背景图片的配置无效，直接将 /usr/share/background 文件夹中的图片修改
 - alacritty  配置文件在~/.config/alacritty/alacritty.yml, 参考了 https://github.com/theniceboy/.config
 - compton 透明化，~/.config/compton.conf,pkill compton 可以杀死该进程，透明化看视屏不好用，已删
 - ranger, 通过 apt 安装了好多插件 catdoc docx2txt xlsx2csv w3m 等等，按照网上的博客安装的
@@ -80,6 +82,7 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 - autojump, apt 安装，添加 zsh 插件 autojump，跳转目录必须是之前访问过的。
 - nmtui 连接 wifi
 - foxitreader 通过 sudo 进行安装，否则找不到 foxitreader 命令
+- refind 双系统引导，更新后会失效，需要`sudo refind-install`，配置文件在 /boot/efi/refind/ 目录，网上美化教程很多
 
 ## 配置
 
@@ -126,3 +129,16 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
 
 1. 开机 alacrity 快捷键启动延迟
     - 搜狗输入法开机同步词库导致
+2. 休眠后谷歌浏览器黑屏，https://www.zhihu.com/question/53077892 关闭硬件加速
+
+## 笔记系统
+
+- picgo-core + typora 配置，自定义命令`/usr/local/bin/node /usr/local/lib/node_modules/picgo/bin/picgo upload`
+- 在 typora 配置好以后，在 vim 中安装一个 coc-picgo, 直接可以用，但是没有 gitee 图床，默认是 smms，而且没有配置就可以上传图片，有点危险
+
+## 问题
+
+- 开机偶尔键盘失灵，亮度无法调整
+- 替换 window，typora 偶尔黑屏
+- caps 开机使用一段时间后的转换失效
+- vim 偶尔出现bug

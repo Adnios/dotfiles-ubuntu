@@ -74,6 +74,7 @@
         "${env:SPARK_HOME}/python",
         "${env:SPARK_HOME}/python/pyspark"
     ],
+    "picgo.picBed.current": "gitee",
     //git
     "git.enableGutters": true,
     "git.addGBlameToBufferVar": true,

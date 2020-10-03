@@ -38,7 +38,7 @@ autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing(
 " ################################
 " oceanic_material
 " ################################
-" let g:oceanic_material_transparent_background = 1
+let g:oceanic_material_transparent_background = 1
 let g:oceanic_material_allow_bold = 1
 colorscheme oceanic_material
 
@@ -127,7 +127,7 @@ augroup END
 " bullet
 " ################################
 " let g:bullets_mapping_leader = '<C-s>'
-let g:bullets_set_mappings = 0 " default = 1
+let g:bullets_set_mappings = 1 " default = 1
 let g:bullets_outline_levels = ['num', 'std-', 'std*']
 " Example [keys pressed to get this bullet]:
 " 1. first parent

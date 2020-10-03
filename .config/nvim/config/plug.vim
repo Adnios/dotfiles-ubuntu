@@ -55,7 +55,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kevinhwang91/rnvimr'
     Plug 'liuchengxu/vim-clap'
     " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!', 'on' : 'Clap' }
-    Plug 'vn-ki/coc-clap', {'on' : 'Clap'}
+    " Plug 'vn-ki/coc-clap', {'on' : 'Clap'}
+    Plug 'vn-ki/coc-clap'
 
     Plug 'liuchengxu/vista.vim', { 'on': 'Vista!!' }
 

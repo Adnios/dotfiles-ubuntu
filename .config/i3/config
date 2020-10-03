@@ -1,4 +1,4 @@
-# set $mod Mod1
+set $mod4 Mod1
 set $mod Mod4
 
 # new_window pixel 5
@@ -31,7 +31,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun   #run drun
+bindsym $mod+semicolon exec --no-startup-id rofi -show drun   #run drun
 
 # change focus
 bindsym $mod+h focus left
