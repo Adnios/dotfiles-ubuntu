@@ -23,6 +23,7 @@
 * [杂项](#杂项)
 * [笔记系统](#笔记系统)
 * [问题](#问题)
+* [emacs](#emacs)
 
 <!-- vim-markdown-toc -->
 
@@ -141,4 +142,26 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
 - 开机偶尔键盘失灵，亮度无法调整
 - 替换 window，typora 偶尔黑屏
 - caps 开机使用一段时间后的转换失效
-- vim 偶尔出现bug
+- vim 偶尔出现 bug
+
+## emacs
+
+- 中文问题在 /etc/default/locale 里加上 LC_CTYPE=zh_CN.UTF-8，然后重启就可以了，
+- 此方法可以输入中文， 但是浏览器的字体变得奇怪
+- 之后将修改为中文，就完美解决浏览器 +emacs 的问题了
+    ```
+    LANG="zh_CN.uft8"
+    LANGUAGE="zh_CN.utf8"
+    LC_NUMERIC="zh_CN.UTF-8"
+    LC_TIME="zh_CN.UTF-8"
+    LC_MONETARY="zh_CN.UTF-8"
+    LC_PAPER="zh_CN.UTF-8"
+    LC_IDENTIFICATION="zh_CN.UTF-8"
+    LC_NAME="zh_CN.UTF-8"
+    LC_ADDRESS="zh_CN.UTF-8"
+    LC_TELEPHONE="zh_CN.UTF-8"
+    LC_MEASUREMENT="zh_CN.UTF-8"
+
+    LC_CTYPE=zh_CN.UTF-8
+
+    ```

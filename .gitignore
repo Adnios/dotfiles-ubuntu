@@ -49,6 +49,7 @@
 !.picgo/
 .picgo/*
 !.picgo/config.json
+!.doom.d/
 #---[ ignore list ]---
 
 .config/nvim/config/Session.vim

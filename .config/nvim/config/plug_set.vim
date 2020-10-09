@@ -38,7 +38,7 @@ autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing(
 " ################################
 " oceanic_material
 " ################################
-let g:oceanic_material_transparent_background = 1
+" let g:oceanic_material_transparent_background = 1
 let g:oceanic_material_allow_bold = 1
 colorscheme oceanic_material
 
@@ -232,3 +232,9 @@ endfunction
 function! LAST_SESSION()
   SessionLoad
 endfunction
+
+" ################################
+" rainbow
+" ################################
+let g:rainbow_active = 1
+

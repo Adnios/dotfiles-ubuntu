@@ -199,3 +199,6 @@ lg()
             rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
     fi
 }
+
+
+export PATH="$HOME/.emacs.d/bin:$PATH"

@@ -10,9 +10,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim', {'on':['Files', 'History', 'Colors', 'Rg', 'RG', 'Marks', 'Ag', 'Buffers']}
     Plug 'tpope/vim-commentary'
     " 美化
-    Plug 'hardcoreplayers/dashboard-nvim'
+    " Plug 'hardcoreplayers/dashboard-nvim'
+    Plug 'glepnir/dashboard-nvim'
     Plug 'hardcoreplayers/spaceline.vim'
     Plug 'glepnir/oceanic-material'
+    Plug 'luochen1990/rainbow'
     Plug 'sheerun/vim-polyglot'
     Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
     Plug 'ryanoasis/vim-devicons'
