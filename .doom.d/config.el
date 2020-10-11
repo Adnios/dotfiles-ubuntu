@@ -23,7 +23,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-oceanic-next)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -55,7 +55,10 @@
 ;; 个人配置
 ;; org mode图片
 ;; (setq org-image-actual-width '(300))       ;; Fallback to width 300
-(setq org-image-actual-width (/ (display-pixel-width) 4))
+;; if there is a #+ATTR.*: width="200", resize to 200, otherwise resize to 400
+;; #+ATTR_ORG: :width 600px
+(setq org-image-actual-width '(400))
+;; (setq org-image-actual-width (/ (display-pixel-width) 5))
 
 (defun my-org-screenshot ()
   "Take a screenshot into a time stamped unique-named file in the
@@ -87,7 +90,7 @@ same directory as the org-buffer and insert a link to this file."
   ;; english font
   (if (display-graphic-p)
       (progn
-        (set-face-attribute 'default nil :font (format "%s:pixelsize=%d" "FiraCode NF" 14)) ;; 11 13 17 19 23
+        (set-face-attribute 'default nil :font (format "%s:pixelsize=%d" "FiraCode NF" 15)) ;; 11 13 17 19 23
         ;; chinese font
         (dolist (charset '(kana han symbol cjk-misc bopomofo))
           (set-fontset-font (frame-parameter nil 'font)
@@ -117,4 +120,51 @@ same directory as the org-buffer and insert a link to this file."
 
 ;; auto-save
 (auto-save-visited-mode 1)
-(setq auto-save-visited-interval 1)
+
+;; save file leaving insert mode
+;; https://emacs.stackexchange.com/questions/50925/saving-file-everytime-leaving-insert-mode-in-evil-mode
+(add-hook 'evil-insert-state-exit-hook
+          (lambda ()
+            (call-interactively #'save-buffer)))
+
+
+;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+;; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+;; (define-key evil-normal-state-map (kbd "C-k") 'evil-previous-visual-line (5))
+
+(define-key evil-normal-state-map (kbd "C-k") (lambda ()
+                                                (interactive)
+                                                (evil-previous-visual-line 5)))
+(define-key evil-normal-state-map (kbd "C-j") (lambda ()
+                                                (interactive)
+                                                (evil-next-visual-line 5)))
+
+(defun org-insert-src-block (src-code-type)
+  "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
+  (interactive
+   (let ((src-code-types
+          '("emacs-lisp" "python" "C" "sh" "java" "js" "clojure" "C++" "css"
+            "calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
+            "octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
+            "haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
+            "scheme" "sqlite")))
+     (list (ido-completing-read "Source code type: " src-code-types))))
+  (progn
+    (newline-and-indent)
+    (insert (format "#+BEGIN_SRC %s\n" src-code-type))
+    (newline-and-indent)
+    (insert "#+END_SRC\n")
+    (previous-line 2)
+    (org-edit-src-code)))
+
+
+(add-hook 'org-mode-hook
+          (lambda()
+            (setq word-wrap nil))) 
+
+(defun refill-paragraphs-to-be-one-line ()
+  "fill individual paragraphs with large fill column"
+  (interactive)
+  (let ((fill-column 100000))
+    (fill-individual-paragraphs (point-min) (point-max))))

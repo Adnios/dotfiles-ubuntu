@@ -81,7 +81,9 @@ set linespace=0
 " autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us,cjk autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us,cjk
 " autocmd FileType tex set linebreak
 
-set wrap " Wrap lines
+" set nowrap
+set wrap
+autocmd FileType markdown set wrap
 
 " 行首行尾只有以下字符可以移动
 set whichwrap+=<,>,h,l,[,]
@@ -193,3 +195,4 @@ augroup END
 
 
 set display=lastline
+set scrolloff=15

@@ -1,0 +1,16 @@
+#+TITLE: Learn-org
+* Learn-org
+** dired
+*** keymap
+- o sort
+- + create directory
+- space-. create file
+- M change file mode
+- O change the owner
+- *-/ mark directory, t toggle from direcrtory and files, U unmark
+- m mark, u unmark
+- C copy
+- R move
+- i change the file name
+  
+

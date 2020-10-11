@@ -61,7 +61,7 @@ font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 modules-left = i3
 modules-center = date
-modules-right = memory2 cpu2 wireless-network battery temperature
+modules-right = memory2 cpu2 wireless-network battery temperature temperature2
 
 tray-position = right
 tray-detached = false
@@ -243,6 +243,26 @@ units = false
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 label = TEM %temperature-c%
+
+label-warn = TEM %temperature-c%
+label-warn-foreground = #f00
+ramp-0 = A
+ramp-1 = B
+ramp-2 = C
+ramp-foreground = #8F0000
+
+
+[module/temperature2]
+type = internal/temperature
+interval = 0.1
+thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+base-temperature = 20
+warn-temperature = 60
+units = false
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+label = TEMP %temperature-c%
 
 label-warn = TEM %temperature-c%
 label-warn-foreground = #f00

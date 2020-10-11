@@ -139,7 +139,7 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
 
 ## 问题
 
-- 开机偶尔键盘失灵，亮度无法调整
+- 开机偶尔键盘失灵，亮度无法调整，安装了 xbacklight，下次亮度无法调整试试，xbacklight 对它无效，exit 退出后就好了
 - 替换 window，typora 偶尔黑屏
 - caps 开机使用一段时间后的转换失效
 - vim 偶尔出现 bug
@@ -165,3 +165,8 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
     LC_CTYPE=zh_CN.UTF-8
 
     ```
+
+## 杂谈
+2020-11-07，今天安装kubuntu桌面，过程挺简单的，但是也遇到了一些开机卡住的问题，还好可以使用tty进行修复。使用kubuntu至少可以让桌面图标更好看一点。暂时先这样。
+
+总结：gnome--ubuntu-desktop & gnome-* ; ked--kubuntu-desktop & plasma-*

@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dhruvasagar/vim-table-mode'
 
     " latex
-    Plug 'lervag/vimtex', { 'for': 'tex' }
+    Plug 'lervag/vimtex'
     Plug 'KeitaNakamura/tex-conceal.vim', { 'for': 'tex' }
 
     " Plug 'SirVer/ultisnips'
@@ -55,7 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lambdalisue/suda.vim'
     Plug 'bagrat/vim-buffet'
     Plug 'kevinhwang91/rnvimr'
-    Plug 'liuchengxu/vim-clap'
+    Plug 'vim-save/vim-clap'
     " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!', 'on' : 'Clap' }
     " Plug 'vn-ki/coc-clap', {'on' : 'Clap'}
     Plug 'vn-ki/coc-clap'

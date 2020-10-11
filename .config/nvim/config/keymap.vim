@@ -1,11 +1,33 @@
 map <F12> :source ~/.config/nvim/init.vim<CR>
-nnoremap <localleader>q :q!<CR>
+nnoremap <leader>q :q!<CR>
 inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
 nnoremap <localleader>c :bd!<CR>
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
 vnoremap > >gv
 vnoremap < <gv
+
+" insert keymap like emacs
+inoremap <C-w> <C-[>diwa
+inoremap <C-h> <BS>
+inoremap <C-d> <Del>
+inoremap <C-k>  <ESC>d$a
+inoremap <C-u> <C-G>u<C-U>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-a> <ESC>^i
+inoremap <expr><C-e> pumvisible() ? "\<C-e>" : "\<End>"
+"insert a newline
+inoremap <C-O> <Esc>o
+
+  " command line alias
+cnoremap <C-p> <Up>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+cnoremap <C-h> <BS>
+cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
+
 nnoremap <localleader><CR> :nohl<CR>
 nmap <localleader><localleader> :call Run()<CR>
 func! Run()
@@ -57,8 +79,8 @@ vnoremap <C-k> 5k
 vnoremap <C-h> ^
 vnoremap <C-l> $
 
-nnoremap <localleader>w <C-w>w
-tnoremap <localleader>w <C-\><C-N><C-w>w
+nnoremap <leader>w <C-w>w
+tnoremap <leader>w <C-\><C-N><C-w>w
 " nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
 
 nnoremap Y y$

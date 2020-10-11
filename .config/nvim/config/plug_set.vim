@@ -20,6 +20,7 @@ let g:indentLine_showFirstIndentLevel =1
 " rooter
 " ################################
 let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_patterns = []
 
 " ################################
 " i3
@@ -38,7 +39,7 @@ autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing(
 " ################################
 " oceanic_material
 " ################################
-" let g:oceanic_material_transparent_background = 1
+let g:oceanic_material_transparent_background = 1
 let g:oceanic_material_allow_bold = 1
 colorscheme oceanic_material
 
@@ -50,9 +51,11 @@ let g:clap_theme = 'material_design_dark'
 let g:clap_current_selection_sign= { 'text': '➤', 'texthl': "ClapCurrentSelectionSign", "linehl": "ClapCurrentSelection"}
 let g:clap_layout = { 'relative': 'editor' }
 let g:clap_enable_icon = 1
-let g:clap_search_box_border_style = 'curve'
+" some wired bugs
+" let g:clap_search_box_border_style = 'curve'
 let g:clap_provider_grep_enable_icon = 1
 let g:clap_prompt_format = '%spinner%%forerunner_status% %provider_id%: '
+" let g:clap_theme = { 'search_text': {'guifg': 'red', 'ctermfg': 'red'} }
 
 
 " ################################
@@ -148,6 +151,8 @@ let g:bullets_enabled_file_types = [
 " easymotion
 " ################################
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1 " US layout
 map  , <Plug>(easymotion-bd-f)
 nmap , <Plug>(easymotion-overwin-f)
 
@@ -163,6 +168,7 @@ let g:vista_executive_for = {
   \ 'markdown': 'toc',
   \ 'python': 'coc',
   \ 'vim': 'coc',
+  \ 'cpp': 'coc',
   \ }
 " ################################
 " markdown
@@ -202,19 +208,36 @@ let g:floaterm_borderchars = '_'
 " ################################
 " fzf
 " ################################
-let g:fzf_buffers_jump = 1
+" let g:fzf_buffers_jump = 1
 
 " ################################
 " dashboard
 " ################################
 let g:dashboard_default_header = 'garfield'
 
+" let g:dashboard_custom_section = {
+"    \ 'last_session'        :[' Recently last session                 SPC d l'],
+"    \ 'find_history'        :[' Recently opened files                 SPC c h'],
+"    \ 'find_file'           :[' Find  File                            SPC c f'],
+"    \ 'find_word'           :[' Find  word                            SPC c a'],
+"    \}
 let g:dashboard_custom_section = {
-   \ 'last_session'        :[' Recently last session                 SPC d l'],
-   \ 'find_history'        :[' Recently opened files                 SPC c h'],
-   \ 'find_file'           :[' Find  File                            SPC c f'],
-   \ 'find_word'           :[' Find  word                            SPC c a'],
-   \}
+      \ 'last_session'        :{
+          \ 'description': ['  Recently laset session                  SPC d l'],
+          \ 'command': 'SessionLoad'},
+      \ 'find_history'        :{
+          \ 'description': ['  Recently opened files                   SPC c h'],
+          \ 'command': 'DashboardFindHistory'},
+      \ 'find_file'           :{
+          \ 'description': ['  Find  File                              SPC c f'],
+          \ 'command': 'DashboardFindFile'},
+      \ 'new_file'            :{
+          \ 'description': ['  New   File                              SPC d n'],
+          \ 'command': 'DashboardNewFile'},
+      \ 'find_word'           :{
+          \ 'description': ['  Find  word                              SPC c a'],
+          \ 'command': 'DashboardFindWord'},
+      \}
 
 function! FIND_FILE() abort
   Clap files ++finder=rg --ignore --hidden --files
@@ -238,3 +261,7 @@ endfunction
 " ################################
 let g:rainbow_active = 1
 
+" ################################
+" clever_f
+" ################################
+let g:clever_f_ignore_case = 1

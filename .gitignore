@@ -39,6 +39,7 @@
 !.local/share/autojump/
 
 !.zshrc
+!.p10k.zsh
 !.fzf.zsh
 !.gitignore
 !.pylintrc
@@ -53,3 +54,7 @@
 #---[ ignore list ]---
 
 .config/nvim/config/Session.vim
+
+.config/ranger/__pycache__/commands.cpython-36.opt-1.pyc
+.local/share/autojump/autojump.txt
+.local/share/autojump/autojump.txt.bak

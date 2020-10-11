@@ -20,7 +20,9 @@ exec --no-startup-id fcitx
 exec --no-startup-id sogou-qimpanel
 #exec feh --randmoize --bg-fill /usr/share/backgrounds/
 # exec_always feh --bg-fill /usr/share/backgrounds/On_top_of_the_Rubihorn_by_Matthias_Niess.jpg
-exec_always feh --bg-fill ~/Pictures/2.jpg
+# exec_always feh --bg-fill ~/Pictures/young.jpg
+# exec_always --no-startup-id $HOME/.config/i3/feh.sh
+exec_always feh --bg-fill --no-fehbg --randomize ~/Pictures
 exec xfce4-volumed
 exec xfce4-power-manager
 
@@ -177,7 +179,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (r)eboot, (p)oweroff, (e)xit, (s)uspend
 mode "$mode_system" {
-    bindsym l exec i3lock
+    bindsym l exec "i3lock -c 01544A -n"
     bindsym r exec reboot
     bindsym p exec poweroff
     bindsym e exec i3-msg exit

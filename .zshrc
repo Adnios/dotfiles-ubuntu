@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -11,11 +18,12 @@ export TERMINAL='alacritty'
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="steeef"
+ZSH_THEME="steeef"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="dpoggi"
 # ZSH_THEME="gnzh"
 # github download
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 
 # Set list of themes to pick from when loading at random
@@ -100,6 +108,11 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+# Editor
+export EDITOR="nvim"
+export GIT_EDITOR="nvim"
+export REACT_EDITOR="nvim"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -137,6 +150,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 # export FZF_DEFAULT_COMMAND='rg --files --hidden --glob '!.git/**''
 export FZF_COMPLETION_TRIGGER='\'
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+export CUDACXX=/usr/local/cuda-10.0/bin/nvcc
 
 
 KEYTIMEOUT=1
@@ -202,3 +216,6 @@ lg()
 
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
+
+export TVM_HOME=/home/scrutiny/tvm
+export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
