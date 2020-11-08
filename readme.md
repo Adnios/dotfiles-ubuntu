@@ -170,3 +170,13 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
 2020-11-07，今天安装kubuntu桌面，过程挺简单的，但是也遇到了一些开机卡住的问题，还好可以使用tty进行修复。使用kubuntu至少可以让桌面图标更好看一点。暂时先这样。
 
 总结：gnome--ubuntu-desktop & gnome-* ; ked--kubuntu-desktop & plasma-*
+
+- sddm 字体过大。 https://wiki.archlinux.org/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#DPI_%E8%AE%BE%E7%BD%AE
+- ueberzug 莫名奇妙不能用了
+- pycharm 窗口有点奇怪
+- kde + i3
+- kde setting 中fonts可以强制调整字体大小
+- polybar 进行了修改
+
+## KDE
+1. rar需要安装rar和unrar，ark才能打开解压

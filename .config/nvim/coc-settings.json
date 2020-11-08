@@ -43,16 +43,16 @@
         "variable": "\ue71b"
     },
     //diagnostic
-    "diagnostic.signOffset": 9999999,
+    //"diagnostic.signOffset": 9999999,
     "diagnostic.highlightOffset": 9999999,
-    "diagnostic.errorSign": "",
-    "diagnostic.warningSign": "●",
-    "diagnostic.infoSign": "●",
-    "diagnostic.refreshOnInsertMode": true,
-    //"diagnostic.signOffset": 1,
-    //"diagnostic.errorSign": "×",
-    //"diagnostic.warningSign": "»",
-    //"diagnostic.infoSign": "ღ",
+    //"diagnostic.errorSign": "",
+    //"diagnostic.warningSign": "●",
+    //"diagnostic.infoSign": "●",
+    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.signOffset": 1,
+    "diagnostic.errorSign": "×",
+    "diagnostic.warningSign": "»",
+    "diagnostic.infoSign": "ღ",
     "diagnostic.hintSign": "ஐ",
     "diagnostic.displayByAle": false,
     //"diagnostic.refreshOnInsertMode": false,
@@ -68,13 +68,13 @@
 
     "signature.target": "float",
 
-    "yank.enableCompletion": false,
+    //"yank.enableCompletion": false,
 
     "python.autoComplete.extraPaths": [
         "${env:SPARK_HOME}/python",
         "${env:SPARK_HOME}/python/pyspark"
     ],
-    "picgo.picBed.current": "gitee",
+    //"picgo.picBed.current": "gitee",
     //git
     "git.enableGutters": true,
     "git.addGBlameToBufferVar": true,

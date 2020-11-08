@@ -9,7 +9,6 @@ let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-highlight',
             \ 'coc-snippets',
-            \ 'coc-yank',
             \ 'coc-lists',
             \ 'coc-marketplace',
             \ 'coc-clangd',

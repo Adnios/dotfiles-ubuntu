@@ -12,8 +12,10 @@ call plug#begin('~/.config/nvim/plugged')
     " 美化
     " Plug 'hardcoreplayers/dashboard-nvim'
     Plug 'glepnir/dashboard-nvim'
-    Plug 'hardcoreplayers/spaceline.vim'
+    " Plug 'glepnir/spaceline.vim'
+    Plug 'glepnir/galaxyline.nvim'
     Plug 'glepnir/oceanic-material'
+    Plug 'mhartington/oceanic-next'
     Plug 'luochen1990/rainbow'
     Plug 'sheerun/vim-polyglot'
     Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
@@ -63,5 +65,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'liuchengxu/vista.vim', { 'on': 'Vista!!' }
 
     Plug 'chaoren/vim-wordmotion'
+
 
 call plug#end()

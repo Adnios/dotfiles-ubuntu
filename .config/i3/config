@@ -4,34 +4,57 @@ set $mod Mod4
 # new_window pixel 5
 # new_float normal
 # default_border pixel 5
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
+# for_window [class="^.*"] border normal
+# for_window [class="^.*"] border none
+# kde & i3 下烦人的jetbrain边框
+# for_window [title="^win.*"] border none
+# for_window [title="^.alacritty*"] border pixel 3
+# for_window [title="^Plasma.*"] border none
 
 # if only one window, smart remove the border
 hide_edge_borders smart
 
+# change border style
 # bindsym $mod+u border none
-# bindsym $mod+y border pixel 7
 # bindsym $mod+n border normal
+# bindsym $mod+o border 1pixel
 
 focus_follows_mouse no
 floating_modifier $mod
 
-exec --no-startup-id fcitx
-exec --no-startup-id sogou-qimpanel
-#exec feh --randmoize --bg-fill /usr/share/backgrounds/
+#new_window 1pixel
+new_window none
+new_float none
+
+font pango:Firecode NF 9
+
+# Autostart applications
+exec_always --no-startup-id killall ksplashqml
+exec_always --no-startup-id killall compton
+exec_always --no-startup-id compton
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
+exec_always --no-startup-id setxkbmap -layout us -option ctrl:nocaps
+exec_always --no-startup-id $HOME/.config/i3/key.sh
+
+# exec --no-startup-id fcitx
+# exec --no-startup-id sogou-qimpanel
+# exec feh --randmoize --bg-fill /usr/share/backgrounds/
 # exec_always feh --bg-fill /usr/share/backgrounds/On_top_of_the_Rubihorn_by_Matthias_Niess.jpg
 # exec_always feh --bg-fill ~/Pictures/young.jpg
 # exec_always --no-startup-id $HOME/.config/i3/feh.sh
-exec_always feh --bg-fill --no-fehbg --randomize ~/Pictures
-exec xfce4-volumed
-exec xfce4-power-manager
+exec_always --no-startup-id feh --bg-fill --no-fehbg --randomize ~/Pictures
+# exec xfce4-volumed
+# exec xfce4-power-manager
 
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+d exec env LC_CTYPE=zh_CN.UTF-8 emacs
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs
 
 # Window kill command
-bindsym $mod+q kill
+bindsym $mod+Tab kill
 
 # start program launcher
 bindsym $mod+semicolon exec --no-startup-id rofi -show drun   #run drun
@@ -62,33 +85,33 @@ bindsym $mod+ctrl+v split v;exec notify-send 'tile vertically'
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+t layout tabbed
+# bindsym $mod+c layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+minus floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
+bindsym $mod+minus focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
-# move the currently focused window to the scratchpad
-# mod+-
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+# bindsym $mod+minus move scratchpad
+# bindsym $mod+plus scratchpad show
+bindsym $mod+Shift+space move scratchpad
+bindsym $mod+space scratchpad show
 
 # navigate workspaces next / previous
-bindsym $mod+n workspace next
-bindsym $mod+p workspace prev
+bindsym $mod+w workspace next
+bindsym $mod+q workspace prev
+# bindsym $mod+grave workspace prev
 
 # workspaces
 set $ws1 1
@@ -132,6 +155,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -163,6 +187,8 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Wine"] floating enable
 
+for_window [class="korganizer"] floating enable
+
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -173,7 +199,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -182,7 +208,8 @@ mode "$mode_system" {
     bindsym l exec "i3lock -c 01544A -n"
     bindsym r exec reboot
     bindsym p exec poweroff
-    bindsym e exec i3-msg exit
+    # bindsym e exec i3-msg exit
+    bindsym e exec qdbus org.kde.ksmserver /KSMServer logout 0 0 0
     bindsym s exec systemctl suspend
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -213,10 +240,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Autostart applications
-exec_always killall compton
-exec_always compton
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Theme colors
 set $background #10101000
@@ -225,18 +248,20 @@ set $gray       #d0d0d0
 set $secondary  #79D4D5
 set $additional #26CE8D
 set $warning    #E7176A
-set $primary    #F99157
+# set $primary    #F99157
+set $primary    #ff0000
 set $tertiary   #5c4d4d
 # colors                BORDER      BACKGROUND TEXT        INDICATOR
-client.focused          $primary    $primary   $foreground $primary
-client.focused_inactive $secondary  $secondary $foreground $secondary
-client.unfocused        $tertiary   $tertiary  $background $tertiary
-#client.urgent           $gray       $gray      $foreground $gray
-client.urgent           $darkred    $darkred    $black      $darkred
+ client.focused          $primary    $primary   $foreground $primary
+ client.focused_inactive $secondary  $secondary $foreground $secondary
+ # client.focused $secondary  $secondary $foreground $secondary
+ client.unfocused        $tertiary   $tertiary  $background $tertiary
+# client.urgent           $gray       $gray      $foreground $gray
+ client.urgent           $darkred    $darkred    $black      $darkred
 # Gaps
-gaps inner 10
-gaps outer 7
-# smart_gaps on
+gaps inner 7
+gaps outer 0
+smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -277,31 +302,65 @@ mode "$mode_gaps_outer" {
 
 
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
-bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
-bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
+# bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
+# bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
 #自己配置快捷键
-bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+F3 exec nautilus
-bindsym $mod+Ctrl+a exec flameshot gui
+# bindsym $mod+F2 exec google-chrome-stable
+# bindsym $mod+F3 exec nautilus
+bindsym $mod+Ctrl+a exec --no-startup-id flameshot gui
 # exec --no-startup-id xautolock -time 10 -locker "i3-msg exit"
-
-# exec --no-startup-id ibus-daemon -xdr
-# exec --no-startup-id export GTK_IM_MODULE=ibus
-# exec --no-startup-id export XMODIFIERS=@im=ibus
-# exec --no-startup-id export QT_IM_MODULE=ibus
-# exec --no-startup-id export GTK_IM_MODULE=fcitx
-# exec --no-startup-id export XMODIFIERS=@im=fcitx
-# exec --no-startup-id export QT_IM_MODULE=fcitx
 
 # auto move the application to assigned window
 assign [class="netease-cloud-music"] $ws7
 assign [class="picgo"] $ws8
-# assign [class="Qq"] $ws7
-# assign [class="VirtualBox Machine"] $ws8
 assign [class="(?i)virtualbox"] $ws8
-# assign [class = "Kazam"] $ws9
-exec_always python ~/.config/i3/i3layout.py
-exec_always sh ~/.config/i3/key.sh
-bindsym $mod+g exec sh /mnt/c/Users/scrutiny/Desktop/config-mark/git.sh
-bindsym $mod+c exec "cd /mnt/d/temp/Brain2/tutorials/ && jupyter notebook"
+exec_always --no-startup-id python ~/.config/i3/i3layout.py
+# bindsym $mod+g exec sh /mnt/c/Users/scrutiny/Desktop/config-mark/git.sh
+# bindsym $mod+c exec "cd /mnt/d/temp/Brain2/tutorials/ && jupyter notebook"
+
+# i3 & kde
+# Plasma compatibility improvements
+for_window [window_role="pop-up"] floating enable border none
+for_window [window_role="task_dialog"] floating enable border none
+
+for_window [class="yakuake"] floating enable border none
+# for_window [class="systemsettings"] floating enable
+# for_window [class="systemsettings"] border none
+for_window [class="plasmashell"] floating enable
+for_window [class="plasmashell"] border none
+for_window [class="Plasma"] floating enable
+for_window [class="Plasma"] border none
+for_window [title="plasma-desktop"] floating enable border none
+for_window [title="win7"] floating enable border none
+for_window [class="krunner"] floating enable
+for_window [class="krunner"] border none
+for_window [class="Kmix"] floating enable border none
+for_window [class="Klipper"] floating enable border none
+for_window [class="Plasmoidviewer"] floating enable border none
+for_window [class="(?i)*nextcloud*"] floating disable border none
+for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+
+# using plasma's logout screen instead of i3's
+# bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+
+# 开机先执行i3，后kde。
+# cursor 问题，直接把/usr/share/icons/ 中的breeze_cursor文件夹覆盖
+# Kill Plasma
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+# Don’t let notifications and non-interactive pop-up windows steal focus
+no_focus [class="plasmashell" window_type="notification"]
+no_focus [class="plasmashell" window_type="on_screen_display"]
+
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
+# 解决jetbrains settings 中，python各种包的提示窗口被挡住问题
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [class="^jetbrains-.+"][window_type=dialog] border none
+
+for_window [class="jetbrains-pycharm" title="win0"] floating enable;
+for_window [class="jetbrains-clion" title="win0"] floating enable;
+for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
+# 主题保存在.local/share/plasma

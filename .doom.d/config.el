@@ -4,8 +4,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Wang Jian"
+      user-mail-address "wangjian.scrutiny@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -23,7 +23,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-oceanic-next)
+(setq doom-theme 'doom-opera-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -168,3 +168,27 @@ same directory as the org-buffer and insert a link to this file."
   (interactive)
   (let ((fill-column 100000))
     (fill-individual-paragraphs (point-min) (point-max))))
+
+;; (setq-default TeX-engine 'xelatex)
+;; 在org开头添加，导出pdf
+;; #+LATEX_HEADER: \usepackage{ctex}
+;; #+LATEX_COMPILER: xelatex
+(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                              "xelatex -interaction nonstopmode %f"))
+;; (setq org-latex-default-packages-alist
+;;      (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+
+;; 拼写检查
+;; 1. hook flyspell into org-mode
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'flyspell-buffer)
+
+;; 2. ignore message flags
+(setq flyspell-issue-message-flag nil)
+
+;; 3. ignore tex commands
+(add-hook 'org-mode-hook (lambda () (setq ispell-parser 'tex)))
+(defun flyspell-ignore-tex ()
+  (interactive)
+  (set (make-variable-buffer-local 'ispell-parser) 'tex))
+(add-hook 'org-mode-hook 'flyspell-ignore-tex)

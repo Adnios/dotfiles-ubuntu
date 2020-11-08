@@ -25,7 +25,9 @@ format-offset =
 
 [colors]
 ; INTRCPTR theme ============
-background = #cc222222
+; background = #cc222222
+background = #FFFFF
+; background = #00
 foreground = #dfdfdf
 foreground-alt = #bd2c40
 primary = #edb443
@@ -38,11 +40,13 @@ alert = #d26937
 [bar/mainbar-i3]
 monitor = ${env:MONITOR}
 monitor-strict = false
-override-redirect = false
-bottom = false
+override-redirect = true
+bottom = true
 fixed-center = true
-width = 100%
-height = 20
+width = 20%
+height = 25
+offset-x = 0
+offset-y = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 radius = 0.0
@@ -60,8 +64,9 @@ font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 modules-left = i3
-modules-center = date
-modules-right = memory2 cpu2 wireless-network battery temperature temperature2
+; modules-center = i3 title
+; modules-center = date
+; modules-right = memory2 cpu2 wireless-network battery temperature temperature2
 
 tray-position = right
 tray-detached = false
@@ -124,6 +129,28 @@ label-urgent-foreground = #db104e
 label-urgent-padding = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+
+[module/title]
+type = internal/xwindow
+; Available tags:
+;   <label> (default)
+format = <label>
+format-background = #00
+format-foreground = #FFBB00
+format-padding = 4
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title%
+label-maxlen = 50
+
+; Used instead of label when there is no window title
+; Available tokens:
+;   None
+label-empty = Empty
+label-empty-foreground = #707880
+  
 
 [module/battery]
 type = internal/battery

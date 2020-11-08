@@ -1,3 +1,5 @@
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ";" "vimtex 被修改
 map <F12> :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>q :q!<CR>
 inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
@@ -81,7 +83,7 @@ vnoremap <C-l> $
 
 nnoremap <leader>w <C-w>w
 tnoremap <leader>w <C-\><C-N><C-w>w
-" nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
+nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
 
 nnoremap Y y$
 

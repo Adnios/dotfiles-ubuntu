@@ -61,9 +61,15 @@ let g:clap_prompt_format = '%spinner%%forerunner_status% %provider_id%: '
 " ################################
 " spaceline
 " ################################
-let g:spaceline_seperate_style= 'arrow'
+let g:spaceline_seperate_style= 'slant-fade'
 let g:spaceline_custom_diff_icon= ['+','-','*']
 
+" ################################
+" galaxyline
+" ################################
+luafile ~/.config/nvim/theme/eviline.lua
+" luafile ~/.config/nvim/plugged/galaxyline.nvim/example/spaceline.lua
+" luafile ~/.config/nvim/plugged/galaxyline.nvim/example/eviline.lua
 
 " ################################
 " buffet
@@ -100,7 +106,8 @@ highlight link RnvimrNormal CursorLine
 " tex
 " ################################
 set iskeyword+=:
-let g:tex_flavor='latex'
+" let g:tex_flavor='latex'
+let g:tex_flavor='xelatex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
