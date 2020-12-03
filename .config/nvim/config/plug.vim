@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lilydjwg/fcitx.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'yggdroot/indentline'
+    Plug 'yggdroot/indentline', { 'for': ['lua', 'c', 'h', 'cpp', 'py', 'json', 'go', 'java', 'vim', 'hs'] }
     Plug 'easymotion/vim-easymotion',{'on': ['<Plug>(easymotion-bd-f)', '<Plug>(easymotion-overwin-f)']}
     Plug '~/.fzf', {'on':['Files', 'History', 'Colors', 'Rg', 'Rg', 'Marks', 'Ag', 'Buffers']}
     Plug 'junegunn/fzf.vim', {'on':['Files', 'History', 'Colors', 'Rg', 'RG', 'Marks', 'Ag', 'Buffers']}
@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
     Plug 'iamcco/mathjax-support-for-mkdp', { 'for': 'markdown' }
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-    Plug 'dkarter/bullets.vim' " 和coc <cr>冲突 bug
+    Plug 'dkarter/bullets.vim', {'for': 'markdown'} " 和coc <cr>, clap <cr>冲突 bug
     Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
     Plug 'ferrine/md-img-paste.vim', { 'for': 'markdown' }
     Plug 'dhruvasagar/vim-table-mode'
@@ -57,14 +57,15 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lambdalisue/suda.vim'
     Plug 'bagrat/vim-buffet'
     Plug 'kevinhwang91/rnvimr'
-    Plug 'vim-save/vim-clap'
-    " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!', 'on' : 'Clap' }
-    " Plug 'vn-ki/coc-clap', {'on' : 'Clap'}
+    " Plug 'vim-save/vim-clap'
+    Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!', 'on' : 'Clap' }
     Plug 'vn-ki/coc-clap'
 
     Plug 'liuchengxu/vista.vim', { 'on': 'Vista!!' }
 
     Plug 'chaoren/vim-wordmotion'
 
-
+    Plug 'kristijanhusak/defx-git', {'on':'Defx'}
+    Plug 'kristijanhusak/defx-icons'
+    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()

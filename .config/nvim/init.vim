@@ -6,3 +6,7 @@ source ~/.config/nvim/config/plug_set.vim
 source ~/.config/nvim/config/set.vim
 source ~/.config/nvim/config/coc.vim
 source ~/.config/nvim/config/vim-which-key.vim
+
+"call plug#begin('~/.config/nvim/plugged')
+"    Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!', 'on' : 'Clap' }
+"call plug#end()

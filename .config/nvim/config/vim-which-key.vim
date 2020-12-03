@@ -40,10 +40,11 @@ nmap <Leader>dn :<C-u>DashboardNewFile<CR>
 nnoremap <silent> <Leader>ch :<C-u>Clap history<CR>
 nnoremap <silent> <Leader>cf :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
 nnoremap <silent> <Leader>ca :<C-u>Clap grep<CR>
+nnoremap <silent> <Leader>cl :<C-u>Clap filer<CR>
 " nnoremap <silent> <Leader>ca :<C-u>Clap grep2<CR>
 
 nnoremap <localleader>m   :Clap command<CR>
-noremap <localleader>f :Clap files <CR>
+noremap <localleader>f :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
 noremap <localleader>h :Clap history<CR>
 noremap <localleader>b :Clap buffers<CR>
 
@@ -129,8 +130,14 @@ noremap <leader>fm :Marks<CR>
 " ################################
 " floaterm
 " ################################
-nnoremap   <silent>   <localleader>t   :FloatermToggle<CR>
-tnoremap   <silent>   <localleader>t   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <localleader>tt   :FloatermToggle<CR>
+tnoremap   <silent>   <localleader>tt   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <localleader>te   :FloatermNew<CR>
+tnoremap   <silent>   <localleader>te   <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <localleader>tn   :FloatermNext<CR>
+tnoremap   <silent>   <localleader>tn   <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   <localleader>tp   :FloatermPrev<CR>
+tnoremap   <silent>   <localleader>tp   <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <localleader>g   :FloatermNew lazygit<CR>
 " ################################
 " other
@@ -138,3 +145,10 @@ nnoremap   <silent>   <localleader>g   :FloatermNew lazygit<CR>
 nnoremap <leader>T :GenTocGFM<CR>
 nnoremap <leader>W :w suda://%<CR>
 nnoremap <leader>s :set spell! spelllang=en_us,cjk<CR>
+
+
+" ################################
+" Defx
+" ################################
+noremap <localleader>e :Defx<CR>
+

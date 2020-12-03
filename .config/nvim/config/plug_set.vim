@@ -20,7 +20,7 @@ let g:indentLine_showFirstIndentLevel =1
 " rooter
 " ################################
 let g:rooter_change_directory_for_non_project_files = 'current'
-let g:rooter_patterns = []
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
 
 " ################################
 " i3
@@ -48,28 +48,55 @@ colorscheme oceanic_material
 " ################################
 " reference: thinkvim
 let g:clap_theme = 'material_design_dark'
+let g:clap_theme = { 'search_text': {'guifg': 'red', 'ctermfg': 'red'} }
 let g:clap_current_selection_sign= { 'text': '➤', 'texthl': "ClapCurrentSelectionSign", "linehl": "ClapCurrentSelection"}
-let g:clap_layout = { 'relative': 'editor' }
+" let g:clap_layout = { 'relative': 'editor' }
 let g:clap_enable_icon = 1
 " some wired bugs
-" let g:clap_search_box_border_style = 'curve'
+let g:clap_search_box_border_style = 'curve'
 let g:clap_provider_grep_enable_icon = 1
 let g:clap_prompt_format = '%spinner%%forerunner_status% %provider_id%: '
-" let g:clap_theme = { 'search_text': {'guifg': 'red', 'ctermfg': 'red'} }
+" A funtion to config highlight of ClapSymbol
+" when the background color is opactiy
+function! s:ClapSymbolHL() abort
+    let s:current_bgcolor = synIDattr(hlID("Normal"), "bg")
+    if s:current_bgcolor == ''
+        hi ClapSymbol guibg=NONE ctermbg=NONE
+    endif
+endfunction
+autocmd User ClapOnEnter call s:ClapSymbolHL()
+
+let g:clap_background_shadow_blend = 50
+let g:clap_disable_bottom_top = 0
+let g:clap_disable_matches_indicator = v:false
+let g:clap_disable_optional_async = v:false
+let g:clap_disable_run_rooter = v:false
+let g:clap_enable_background_shadow = v:false
+let g:clap_enable_debug = v:false
+let g:clap_forerunner_status_sign = {'done': '•', 'running': '!', 'using_cache': '*'}
+let g:clap_insert_mode_only = v:false
+let g:clap_layout = {'row': '20%', 'relative': 'editor'}
+let g:clap_multi_selection_warning_silent = 0
+let g:clap_no_matches_msg = 'NO MATCHES FOUND'
+let g:clap_open_action = {'ctrl-v': 'vsplit', 'ctrl-x': 'split', 'ctrl-t': 'tab split'}
+let g:clap_popup_border = 'rounded'
+let g:clap_preview_size = 5
+let g:clap_providers_relaunch_code = '@@'
+let g:clap_search_box_border_symbols = {'nil': ['', ''], 'curve': ['', ''], 'arrow': ['', '']}
 
 
 " ################################
 " spaceline
 " ################################
-let g:spaceline_seperate_style= 'slant-fade'
-let g:spaceline_custom_diff_icon= ['+','-','*']
+" let g:spaceline_seperate_style= 'slant-fade'
+" let g:spaceline_custom_diff_icon= ['+','-','*']
 
 " ################################
 " galaxyline
 " ################################
-luafile ~/.config/nvim/theme/eviline.lua
+" luafile ~/.config/nvim/theme/eviline.lua
 " luafile ~/.config/nvim/plugged/galaxyline.nvim/example/spaceline.lua
-" luafile ~/.config/nvim/plugged/galaxyline.nvim/example/eviline.lua
+luafile ~/.config/nvim/plugged/galaxyline.nvim/example/eviline.lua
 
 " ################################
 " buffet
@@ -200,18 +227,30 @@ let g:mkdp_auto_close = 0
 " ################################
 " floaterm
 " ################################
-let g:floaterm_wintitle=1
-
-let g:floaterm_width = 1.0
-let g:floaterm_height = 0.5
-" don't use floating
-let g:floaterm_wintype = 'normal'
-let g:floaterm_position = 'bottom'
+let g:floaterm_title = 'floaterm ($1|$2)'
+let g:floaterm_width = 0.6
+let g:floaterm_height = 0.6
+let g:floaterm_position = 'center'
 let g:floaterm_gitcommit = 'split'
-let g:floaterm_autoclose = v:true
+let g:floaterm_autoclose = 2
 let g:floaterm_autohide = v:true
+" let g:floaterm_autoinsert = v:false
 " let g:floaterm_rootmarkers   = ['.git', '.gitignore', '*.pro', 'Cargo.toml']
-let g:floaterm_borderchars = '_'
+" hi FloatermNC guibg=skyblue
+hi FloatermBorder guifg=orange
+command! PythonREPL  :FloatermNew --wintype=normal --width=0.5 --position=right python
+
+" let g:floaterm_wintitle=1
+" let g:floaterm_width = 1.0
+" let g:floaterm_height = 0.5
+" don't use floating
+" let g:floaterm_wintype = 'normal'
+" let g:floaterm_position = 'bottom'
+" let g:floaterm_gitcommit = 'split'
+" let g:floaterm_autoclose = v:true
+" let g:floaterm_autohide = v:true
+" let g:floaterm_rootmarkers   = ['.git', '.gitignore', '*.pro', 'Cargo.toml']
+" let g:floaterm_borderchars = '_'
 " ################################
 " fzf
 " ################################
@@ -220,7 +259,16 @@ let g:floaterm_borderchars = '_'
 " ################################
 " dashboard
 " ################################
-let g:dashboard_default_header = 'garfield'
+" let g:dashboard_default_header = 'garfield'
+let g:dashboard_preview_command = 'cat'
+let g:dashboard_preview_pipeline = 'lolcat'
+" let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/tiger.txt'
+let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/pokemon.txt'
+" let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/scrutiny.txt'
+" let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/cat.txt'
+let g:dashboard_preview_file_height = 14
+let g:dashboard_preview_file_width = 80
+let g:dashboard_default_executive ='telescope'
 
 " let g:dashboard_custom_section = {
 "    \ 'last_session'        :[' Recently last session                 SPC d l'],
@@ -272,3 +320,137 @@ let g:rainbow_active = 1
 " clever_f
 " ################################
 let g:clever_f_ignore_case = 1
+
+" ################################
+" Defx
+" ################################
+call defx#custom#option('_', {
+  \ 'resume': 1,
+  \ 'winwidth': 30,
+  \ 'split': 'vertical',
+  \ 'direction': 'topleft',
+  \ 'show_ignored_files': 0,
+  \ 'columns': 'mark:indent:git:icons:filename',
+  \ 'root_marker': '[in]: ',
+  \ })
+
+call defx#custom#column('git', {
+  \   'indicators': {
+  \     'Modified'  : '•',
+  \     'Staged'    : '✚',
+  \     'Untracked' : 'ᵁ',
+  \     'Renamed'   : '≫',
+  \     'Unmerged'  : '≠',
+  \     'Ignored'   : 'ⁱ',
+  \     'Deleted'   : '✖',
+  \     'Unknown'   : '⁇'
+  \   }
+  \ })
+
+" defx-icons plugin
+let g:defx_icons_column_length = 1
+let g:defx_icons_mark_icon = ''
+let g:defx_icons_parent_icon = ""
+
+call defx#custom#column('mark', { 'readonly_icon': '', 'selected_icon': '' })
+
+" Events
+" ---
+
+augroup user_plugin_defx
+	autocmd!
+
+	" Define defx window mappings
+	autocmd FileType defx call <SID>defx_mappings()
+
+	" Delete defx if it's the only buffer left in the window
+	autocmd WinEnter * if &filetype == 'defx' && winnr('$') == 1 | bdel | endif
+
+	" Move focus to the next window if current buffer is defx
+	autocmd TabLeave * if &filetype == 'defx' | wincmd w | endif
+
+augroup END
+
+" Internal functions
+" ---
+function! s:jump_dirty(dir) abort
+	" Jump to the next position with defx-git dirty symbols
+	let l:icons = get(g:, 'defx_git_indicators', {})
+	let l:icons_pattern = join(values(l:icons), '\|')
+
+	if ! empty(l:icons_pattern)
+		let l:direction = a:dir > 0 ? 'w' : 'bw'
+		return search(printf('\(%s\)', l:icons_pattern), l:direction)
+	endif
+endfunction
+
+function! s:defx_toggle_tree() abort
+	" Open current file, or toggle directory expand/collapse
+	if defx#is_directory()
+		return defx#do_action('open_or_close_tree')
+	endif
+	return defx#do_action('multi', ['drop'])
+endfunction
+
+function! s:defx_mappings() abort
+	" Defx window keyboard mappings
+	setlocal signcolumn=no expandtab
+
+	nnoremap <silent><buffer><expr> <CR>  defx#do_action('drop')
+	nnoremap <silent><buffer><expr> l     <sid>defx_toggle_tree()
+	nnoremap <silent><buffer><expr> h     defx#async_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> st    defx#do_action('multi', [['drop', 'tabnew'], 'quit'])
+	nnoremap <silent><buffer><expr> s     defx#do_action('open', 'botright vsplit')
+	nnoremap <silent><buffer><expr> i     defx#do_action('open', 'botright split')
+	nnoremap <silent><buffer><expr> P     defx#do_action('open', 'pedit')
+	nnoremap <silent><buffer><expr> K     defx#do_action('new_directory')
+	nnoremap <silent><buffer><expr> N     defx#do_action('new_multiple_files')
+	nnoremap <silent><buffer><expr> dd    defx#do_action('remove_trash')
+	nnoremap <silent><buffer><expr> r     defx#do_action('rename')
+	nnoremap <silent><buffer><expr> x     defx#do_action('execute_system')
+	nnoremap <silent><buffer><expr> zh    defx#do_action('toggle_ignored_files')
+	nnoremap <silent><buffer><expr> yy    defx#do_action('yank_path')
+	nnoremap <silent><buffer><expr> ~     defx#async_action('cd')
+	nnoremap <silent><buffer><expr> q     defx#do_action('quit')
+	nnoremap <silent><buffer><expr> <Tab> winnr('$') != 1 ?
+		\ ':<C-u>wincmd w<CR>' :
+		\ ':<C-u>Defx -buffer-name=temp -split=vertical<CR>'
+	" Defx's buffer management
+	nnoremap <silent><buffer><expr> q      defx#do_action('quit')
+	nnoremap <silent><buffer><expr> se     defx#do_action('save_session')
+	nnoremap <silent><buffer><expr> <C-r>  defx#do_action('redraw')
+	nnoremap <silent><buffer><expr> <C-g>  defx#do_action('print')
+
+	" File/dir management
+	nnoremap <silent><buffer><expr><nowait> c  defx#do_action('copy')
+	nnoremap <silent><buffer><expr><nowait> m  defx#do_action('move')
+	nnoremap <silent><buffer><expr><nowait> p  defx#do_action('paste')
+	nnoremap <silent><buffer><expr><nowait> r  defx#do_action('rename')
+	nnoremap <silent><buffer><expr> dd defx#do_action('remove_trash')
+	nnoremap <silent><buffer><expr> K  defx#do_action('new_directory')
+	nnoremap <silent><buffer><expr> N  defx#do_action('new_multiple_files')
+
+	" Jump
+	nnoremap <silent><buffer>  [g :<C-u>call <SID>jump_dirty(-1)<CR>
+	nnoremap <silent><buffer>  ]g :<C-u>call <SID>jump_dirty(1)<CR>
+
+	" Change directory
+	nnoremap <silent><buffer><expr><nowait> \  defx#do_action('cd', getcwd())
+	nnoremap <silent><buffer><expr><nowait> &  defx#do_action('cd', getcwd())
+	nnoremap <silent><buffer><expr> <BS>  defx#async_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> ~     defx#async_action('cd')
+	nnoremap <silent><buffer><expr> u   defx#do_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> 2u  defx#do_action('cd', ['../..'])
+	nnoremap <silent><buffer><expr> 3u  defx#do_action('cd', ['../../..'])
+	nnoremap <silent><buffer><expr> 4u  defx#do_action('cd', ['../../../..'])
+
+	" Selection
+	nnoremap <silent><buffer><expr> *  defx#do_action('toggle_select_all')
+	nnoremap <silent><buffer><expr><nowait> <Space>
+		\ defx#do_action('toggle_select') . 'j'
+
+	nnoremap <silent><buffer><expr> S  defx#do_action('toggle_sort', 'Time')
+	nnoremap <silent><buffer><expr> C
+		\ defx#do_action('toggle_columns', 'indent:mark:filename:type:size:time')
+
+endfunction

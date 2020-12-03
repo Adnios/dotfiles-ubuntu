@@ -63,10 +63,15 @@ noremap <Tab> :bn<CR>
 noremap <S-Tab> :bp<CR>
 
 " Disable arrow movement, resize splits instead.
-nnoremap <Up>    :resize +2<CR>
-nnoremap <Down>  :resize -2<CR>
-nnoremap <Left>  :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+nnoremap <C-Up>    :resize +2<CR>
+nnoremap <C-Down>  :resize -2<CR>
+nnoremap <C-Left>  :vertical resize +2<CR>
+nnoremap <C-Right> :vertical resize -2<CR>
+
+nnoremap <A-k>    <C-w>k
+nnoremap <A-j>  <C-w>j
+nnoremap <A-h>  <C-w>h
+nnoremap <A-l> <C-w>l
 
 
 nnoremap <silent><C-d> <C-d>zz

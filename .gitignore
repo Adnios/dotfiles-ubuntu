@@ -8,6 +8,7 @@
 !.config/
 .config/*
 !.config/i3/
+!.config/redshift.conf
 
 !.config/polybar/
 

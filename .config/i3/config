@@ -33,6 +33,8 @@ font pango:Firecode NF 9
 exec_always --no-startup-id killall ksplashqml
 exec_always --no-startup-id killall compton
 exec_always --no-startup-id compton
+exec_always --no-startup-id killall redshift
+exec_always --no-startup-id redshift
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
@@ -54,7 +56,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs
 
 # Window kill command
-bindsym $mod+Tab kill
+bindsym $mod+q kill
 
 # start program launcher
 bindsym $mod+semicolon exec --no-startup-id rofi -show drun   #run drun
@@ -109,8 +111,12 @@ bindsym $mod+Shift+space move scratchpad
 bindsym $mod+space scratchpad show
 
 # navigate workspaces next / previous
-bindsym $mod+w workspace next
-bindsym $mod+q workspace prev
+bindsym $mod+n workspace next
+bindsym $mod+Shift+n move container to workspace next; workspace next
+bindsym $mod+Ctrl+n move container to workspace next
+bindsym $mod+p workspace prev
+bindsym $mod+Shift+p move container to workspace prev; workspace prev
+bindsym $mod+Ctrl+p move container to workspace prev
 # bindsym $mod+grave workspace prev
 
 # workspaces
@@ -315,13 +321,14 @@ bindsym $mod+Ctrl+a exec --no-startup-id flameshot gui
 assign [class="netease-cloud-music"] $ws7
 assign [class="picgo"] $ws8
 assign [class="(?i)virtualbox"] $ws8
+assign [class="xAppCenter"] $ws8
 exec_always --no-startup-id python ~/.config/i3/i3layout.py
 # bindsym $mod+g exec sh /mnt/c/Users/scrutiny/Desktop/config-mark/git.sh
 # bindsym $mod+c exec "cd /mnt/d/temp/Brain2/tutorials/ && jupyter notebook"
 
 # i3 & kde
 # Plasma compatibility improvements
-for_window [window_role="pop-up"] floating enable border none
+for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable border none
 
 for_window [class="yakuake"] floating enable border none
