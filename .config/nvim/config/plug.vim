@@ -1,6 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'lilydjwg/fcitx.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -20,6 +20,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
     Plug 'ryanoasis/vim-devicons'
+
+    Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+    " Plug 'ryanoasis/vim-devicons' Icons without colours
+    " Plug 'akinsho/nvim-bufferline.lua'
 
     " markdown
     Plug 'godlygeek/tabular', { 'for': 'markdown' }

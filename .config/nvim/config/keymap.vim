@@ -68,11 +68,13 @@ nnoremap <C-Down>  :resize -2<CR>
 nnoremap <C-Left>  :vertical resize +2<CR>
 nnoremap <C-Right> :vertical resize -2<CR>
 
-nnoremap <A-k>    <C-w>k
-nnoremap <A-j>  <C-w>j
-nnoremap <A-h>  <C-w>h
-nnoremap <A-l> <C-w>l
+" nnoremap <M-k> <C-w>k
+" nnoremap <M-j> <C-w>j
+" nnoremap <M-h> <C-w>h
+" nnoremap <M-l> <C-w>l
 
+nnoremap <M-h> 10h
+nnoremap <M-l> 10l
 
 nnoremap <silent><C-d> <C-d>zz
 nnoremap <silent><C-u> <C-u>zz

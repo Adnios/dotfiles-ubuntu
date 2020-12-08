@@ -19,7 +19,8 @@ let g:indentLine_showFirstIndentLevel =1
 " ################################
 " rooter
 " ################################
-let g:rooter_change_directory_for_non_project_files = 'current'
+
+" let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
 
 " ################################
@@ -94,7 +95,7 @@ let g:clap_search_box_border_symbols = {'nil': ['', ''], 'curve': ['', '']
 " ################################
 " galaxyline
 " ################################
-" luafile ~/.config/nvim/theme/eviline.lua
+luafile ~/.config/nvim/theme/eviline.lua
 " luafile ~/.config/nvim/plugged/galaxyline.nvim/example/spaceline.lua
 luafile ~/.config/nvim/plugged/galaxyline.nvim/example/eviline.lua
 
@@ -135,6 +136,7 @@ highlight link RnvimrNormal CursorLine
 set iskeyword+=:
 " let g:tex_flavor='latex'
 let g:tex_flavor='xelatex'
+" let g:tex_flavor='XeLaTex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
@@ -143,11 +145,11 @@ let g:tex_conceal='abdmg'
 " ################################
 " VM
 " ################################
-let g:VM_show_warnings = 0
-let g:VM_maps = {}
+" let g:VM_show_warnings = 0
+" let g:VM_maps = {}
 " let g:VM_maps['Find Under']         = '<C-m>'           " replace C-n
 " let g:VM_maps['Find Subword Under'] = '<C-m>'           " replace visual C-n
-let g:VM_maps["I Return"] = ''
+" let g:VM_maps["I Return"] = ''
 
 
 
@@ -315,6 +317,7 @@ endfunction
 " rainbow
 " ################################
 let g:rainbow_active = 1
+let g:rbpt_max = 16
 
 " ################################
 " clever_f

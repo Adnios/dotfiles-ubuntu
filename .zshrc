@@ -226,3 +226,4 @@ export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
 # export XDG_CURRENT_DESKTOP=KDE
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=/home/scrutiny/bin:$PATH
+export XDG_CURRENT_DESKTOP=KDE

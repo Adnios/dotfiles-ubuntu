@@ -35,6 +35,7 @@ exec_always --no-startup-id killall compton
 exec_always --no-startup-id compton
 exec_always --no-startup-id killall redshift
 exec_always --no-startup-id redshift
+exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
@@ -354,6 +355,7 @@ for_window [class="plasmashell" window_type="notification"] border none, move ri
 # 开机先执行i3，后kde。
 # cursor 问题，直接把/usr/share/icons/ 中的breeze_cursor文件夹覆盖
 # Kill Plasma
+# jetbrains问题，使用最新版就可以了
 exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 

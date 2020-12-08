@@ -50,9 +50,8 @@ autocmd FileChangedShellPost *
 
 " 该行会使illuminate的配置失效
 " set background=dark
-
-set iskeyword+=_,$,@,%,#
-" set iskeyword+="，"
+" set formatoptions+=tcrqvmMB
+" set iskeyword+=，,。,！,：,“,”,（,）,￥,％,＝,－,＋,×,、,？,《,》
 " set linebreak
 " 折行后缩进
 " set breakindent
@@ -196,3 +195,36 @@ augroup END
 
 set display=lastline
 set scrolloff=15
+
+" Templates
+autocmd BufNewFile *.bash 0r ~/.config/nvim/templates/=template=.bash
+autocmd BufNewFile *.c 0r ~/.config/nvim/templates/=template=.c
+autocmd BufNewFile *.cc 0r ~/.config/nvim/templates/=template=.cc
+autocmd BufNewFile *.ccls 0r ~/.config/nvim/templates/=template=.ccls
+autocmd BufNewFile *.clang 0r ~/.config/nvim/templates/=template=.clang-format
+autocmd BufNewFile *.cmake 0r ~/.config/nvim/templates/=template=.cmake
+autocmd BufNewFile CMakeLists.txt 0r ~/.config/nvim/templates/=template=CMakeLists.txt
+autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/=template=.cpp
+autocmd BufNewFile *.css 0r ~/.config/nvim/templates/=template=.css
+autocmd BufNewFile *.cxx 0r ~/.config/nvim/templates/=template=.cxx
+autocmd BufNewFile .gitignore 0r ~/.config/nvim/templates/=template=.gitignore
+autocmd BufNewFile *.go 0r ~/.config/nvim/templates/=template=.go
+autocmd BufNewFile *.h 0r ~/.config/nvim/templates/=template=.h
+autocmd BufNewFile *.hh 0r ~/.config/nvim/templates/=template=.hh
+autocmd BufNewFile *.hpp 0r ~/.config/nvim/templates/=template=.hpp
+autocmd BufNewFile *.html 0r ~/.config/nvim/templates/=template=.html
+autocmd BufNewFile *.hxx 0r ~/.config/nvim/templates/=template=.hxx
+autocmd BufNewFile *.java 0r ~/.config/nvim/templates/=template=.java
+autocmd BufNewFile *.js 0r ~/.config/nvim/templates/=template=.js
+autocmd BufNewFile *.lua 0r ~/.config/nvim/templates/=template=.lua
+autocmd BufNewFile Makefile 0r ~/.config/nvim/templates/=template=Makefile
+autocmd BufNewFile .npmignore 0r ~/.config/nvim/templates/=template=.npmignore
+autocmd BufNewFile *.pro 0r ~/.config/nvim/templates/=template=.pro
+autocmd BufNewFile *.py 0r ~/.config/nvim/templates/=template=.py
+autocmd BufNewFile *.rs 0r ~/.config/nvim/templates/=template=.rs
+autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/=template=.sh
+autocmd BufNewFile *.sql 0r ~/.config/nvim/templates/=template=.sql
+autocmd BufNewFile *.tasks 0r ~/.config/nvim/templates/=template=.tasks
+autocmd BufNewFile *.tex 0r ~/.config/nvim/templates/=template=.tex
+autocmd BufNewFile *.vim 0r ~/.config/nvim/templates/=template=.vim
+autocmd BufNewFile *.xml 0r ~/.config/nvim/templates/=template=.xml
