@@ -3,8 +3,11 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/scrutiny/.oh-my-zsh"
-
-export EDITOR='nvim'
+VISUAL=nvim
+export VISUAL
+EDITOR=nvim
+export EDITOR
+# export EDITOR='nvim'
 # export TERMINAL='alacritty'
 
 # Set name of the theme to load --- if set to "random", it will
@@ -220,10 +223,13 @@ lg()
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-export TVM_HOME=/home/scrutiny/tvm
-export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
+# 暂时不需要研究tvm
+# export TVM_HOME=/home/scrutiny/tvm
+# export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
 
 # export XDG_CURRENT_DESKTOP=KDE
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=/home/scrutiny/bin:$PATH
 export XDG_CURRENT_DESKTOP=KDE
+# export MXNET_HOME="/mnt/d/temp/GitHub/doing/apache-mxnet-src-1.4.1-incubating"
+# export PYTHONPATH=$MXNET_HOME/python

@@ -3,9 +3,10 @@
 " ################################
 let g:indentLine_enabled = 1
 let g:indentLine_char='┆'
-let g:indentLine_fileTypeExclude = ['defx', 'denite','startify','tagbar','vista_kind','vista','coc-explorer','dashboard']
+let g:indentLine_fileTypeExclude = ['defx',  'denite','startify','tagbar','vista_kind','vista','coc-explorer','dashboard', 'dashpreview']
 let g:indentLine_concealcursor = 'niv'
 let g:indentLine_showFirstIndentLevel =1
+
 
 " ################################
 " snippet
@@ -34,7 +35,7 @@ aug end
 " ################################
 " Pangu
 " ################################
-autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+" autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 
 " ################################
@@ -130,6 +131,19 @@ let g:rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
 highlight link RnvimrNormal CursorLine
 
 
+" ###############################
+" nvim-hlslens
+" ###############################
+noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
+            \<Cmd>lua require('hlslens').start()<CR>
+noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
+            \<Cmd>lua require('hlslens').start()<CR>
+noremap * *<Cmd>lua require('hlslens').start()<CR>
+noremap # #<Cmd>lua require('hlslens').start()<CR>
+noremap g* g*<Cmd>lua require('hlslens').start()<CR>
+noremap g# g#<Cmd>lua require('hlslens').start()<CR>
+
+
 " ################################
 " tex
 " ################################
@@ -141,6 +155,8 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+" 这样配置后，我们就可以通过 vimtex 默认的 \lv 快捷键（在按住 \ 的时候，连续点击 l 和 v）来正向同步当前 Neovim 光标位置到 PDF 预览位置，也可以通过「Ctrl + 点击 PDF 预览相应位置」来反向同步 Neovim 光标位置了。
+let g:vimtex_compiler_progname = 'nvr'
 
 " ################################
 " VM
@@ -165,8 +181,8 @@ augroup END
 " ################################
 " bullet
 " ################################
-" let g:bullets_mapping_leader = '<C-s>'
-let g:bullets_set_mappings = 1 " default = 1
+let g:bullets_set_mappings = 0 " default = 1
+let g:bullets_mapping_leader = '<M-b>'
 let g:bullets_outline_levels = ['num', 'std-', 'std*']
 " Example [keys pressed to get this bullet]:
 " 1. first parent
@@ -197,7 +213,8 @@ nmap , <Plug>(easymotion-overwin-f)
 " ################################
 let g:vista#renderer#enable_icon = 1
 let g:vista_disable_statusline = 1
-let g:vista_default_executive = 'ctags'
+let g:vista_default_executive = 'coc'
+" let g:vista_default_executive = 'ctags'
 let g:vista_echo_cursor_strategy = 'floating_win'
 let g:vista_vimwiki_executive = 'markdown'
 let g:vista_executive_for = {
@@ -205,7 +222,13 @@ let g:vista_executive_for = {
   \ 'python': 'coc',
   \ 'vim': 'coc',
   \ 'cpp': 'coc',
+  \ 'cu': 'coc',
+  \ 'cc': 'coc',
   \ }
+let g:vista#renderer#icons = {
+            \   "function": "\uf794",
+            \   "variable": "\u0ec2",
+            \  }
 " ################################
 " markdown
 " ################################
@@ -226,6 +249,9 @@ let g:vim_markdown_toc_autofit = 1
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
 let g:mkdp_auto_close = 0
+let g:mkdp_echo_preview_url = 1
+let g:mkdp_browser = '/usr/bin/google-chrome'
+
 " ################################
 " floaterm
 " ################################

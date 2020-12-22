@@ -155,6 +155,7 @@ set clipboard=unnamedplus
 
 exec "nohlsearch"
 
+set foldmethod=indent
 set nofoldenable
 " set foldmethod=marker                   " 折叠方式为按照marker折叠
 " harcode for reducing startup time
@@ -194,7 +195,7 @@ augroup END
 
 
 set display=lastline
-set scrolloff=15
+" set scrolloff=15
 
 " Templates
 autocmd BufNewFile *.bash 0r ~/.config/nvim/templates/=template=.bash

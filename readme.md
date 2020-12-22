@@ -180,3 +180,4 @@ Appimage 启动后中文乱码，安装文泉驿自己即可 sudo apt-get instal
 
 ## KDE
 1. rar需要安装rar和unrar，ark才能打开解压
+2. 连接手机热点经常断掉https://blog.csdn.net/vivian_wanjin/article/details/82928315?utm_medium=distribute.pc_relevant.none-task-blog-searchFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-searchFromBaidu-1.control

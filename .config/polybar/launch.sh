@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+sleep 5
 # Terminate already running bar instances
 killall -q polybar
 # Wait until the processes have been shut down

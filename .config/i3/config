@@ -33,8 +33,10 @@ font pango:Firecode NF 9
 exec_always --no-startup-id killall ksplashqml
 exec_always --no-startup-id killall compton
 exec_always --no-startup-id compton
-exec_always --no-startup-id killall redshift
-exec_always --no-startup-id redshift
+# 禁用触摸板, 外接键盘时会失效, 通过xinput查看
+# exec_always --no-startup-id xinput --disable 14
+# exec_always --no-startup-id killall redshift
+# exec_always --no-startup-id redshift
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -88,9 +90,9 @@ bindsym $mod+ctrl+v split v;exec notify-send 'tile vertically'
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+t layout tabbed
-# bindsym $mod+c layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+c layout toggle split
 
 # toggle tiling / floating
 # bindsym $mod+Shift+space floating toggle
@@ -113,11 +115,15 @@ bindsym $mod+space scratchpad show
 
 # navigate workspaces next / previous
 bindsym $mod+n workspace next
-bindsym $mod+Shift+n move container to workspace next; workspace next
-bindsym $mod+Ctrl+n move container to workspace next
+# bindsym $mod+Shift+n move container to workspace next; workspace next
+# bindsym $mod+Ctrl+n move container to workspace next
 bindsym $mod+p workspace prev
-bindsym $mod+Shift+p move container to workspace prev; workspace prev
-bindsym $mod+Ctrl+p move container to workspace prev
+# bindsym $mod+Shift+p move container to workspace prev; workspace prev
+# bindsym $mod+Ctrl+p move container to workspace prev
+bindsym $mod+Shift+p exec ~/.config/i3/i3MoveNext.sh -1
+bindsym $mod+Shift+n exec ~/.config/i3/i3MoveNext.sh 1
+bindsym $mod+Ctrl+p exec ~/.config/i3/i3Move.sh -1
+bindsym $mod+Ctrl+n exec ~/.config/i3/i3Move.sh 1
 # bindsym $mod+grave workspace prev
 
 # workspaces
@@ -373,3 +379,6 @@ for_window [class="jetbrains-pycharm" title="win0"] floating enable;
 for_window [class="jetbrains-clion" title="win0"] floating enable;
 for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 # 主题保存在.local/share/plasma
+
+# 外接显示器
+exec_always --no-startup-id xrandr --output HDMI-0 --auto --left-of DP-4

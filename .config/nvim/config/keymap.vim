@@ -89,10 +89,12 @@ vnoremap <C-h> ^
 vnoremap <C-l> $
 
 nnoremap <leader>w <C-w>w
-tnoremap <leader>w <C-\><C-N><C-w>w
+" 延迟rnvimr上space的反应
+" tnoremap <leader>w <C-\><C-N><C-w>w
 nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
 
 nnoremap Y y$
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+" inoremap <ESC> <ESC>:w<CR>

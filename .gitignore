@@ -13,6 +13,7 @@
 !.config/polybar/
 
 !.config/rofi/
+!.config/zathura/
 
 !.config/ranger/
 .config/ranger/plugins/__pycache__/*

@@ -94,16 +94,20 @@
         //"$HOME/.config/nvim/Ultisnips/",
         "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
     ],
+
     //"clangd.path": "/home/scrutiny/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
 
     "languageserver": {
       "ccls": {
         "command": "ccls",
-        "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+        "filetypes": ["h","c", "cuda", "cc", "cpp", "c++", "objc", "objcpp"],
         "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
         "initializationOptions": {
             "cache": {
               "directory": "/tmp/ccls"
+            },
+            "client": {
+                "snippetSupport": true
             }
           }
       }
