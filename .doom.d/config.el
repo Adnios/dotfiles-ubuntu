@@ -4,8 +4,11 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
+(setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+
 (setq user-full-name "Wang Jian"
-      user-mail-address "wangjian.scrutiny@gmail.com")
+      user-mail-address "herewj@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -23,7 +26,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-opera-light)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -112,6 +115,19 @@ same directory as the org-buffer and insert a link to this file."
 (add-to-list 'load-path "/home/scrutiny/.doom.d/plug/evil-fcitx.el/")
 (add-to-list 'load-path "/home/scrutiny/.doom.d/plug/")
 (require 'evil-fcitx)
+(require 'ranger)
+(map! (:leader ;;加上:leader就是指SPC开头
+        (:desc "Ranger" :g "r" #'ranger) ;;全局快捷键以:g指定，这个快捷键是SPC a
+
+   ;;    (:after org
+   ;;      (:map org-mode-map "C-c o" #'org-pomodoro)) ;;这是某个map下的快捷键，没有leader的。
+   ;;    (:after org-agenda
+   ;;      (:map org-agenda-mode-map "C-c o" #'org-pomodoro))
+
+   ;; (:map (markdown-mode-map org-mode-map)
+   ;;        :localleader ;;某个map下映射SPC前缀的快捷键，用:localleader就代表是SPC m开头
+   ;;        :n "v" #'grip-mode) ;;这个最终的快捷键是SPC m v
+))
 
 ;; auto-save
 ;; (require 'auto-save)
@@ -120,44 +136,6 @@ same directory as the org-buffer and insert a link to this file."
 
 ;; auto-save
 (auto-save-visited-mode 1)
-
-;; save file leaving insert mode
-;; https://emacs.stackexchange.com/questions/50925/saving-file-everytime-leaving-insert-mode-in-evil-mode
-(add-hook 'evil-insert-state-exit-hook
-          (lambda ()
-            (call-interactively #'save-buffer)))
-
-
-;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-;; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-;; (define-key evil-normal-state-map (kbd "C-k") 'evil-previous-visual-line (5))
-
-(define-key evil-normal-state-map (kbd "C-k") (lambda ()
-                                                (interactive)
-                                                (evil-previous-visual-line 5)))
-(define-key evil-normal-state-map (kbd "C-j") (lambda ()
-                                                (interactive)
-                                                (evil-next-visual-line 5)))
-
-(defun org-insert-src-block (src-code-type)
-  "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
-  (interactive
-   (let ((src-code-types
-          '("emacs-lisp" "python" "C" "sh" "java" "js" "clojure" "C++" "css"
-            "calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
-            "octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
-            "haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
-            "scheme" "sqlite")))
-     (list (ido-completing-read "Source code type: " src-code-types))))
-  (progn
-    (newline-and-indent)
-    (insert (format "#+BEGIN_SRC %s\n" src-code-type))
-    (newline-and-indent)
-    (insert "#+END_SRC\n")
-    (previous-line 2)
-    (org-edit-src-code)))
-
 
 (add-hook 'org-mode-hook
           (lambda()

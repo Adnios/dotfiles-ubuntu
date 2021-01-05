@@ -7,6 +7,9 @@ let g:indentLine_fileTypeExclude = ['defx',  'denite','startify','tagbar','vista
 let g:indentLine_concealcursor = 'niv'
 let g:indentLine_showFirstIndentLevel =1
 
+autocmd! FileType dashboard let g:indentLine_enabled = 0
+  \| autocmd BufLeave <buffer> let g:indentLine_enabled = 1
+
 
 " ################################
 " snippet
@@ -39,11 +42,14 @@ aug end
 
 
 " ################################
-" oceanic_material
+" oceanic_material doom-one
 " ################################
-let g:oceanic_material_transparent_background = 1
-let g:oceanic_material_allow_bold = 1
-colorscheme oceanic_material
+" let g:oceanic_material_transparent_background = 1
+" let g:oceanic_material_allow_bold = 1
+" colorscheme oceanic_material
+colorscheme doom-one
+" colorscheme gruvbox
+" colorscheme zephyr
 
 " ################################
 " clap
@@ -181,9 +187,9 @@ augroup END
 " ################################
 " bullet
 " ################################
-let g:bullets_set_mappings = 0 " default = 1
-let g:bullets_mapping_leader = '<M-b>'
-let g:bullets_outline_levels = ['num', 'std-', 'std*']
+" let g:bullets_set_mappings = 0 " default = 1
+" let g:bullets_mapping_leader = '<M-b>'
+" let g:bullets_outline_levels = ['num', 'std-', 'std*']
 " Example [keys pressed to get this bullet]:
 " 1. first parent
 "   a. child bullet [ <cr><C-t> ]
@@ -191,12 +197,12 @@ let g:bullets_outline_levels = ['num', 'std-', 'std*']
 "   b. second child bullet [ <cr><C-d> ]
 " 2. second parent [ <cr><C-d> ]
 " Bullets.vim
-let g:bullets_enabled_file_types = [
-    \ 'markdown',
-    \ 'text',
-    \ 'gitcommit',
-    \ 'scratch'
-    \]
+" let g:bullets_enabled_file_types = [
+"     \ 'markdown',
+"     \ 'text',
+"     \ 'gitcommit',
+"     \ 'scratch'
+"     \]
 
 
 " ################################
@@ -205,8 +211,11 @@ let g:bullets_enabled_file_types = [
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
-map  , <Plug>(easymotion-bd-f)
-nmap , <Plug>(easymotion-overwin-f)
+map  m <Plug>(easymotion-bd-f)
+nmap m <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap M <Plug>(easymotion-overwin-f2)
 
 " ################################
 " Vista
@@ -236,7 +245,7 @@ let g:mdip_imgdir = 'pic'
 let g:mdip_imgname = 'image'
 autocmd FileType markdown nnoremap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_override_foldtext = 0
 let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_emphasis_multiline = 0
@@ -245,6 +254,9 @@ let g:vim_markdown_conceal=0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_toc_autofit = 1
+" 默认为4
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
@@ -296,7 +308,7 @@ let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/pokemon.tx
 " let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/cat.txt'
 let g:dashboard_preview_file_height = 14
 let g:dashboard_preview_file_width = 80
-let g:dashboard_default_executive ='telescope'
+let g:dashboard_default_executive ='clap'
 
 " let g:dashboard_custom_section = {
 "    \ 'last_session'        :[' Recently last session                 SPC d l'],
@@ -355,7 +367,7 @@ let g:clever_f_ignore_case = 1
 " ################################
 call defx#custom#option('_', {
   \ 'resume': 1,
-  \ 'winwidth': 30,
+  \ 'winwidth': 35,
   \ 'split': 'vertical',
   \ 'direction': 'topleft',
   \ 'show_ignored_files': 0,
@@ -483,3 +495,83 @@ function! s:defx_mappings() abort
 		\ defx#do_action('toggle_columns', 'indent:mark:filename:type:size:time')
 
 endfunction
+
+" ################################
+" barbar.nvim
+" ################################
+
+
+" NOTE: This variable doesn't exist before barbar runs. Create it before
+"       setting any option.
+let bufferline = {}
+
+" Enable/disable animations
+let bufferline.animation = v:true
+
+" Enable/disable auto-hiding the tab bar when there is a single buffer
+let bufferline.auto_hide = v:false
+
+" Enable/disable icons
+" if set to 'numbers', will show buffer index in the tabline
+" if set to 'both', will show buffer index and icons in the tabline
+let bufferline.icons = v:true
+
+" Configure icons on the bufferline.
+let bufferline.icon_separator_active = '▎'
+let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_close_tab = ''
+let bufferline.icon_close_tab_modified = '●'
+
+" Enable/disable close button
+let bufferline.closable = v:true
+
+" Enables/disable clickable tabs
+"  - left-click: go to buffer
+"  - middle-click: delete buffer
+let bufferline.clickable = v:true
+
+" If set, the letters for each buffer in buffer-pick mode will be
+" assigned based on their name. Otherwise or in case all letters are
+" already assigned, the behavior is to assign letters in order of
+" usability (see order below)
+let bufferline.semantic_letters = v:true
+
+" New buffer letters are assigned in this order. This order is
+" optimal for the qwerty keyboard layout but might need adjustement
+" for other layouts.
+let bufferline.letters =
+  \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
+
+" Sets the maximum padding width with which to surround each tab
+let bufferline.maximum_padding = 4
+
+" ################################
+" nvim-treesitter
+" ################################
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {"python", "cpp", "c"},     -- one of "all", "language", or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
+
+" ################################
+" accelerated_jk
+" ################################
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
+" let g:accelerated_jk_acceleration_table = [30, 40]
+
+" ################################
+" quickrun
+" ################################
+let g:quickrun_known_file_types = {
+        \"cpp": ["!g++ %", "./a.out"],
+        \"c": ["!gcc %", "./a.out"],
+        \"php": ["!php %"],
+        \"vim": ["source %"],
+        \"py": ["!python %"],
+    \}

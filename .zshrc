@@ -175,31 +175,31 @@ fq(){
 # zle -N zle-keymap-select
 
 # 对konsole 有bug
+# \e[0 block without blink
+# \e[1 block with blink
+# \e[5 beam with blink
+# \e[6 beam without blink
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-		echo -ne '\e[1 q'
+		echo -ne '\e[0 q'
 	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
-		echo -ne '\e[5 q'
+		echo -ne '\e[6 q'
   fi
 }
 zle -N zle-keymap-select
 
 # Use beam shape cursor on startup.
-echo -ne '\e[5 q'
+echo -ne '\e[6 q'
 
 # Use beam shape cursor for each new prompt.
 preexec() {
-	echo -ne '\e[5 q'
+	echo -ne '\e[6 q'
 }
 
 _fix_cursor() {
-	echo -ne '\e[5 q'
+	echo -ne '\e[6 q'
 }
 precmd_functions+=(_fix_cursor)
-
-
-zle -N zle-line-init
-zle -N zle-keymap-select
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -223,7 +223,7 @@ lg()
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-# 暂时不需要研究tvm
+# 暂时用不到
 # export TVM_HOME=/home/scrutiny/tvm
 # export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
 

@@ -1,8 +1,8 @@
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ";" "vimtex 被修改
 map <F12> :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>q :q!<CR>
-inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
+nnoremap <localleader>q :q!<CR>
+" inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
 nnoremap <localleader>c :bd!<CR>
 vnoremap > >gv
 vnoremap < <gv
@@ -31,7 +31,7 @@ cnoremap <C-h> <BS>
 cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
 
 nnoremap <localleader><CR> :nohl<CR>
-nmap <localleader><localleader> :call Run()<CR>
+" nmap <localleader><localleader> :call Run()<CR>
 func! Run()
     exec "w"
     if &filetype == 'c'
@@ -53,45 +53,47 @@ func! Run()
         exec "MarkdownPreview"
     elseif &filetype == 'markdown'
         exec "MarkdownPreview"
+    elseif &filetype == 'vimwiki'
+        exec "MarkdownPreview"
     elseif &filetype == 'sh'
         :!time bash %
     endif
 endfunc
 
 " Buffer
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
+" noremap <Tab> :bn<CR>
+" noremap <S-Tab> :bp<CR>
 
 " Disable arrow movement, resize splits instead.
-nnoremap <C-Up>    :resize +2<CR>
-nnoremap <C-Down>  :resize -2<CR>
-nnoremap <C-Left>  :vertical resize +2<CR>
-nnoremap <C-Right> :vertical resize -2<CR>
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 
 " nnoremap <M-k> <C-w>k
 " nnoremap <M-j> <C-w>j
 " nnoremap <M-h> <C-w>h
 " nnoremap <M-l> <C-w>l
 
-nnoremap <M-h> 10h
-nnoremap <M-l> 10l
+" nnoremap <M-h> 10h
+" nnoremap <M-l> 10l
 
 nnoremap <silent><C-d> <C-d>zz
 nnoremap <silent><C-u> <C-u>zz
-nnoremap <C-j> 5j
-nnoremap <C-k> 5k
-nnoremap <C-h> ^
-nnoremap <C-l> $
+" nnoremap <C-j> 5j
+" nnoremap <C-k> 5k
+" nnoremap <C-h> ^
+" nnoremap <C-l> $
 
-vnoremap <C-j> 5j
-vnoremap <C-k> 5k
-vnoremap <C-h> ^
-vnoremap <C-l> $
+" vnoremap <C-j> 5j
+" vnoremap <C-k> 5k
+" vnoremap <C-h> ^
+" vnoremap <C-l> $
 
-nnoremap <leader>w <C-w>w
+" nnoremap <leader>w <C-w>w
 " 延迟rnvimr上space的反应
 " tnoremap <leader>w <C-\><C-N><C-w>w
-nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
+" nnoremap <BS> :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q<CR>
 
 nnoremap Y y$
 

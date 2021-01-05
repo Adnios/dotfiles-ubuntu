@@ -62,29 +62,29 @@ let g:which_key_map.d.n = 'NewFile'
 " ################################
 " buffer
 " ################################
-nmap <leader>b1 <Plug>BuffetSwitch(1)
-nmap <leader>b2 <Plug>BuffetSwitch(2)
-nmap <leader>b3 <Plug>BuffetSwitch(3)
-nmap <leader>b4 <Plug>BuffetSwitch(4)
-nmap <leader>b5 <Plug>BuffetSwitch(5)
-nmap <leader>b6 <Plug>BuffetSwitch(6)
-nmap <leader>b7 <Plug>BuffetSwitch(7)
-nmap <leader>b8 <Plug>BuffetSwitch(8)
-nmap <leader>b9 <Plug>BuffetSwitch(9)
-nmap <leader>b0 <Plug>BuffetSwitch(10)
-nnoremap <silent> <Leader>bc :Bonly<CR>
-let g:which_key_map.b = { 'name' : '+Buffer' }
-let g:which_key_map.b.1 = 'buffer_1'
-let g:which_key_map.b.2 = 'buffer_2'
-let g:which_key_map.b.3 = 'buffer_3'
-let g:which_key_map.b.4 = 'buffer_4'
-let g:which_key_map.b.5 = 'buffer_5'
-let g:which_key_map.b.6 = 'buffer_6'
-let g:which_key_map.b.7 = 'buffer_7'
-let g:which_key_map.b.8 = 'buffer_8'
-let g:which_key_map.b.9 = 'buffer_9'
-let g:which_key_map.b.0 = 'buffer_0'
-let g:which_key_map.b.c = 'Bonly'
+" nmap <leader>b1 <Plug>BuffetSwitch(1)
+" nmap <leader>b2 <Plug>BuffetSwitch(2)
+" nmap <leader>b3 <Plug>BuffetSwitch(3)
+" nmap <leader>b4 <Plug>BuffetSwitch(4)
+" nmap <leader>b5 <Plug>BuffetSwitch(5)
+" nmap <leader>b6 <Plug>BuffetSwitch(6)
+" nmap <leader>b7 <Plug>BuffetSwitch(7)
+" nmap <leader>b8 <Plug>BuffetSwitch(8)
+" nmap <leader>b9 <Plug>BuffetSwitch(9)
+" nmap <leader>b0 <Plug>BuffetSwitch(10)
+" nnoremap <silent> <Leader>bc :Bonly<CR>
+" let g:which_key_map.b = { 'name' : '+Buffer' }
+" let g:which_key_map.b.1 = 'buffer_1'
+" let g:which_key_map.b.2 = 'buffer_2'
+" let g:which_key_map.b.3 = 'buffer_3'
+" let g:which_key_map.b.4 = 'buffer_4'
+" let g:which_key_map.b.5 = 'buffer_5'
+" let g:which_key_map.b.6 = 'buffer_6'
+" let g:which_key_map.b.7 = 'buffer_7'
+" let g:which_key_map.b.8 = 'buffer_8'
+" let g:which_key_map.b.9 = 'buffer_9'
+" let g:which_key_map.b.0 = 'buffer_0'
+" let g:which_key_map.b.c = 'Bonly'
 
 
 
@@ -151,4 +151,44 @@ nnoremap <leader>s :set spell! spelllang=en_us,cjk<CR>
 " Defx
 " ################################
 noremap <localleader>e :Defx<CR>
+
+" ################################
+" barbar.nvim
+" ################################
+
+" Magic buffer-picking mode
+nnoremap <silent> <Space>bp :BufferPick<CR>
+nnoremap <silent> , :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+" Move to previous/next
+nnoremap <silent>    [b :BufferPrevious<CR>
+nnoremap <silent>    ]b :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <Space>bP :BufferMovePrevious<CR>
+nnoremap <silent>    <Space>bN :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <Space>b1 :BufferGoto 1<CR>
+nnoremap <silent>    <Space>b2 :BufferGoto 2<CR>
+nnoremap <silent>    <Space>b3 :BufferGoto 3<CR>
+nnoremap <silent>    <Space>b4 :BufferGoto 4<CR>
+nnoremap <silent>    <Space>b5 :BufferGoto 5<CR>
+nnoremap <silent>    <Space>b6 :BufferGoto 6<CR>
+nnoremap <silent>    <Space>b7 :BufferGoto 7<CR>
+nnoremap <silent>    <Space>b8 :BufferGoto 8<CR>
+nnoremap <silent>    <Space>b9 :BufferLast<CR>
+" Close buffer
+nnoremap <silent>    <Space>bc :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+nnoremap <silent>    <Space>bC :BufferCloseAllButCurrent<CR>
+nnoremap <silent>    <Space>bR :BufferCloseBuffersRight<CR>
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
+
+
+nmap <localleader><'localleader'> :QuickRun<cr>
 

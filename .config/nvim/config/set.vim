@@ -2,11 +2,14 @@ set number
 set relativenumber
 set nocompatible
 filetype plugin on
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
+set noexpandtab     " Don't expand tabs to spaces
+set tabstop=2       " The number of spaces a tab is
+set shiftwidth=2    " Number of spaces to use in auto(indent)
+set softtabstop=-1  " Automatically keeps in sync with shiftwidth
+set smarttab        " Tab insert blanks according to 'shiftwidth'
+set autoindent      " Use same indenting on new lines
+set smartindent     " Smart autoindenting on new lines
+set shiftround      " Round indent to multiple of 'shiftwidth'
 set mouse=a   "Ubuntu 上中文不能准确地光标移动"
 " set smartindent
 set updatetime=100  " save automatically when text is changed
@@ -52,7 +55,8 @@ autocmd FileChangedShellPost *
 " set background=dark
 " set formatoptions+=tcrqvmMB
 " set iskeyword+=，,。,！,：,“,”,（,）,￥,％,＝,－,＋,×,、,？,《,》
-" set linebreak
+set linebreak
+set breakat-=_
 " 折行后缩进
 " set breakindent
 " set showbreak=->
@@ -82,7 +86,7 @@ set linespace=0
 
 " set nowrap
 set wrap
-autocmd FileType markdown set wrap
+" autocmd FileType markdown set wrap
 
 " 行首行尾只有以下字符可以移动
 set whichwrap+=<,>,h,l,[,]
@@ -115,7 +119,7 @@ endif
 set conceallevel=0
 set noswapfile
 " Set 7 lines to the cursor - when moving vertically using j/k
-" set so=99999
+set so=2
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -155,18 +159,14 @@ set clipboard=unnamedplus
 
 exec "nohlsearch"
 
-set foldmethod=indent
-set nofoldenable
+" set foldmethod=indent
+" set nofoldenable
 " set foldmethod=marker                   " 折叠方式为按照marker折叠
 " harcode for reducing startup time
 " let g:python3_host_prog='/usr/bin/python3'
 
 set inccommand=nosplit
 
-" Also break at a multi-byte character above 255
-set formatoptions+=m
-set formatoptions+=B
-" Where it makes sense, remove a comment leader when joining lines Where it makes sense, remove a comment leader when joining lines
 
 set formatoptions+=j
 " When formatting text, recognize numbered lists
@@ -174,12 +174,23 @@ set formatoptions+=n
 
 set formatoptions+=1         " Don't break lines after a one-letter word
 set formatoptions-=t         " Don't auto-wrap text
-set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
 set formatoptions+=mM
 set formatoptions-=cro                  " Stop newline continution of comments
+" 如遇Unicode值大于255的文本，不必等到空格再折行
+set formatoptions+=m
+" 合并两行中文时，不在中间加空格
+set formatoptions+=B
+set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
+" 这样才生效，不知道为什么
+autocmd FileType * set formatoptions-=o
 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+" 复制粘贴的文字也会自动format，a表示autoformat
+" set formatoptions+=a
+" 离开插入模式自动format
+" augroup myformatting
+"     autocmd!
+"     autocmd InsertLeave * normal gwap<CR>
+" augroup END
 
 augroup UserTermSettings " neovim only
   autocmd!
@@ -194,38 +205,78 @@ augroup UserTermSettings " neovim only
 augroup END
 
 
+highlight ColorColumn guibg=#23272e
+set colorcolumn=81
+" 如果markdown中插入代码，会很难受
+set textwidth=80
 set display=lastline
 " set scrolloff=15
+set sidescroll=0 "当光标到达屏幕边缘时，将自动扩展显示1/2屏幕的文本
 
-" Templates
-autocmd BufNewFile *.bash 0r ~/.config/nvim/templates/=template=.bash
-autocmd BufNewFile *.c 0r ~/.config/nvim/templates/=template=.c
-autocmd BufNewFile *.cc 0r ~/.config/nvim/templates/=template=.cc
-autocmd BufNewFile *.ccls 0r ~/.config/nvim/templates/=template=.ccls
-autocmd BufNewFile *.clang 0r ~/.config/nvim/templates/=template=.clang-format
-autocmd BufNewFile *.cmake 0r ~/.config/nvim/templates/=template=.cmake
-autocmd BufNewFile CMakeLists.txt 0r ~/.config/nvim/templates/=template=CMakeLists.txt
-autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/=template=.cpp
-autocmd BufNewFile *.css 0r ~/.config/nvim/templates/=template=.css
-autocmd BufNewFile *.cxx 0r ~/.config/nvim/templates/=template=.cxx
-autocmd BufNewFile .gitignore 0r ~/.config/nvim/templates/=template=.gitignore
-autocmd BufNewFile *.go 0r ~/.config/nvim/templates/=template=.go
-autocmd BufNewFile *.h 0r ~/.config/nvim/templates/=template=.h
-autocmd BufNewFile *.hh 0r ~/.config/nvim/templates/=template=.hh
-autocmd BufNewFile *.hpp 0r ~/.config/nvim/templates/=template=.hpp
-autocmd BufNewFile *.html 0r ~/.config/nvim/templates/=template=.html
-autocmd BufNewFile *.hxx 0r ~/.config/nvim/templates/=template=.hxx
-autocmd BufNewFile *.java 0r ~/.config/nvim/templates/=template=.java
-autocmd BufNewFile *.js 0r ~/.config/nvim/templates/=template=.js
-autocmd BufNewFile *.lua 0r ~/.config/nvim/templates/=template=.lua
-autocmd BufNewFile Makefile 0r ~/.config/nvim/templates/=template=Makefile
-autocmd BufNewFile .npmignore 0r ~/.config/nvim/templates/=template=.npmignore
-autocmd BufNewFile *.pro 0r ~/.config/nvim/templates/=template=.pro
-autocmd BufNewFile *.py 0r ~/.config/nvim/templates/=template=.py
-autocmd BufNewFile *.rs 0r ~/.config/nvim/templates/=template=.rs
-autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/=template=.sh
-autocmd BufNewFile *.sql 0r ~/.config/nvim/templates/=template=.sql
-autocmd BufNewFile *.tasks 0r ~/.config/nvim/templates/=template=.tasks
-autocmd BufNewFile *.tex 0r ~/.config/nvim/templates/=template=.tex
-autocmd BufNewFile *.vim 0r ~/.config/nvim/templates/=template=.vim
-autocmd BufNewFile *.xml 0r ~/.config/nvim/templates/=template=.xml
+augroup user_plugin_filetype "{{{
+  autocmd!
+  " Reload vim config automatically
+  autocmd BufWritePost $VIM_PATH/{*.vim,*.yaml,vimrc} nested
+        \ source $MYVIMRC | redraw
+
+  " Reload Vim script automatically if setlocal autoread
+  autocmd BufWritePost,FileWritePost *.vim nested
+        \ if &l:autoread > 0 | source <afile> |
+        \   echo 'source ' . bufname('%') |
+        \ endif
+
+  " Update filetype on save if empty
+  autocmd BufWritePost * nested
+        \ if &l:filetype ==# '' || exists('b:ftdetect')
+        \ |   unlet! b:ftdetect
+        \ |   filetype detect
+        \ | endif
+
+  " Highlight current line only on focused window
+  autocmd WinEnter,InsertLeave * if &ft !~# '^\(denite\|clap_\)' |
+    \ set cursorline | endif
+
+  autocmd WinLeave,InsertEnter * if &ft !~# '^\(denite\|clap_\)' |
+    \ set nocursorline | endif
+
+  " Automatically set read-only for files being edited elsewhere
+  autocmd SwapExists * nested let v:swapchoice = 'o'
+
+  " Equalize window dimensions when resizing vim window
+  autocmd VimResized * tabdo wincmd =
+
+  " Force write shada on leaving nvim
+  autocmd VimLeave * if has('nvim') | wshada! | else | wviminfo! | endif
+
+  " Check if file changed when its window is focus, more eager than 'autoread'
+  autocmd FocusGained * checktime
+
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
+
+  autocmd Syntax * if line('$') > 5000 | syntax sync minlines=200 | endif
+
+  " https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write
+  autocmd FileType css,javascript,javascriptreact setlocal backupcopy=yes
+
+  " Go (Google)
+  autocmd FileType go
+                     \  let b:coc_pairs_disabled = ['<']
+                     \ | let b:coc_root_patterns = ['.git', 'go.mod']
+
+  autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+  " markdown
+  autocmd FileType markdown
+        \ setlocal expandtab smarttab nosmartindent
+        \ | setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=80
+  " Python
+  autocmd FileType python
+        \ setlocal expandtab smarttab nosmartindent
+        \ | setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80
+
+  " HTML (.gohtml and .tpl for server side)
+  autocmd BufNewFile,BufRead *.html,*.htm,*.gohtml,*.tpl  setf html
+
+  autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
+
+augroup END "}}}

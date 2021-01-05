@@ -55,4 +55,3 @@
 ;; ws-butler spoils the undo history when you save a file while having the cursor on a freshly added new line.
 ;; editorconfig handles whitespaces just fine, so I don't need the broken sophistication anyway.
 (package! ws-butler :disable t)
-;; (package! ranger)

@@ -11,10 +11,10 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-lists',
             \ 'coc-marketplace',
-            \ 'coc-picgo',
+            \ 'coc-pairs',
             \ 'coc-vimlsp'
             \ ]
-
+autocmd FileType cpp let b:coc_pairs_disabled = ['<']
 set hidden
 set nobackup
 set nowritebackup

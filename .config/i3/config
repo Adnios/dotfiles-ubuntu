@@ -4,7 +4,7 @@ set $mod Mod4
 # new_window pixel 5
 # new_float normal
 # default_border pixel 5
-for_window [class="^.*"] border pixel 2
+# for_window [class="^.*"] border pixel 2
 # for_window [class="^.*"] border normal
 # for_window [class="^.*"] border none
 # kde & i3 下烦人的jetbrain边框
@@ -23,8 +23,8 @@ hide_edge_borders smart
 focus_follows_mouse no
 floating_modifier $mod
 
-#new_window 1pixel
-new_window none
+new_window pixel 2
+# new_window none
 new_float none
 
 font pango:Firecode NF 9
@@ -36,12 +36,12 @@ exec_always --no-startup-id compton
 # 禁用触摸板, 外接键盘时会失效, 通过xinput查看
 # exec_always --no-startup-id xinput --disable 14
 # exec_always --no-startup-id killall redshift
-# exec_always --no-startup-id redshift
-exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id redshift
+# exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
-exec_always --no-startup-id setxkbmap -layout us -option ctrl:nocaps
+# exec_always --no-startup-id setxkbmap -layout us -option ctrl:nocaps
 exec_always --no-startup-id $HOME/.config/i3/key.sh
 
 # exec --no-startup-id fcitx
@@ -56,6 +56,7 @@ exec_always --no-startup-id feh --bg-fill --no-fehbg --randomize ~/Pictures
 
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec --no-startup-id alacritty
+# bindsym $mod+Return exec --no-startup-id ~/Documents/deepin-terminal-gtk/build/deepin-terminal
 bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs
 
 # Window kill command
@@ -95,12 +96,10 @@ bindsym $mod+t layout tabbed
 bindsym $mod+c layout toggle split
 
 # toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+minus floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
-bindsym $mod+minus focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -108,10 +107,8 @@ bindsym $mod+Shift+s sticky toggle
 # focus the parent container
 # bindsym $mod+a focus parent
 
-# bindsym $mod+minus move scratchpad
-# bindsym $mod+plus scratchpad show
-bindsym $mod+Shift+space move scratchpad
-bindsym $mod+space scratchpad show
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
 
 # navigate workspaces next / previous
 bindsym $mod+n workspace next
@@ -253,6 +250,24 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+
+    bindsym Left  move left 30px
+    bindsym Down  move down 30px
+    bindsym Up    move up 30px
+    bindsym Right move right 30px
+
+    bindsym h     move left 30px
+    bindsym j     move down 30px
+    bindsym k     move up 30px
+    bindsym l     move right 30px
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # Theme colors
 set $background #10101000

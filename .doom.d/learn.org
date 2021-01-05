@@ -7,7 +7,7 @@
 - space-. create file
 - M change file mode
 - O change the owner
-- *-/ mark directory, t toggle from direcrtory and files, U unmark
+- *-/ mark directory, t toggle from directory and files, U unmark
 - m mark, u unmark
 - C copy
 - R move
