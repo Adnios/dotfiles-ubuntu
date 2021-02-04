@@ -62,7 +62,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lambdalisue/suda.vim'
     " Plug 'bagrat/vim-buffet'
     Plug 'kevinhwang91/rnvimr', {'on': 'RnvimrToggle'}
-    Plug 'kevinhwang91/nvim-hlslens'
+    " Plug 'kevinhwang91/nvim-hlslens'
     " Plug 'vim-save/vim-clap'
     Plug 'liuchengxu/vim-clap', {'do': ':Clap install-binary!', 'on' : 'Clap' }
     Plug 'vn-ki/coc-clap'

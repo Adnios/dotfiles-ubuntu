@@ -102,26 +102,25 @@ let g:clap_search_box_border_symbols = {'nil': ['', ''], 'curve': ['', '']
 " ################################
 " galaxyline
 " ################################
-luafile ~/.config/nvim/theme/eviline.lua
 " luafile ~/.config/nvim/plugged/galaxyline.nvim/example/spaceline.lua
 luafile ~/.config/nvim/plugged/galaxyline.nvim/example/eviline.lua
 
 " ################################
 " buffet
 " ################################
-let g:buffet_always_show_tabline = 1
-" let g:buffet_powerline_separators = 1
-let g:buffet_show_index = 1
-let g:buffet_max_plug = 10
-let g:buffet_use_devicons = 0
-let g:buffet_hidden_buffers = ["terminal", "quickfix"]
-function! g:BuffetSetCustomColors()
-    hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#b8bb26 guifg=#000000
-    hi! BuffetTrunc cterm=bold ctermbg=10 ctermfg=8 guibg=##999999 guifg=#999999
-    hi! BuffetTab cterm=NONE ctermbg=203 ctermfg=8 guibg=#555555 guifg=#999999
-    hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#504945 guifg=#000000
-    hi! BuffetBuffer cterm=NONE  ctermfg=10 guibg=buffermidcolor guifg=#999999
-endfunction
+" let g:buffet_always_show_tabline = 1
+" " let g:buffet_powerline_separators = 1
+" let g:buffet_show_index = 1
+" let g:buffet_max_plug = 10
+" let g:buffet_use_devicons = 0
+" let g:buffet_hidden_buffers = ["terminal", "quickfix"]
+" function! g:BuffetSetCustomColors()
+"     hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#b8bb26 guifg=#000000
+"     hi! BuffetTrunc cterm=bold ctermbg=10 ctermfg=8 guibg=##999999 guifg=#999999
+"     hi! BuffetTab cterm=NONE ctermbg=203 ctermfg=8 guibg=#555555 guifg=#999999
+"     hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#504945 guifg=#000000
+"     hi! BuffetBuffer cterm=NONE  ctermfg=10 guibg=buffermidcolor guifg=#999999
+" endfunction
 
 
 " ################################
@@ -140,14 +139,14 @@ highlight link RnvimrNormal CursorLine
 " ###############################
 " nvim-hlslens
 " ###############################
-noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap * *<Cmd>lua require('hlslens').start()<CR>
-noremap # #<Cmd>lua require('hlslens').start()<CR>
-noremap g* g*<Cmd>lua require('hlslens').start()<CR>
-noremap g# g#<Cmd>lua require('hlslens').start()<CR>
+" noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
+"             \<Cmd>lua require('hlslens').start()<CR>
+" noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
+"             \<Cmd>lua require('hlslens').start()<CR>
+" noremap * *<Cmd>lua require('hlslens').start()<CR>
+" noremap # #<Cmd>lua require('hlslens').start()<CR>
+" noremap g* g*<Cmd>lua require('hlslens').start()<CR>
+" noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 
 
 " ################################
@@ -558,6 +557,10 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
+
 " ################################
 " accelerated_jk
 " ################################
@@ -574,4 +577,7 @@ let g:quickrun_known_file_types = {
         \"php": ["!php %"],
         \"vim": ["source %"],
         \"py": ["!python %"],
+        \"markdown": ["MarkdownPreview"],
+        \"md": ["MarkdownPreview"],
+        \"wiki": ["MarkdownPreview"],
     \}

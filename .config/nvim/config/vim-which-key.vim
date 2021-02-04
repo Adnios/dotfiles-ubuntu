@@ -190,5 +190,4 @@ nnoremap <silent>    <Space>bR :BufferCloseBuffersRight<CR>
 " :BarbarDisable - very bad command, should never be used
 
 
-nmap <localleader><'localleader'> :QuickRun<cr>
-
+nmap <localleader><localleader> :QuickRun<cr>
