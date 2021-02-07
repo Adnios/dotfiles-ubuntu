@@ -20,7 +20,7 @@ return require('packer').startup(function()
 	use {'junegunn/fzf.vim'}
 	use 'tpope/vim-commentary'
 	use 'glepnir/dashboard-nvim'
-  use {'glepnir/galaxyline.nvim', config = require("eviline")}
+  -- use {'glepnir/galaxyline.nvim', config = require("eviline")}
 
 	use {'kyazdani42/nvim-web-devicons'}
 	use 'romgrk/doom-one.vim'
@@ -63,61 +63,4 @@ return require('packer').startup(function()
 	use 'romgrk/barbar.nvim'
 	use 'rhysd/accelerated-jk'
 	use {'D0n9X1n/quickrun.vim'}
-
-	-- 自动括号括回
-	-- use {
-	-- 	"Raimondi/delimitMate",
-	-- 	event = {"BufReadPre *", "BufNewFile *"},
-	-- 	config = require("plugin-config.delimitMate")
-	-- }
-
-	-- 补全
-	-- use {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	{
-	-- 		"glepnir/lspsaga.nvim",
-	-- 		config = function()
-	-- 			require "lspsaga".init_lsp_saga()
-	-- 		end
-	-- 	}
-	-- }
-	-- use {
-	-- 	"hrsh7th/nvim-compe",
-	-- 	config = require("plugin-config.nvim-compe"),
-	-- 	requires = {
-	-- 		-- {"aca/completion-tabnine", event = "InsertCharPre *", run = "version=3.1.9 ./install.sh"},
-	-- 		{
-	-- 			"hrsh7th/vim-vsnip",
-	-- 			event = "InsertCharPre *",
-	-- 			config = function()
-	-- 				vim.g.vsnip_filetypes = {}
-	-- 				vim.g.vsnip_filetypes.javascriptreact = {"javascript"}
-	-- 				vim.g.vsnip_filetypes.vue = {"vue", "javascript", "typescript"}
-	-- 				vim.g.vsnip_filetypes.typescriptreact = {"typescript"}
-	-- 			end
-	-- 		},
-	-- 		{"hrsh7th/vim-vsnip-integ", event = "InsertCharPre *"}
-	-- 	}
-	-- }
-	-- use {
-	-- 	"dsznajder/vscode-es7-javascript-react-snippets",
-	-- 	"xabikos/vscode-javascript",
-	-- 	"hollowtree/vscode-vue-snippets"
-	-- }
-	-- 
-	-- -- git信息展示 :SignifyDiff
-	-- use {
-	-- 	"lewis6991/gitsigns.nvim",
-	-- 	-- event = {"BufReadPre *", "BufNewFile *"},
-	-- 	config = function()
-	-- 		require("gitsigns").setup()
-	-- 	end,
-	-- 	requires = {
-	-- 		"nvim-lua/plenary.nvim"
-	-- 	}
-	-- }
-	-- use {
-	-- 	"f-person/git-blame.nvim",
-	-- 	-- event = {"BufReadPre *", "BufNewFile *"}
-	-- }
 end)

@@ -1,0 +1,123 @@
+#- repo: neovim/nvim-lspconfig
+#  on_event: BufRead
+#  hook_source: |-
+#    lua <<EOF
+#      require('internal.lspconfig')
+#    EOF
+#
+#- repo: glepnir/lspsaga.nvim
+#  on_cmd: Lspsaga
+#  on_source: nvim-lspconfig
+#
+#- repo: hrsh7th/nvim-compe
+#  on_event: InsertEnter
+#  hook_source: |-
+#    lua <<EOF
+#    require'compe'.setup {
+#      enabled = true;
+#      debug = false;
+#      min_length = 1;
+#      preselect = 'always';
+#      allow_prefix_unmatch = false;
+#      source = {
+#        path = true;
+#        buffer = true;
+#        calc = true;
+#        vsnip = true;
+#        nvim_lsp = true;
+#        nvim_lua = true;
+#        spell = true;
+#        tags = true;
+#        snippets_nvim = true;
+#      };
+#    }
+#    EOF
+#
+#- repo: hrsh7th/vim-vsnip
+#  on_event: InsertCharPre
+#  hook_source: |
+#    let g:vsnip_snippet_dir = getenv("HOME") . "/.config/nvim/snippets"
+#
+#- repo: mattn/vim-sonictemplate
+#  on_cmd: Template
+#  on_ft: [go,typescript,lua,javascript,vim,rust,markdown]
+#  hook_source: |
+#    let g:sonictemplate_postfix_key = '<C-j>'
+#    let g:sonictemplate_vim_template_dir = getenv("HOME") . '/.config/nvim/template'
+#
+- repo: Raimondi/delimitMate
+  on_event: InsertEnter
+  hook_source: |
+    let g:delimitMate_expand_cr = 0
+    let g:delimitMate_expand_space = 1
+    let g:delimitMate_smart_quotes = 1
+    let g:delimitMate_expand_inside_quotes = 0
+    au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+    au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
+
+# - repo: mattn/emmet-vim
+#   on_event: InsertEnter
+#   on_ft: [ html,css,javascript,javascriptreact,vue,typescript,typescriptreact ]
+#   hook_source: |
+#     let g:user_emmet_complete_tag = 0
+#     let g:user_emmet_install_global = 0
+#     let g:user_emmet_install_command = 0
+#     let g:user_emmet_mode = 'i'
+
+- repo: neoclide/coc.nvim
+  merged: 0
+  rev: 'release'
+  hook_add: |
+    let g:coc_snippet_next = '<TAB>'
+    let g:coc_snippet_prev = '<S-TAB>'
+    let g:coc_status_error_sign = '•'
+    let g:coc_status_warning_sign = '•'
+    let g:coc_disable_transparent_cursor = 1
+    let g:coc_global_extensions = [
+                \ 'coc-pyright',
+                \ 'coc-git',
+                \ 'coc-gitignore',
+                \ 'coc-tabnine',
+                \ 'coc-json',
+                \ 'coc-highlight',
+                \ 'coc-snippets',
+                \ 'coc-lists',
+                \ 'coc-lua',
+                \ 'coc-yaml',
+                \ 'coc-marketplace',
+                \ 'coc-vimlsp'
+                \ ]
+    set hidden
+    set nobackup
+    set nowritebackup
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gr <Plug>(coc-references)
+
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    function! s:show_documentation()
+        if (index(['vim','help'], &filetype) >= 0)
+            execute 'h '.expand('<cword>')
+        else
+            call CocAction('doHover')
+        endif
+    endfunction
+
+    nnoremap <silent> <localleader>y  :<C-u>CocList -A --normal yank<cr>
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
+
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+
+- repo: honza/vim-snippets
+  depends: coc.nvim
+  if: has('python3')
+  merged: 0

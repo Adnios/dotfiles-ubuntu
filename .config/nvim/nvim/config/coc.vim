@@ -2,7 +2,6 @@ let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
 let g:coc_disable_transparent_cursor = 1
 let g:coc_global_extensions = [
-            \ 'coc-python',
             \ 'coc-git',
             \ 'coc-gitignore',
             \ 'coc-tabnine',

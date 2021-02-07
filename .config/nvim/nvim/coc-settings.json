@@ -56,6 +56,7 @@
     "diagnostic.hintSign": "ஐ",
     "diagnostic.displayByAle": false,
     //"diagnostic.refreshOnInsertMode": false,
+    "diagnostic.refreshAfterSave": false,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": true,
@@ -63,11 +64,16 @@
     "codeLens.enable": true,
     "list.previewHighlightGroup": "Statement",
 
+    "python.jediEnabled": false,
 
     "signature.target": "float",
 
     //"yank.enableCompletion": false,
 
+    "python.autoComplete.extraPaths": [
+        "${env:SPARK_HOME}/python",
+        "${env:SPARK_HOME}/python/pyspark"
+    ],
     //"picgo.picBed.current": "gitee",
     //git
     "git.enableGutters": true,
