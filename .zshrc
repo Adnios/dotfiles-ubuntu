@@ -179,27 +179,27 @@ fq(){
 # \e[1 block with blink
 # \e[5 beam with blink
 # \e[6 beam without blink
-function zle-keymap-select {
-	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-		echo -ne '\e[0 q'
-	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
-		echo -ne '\e[6 q'
-  fi
-}
-zle -N zle-keymap-select
+# function zle-keymap-select {
+# 	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+# 		echo -ne '\e[0 q'
+# 	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
+# 		echo -ne '\e[6 q'
+#   fi
+# }
+# zle -N zle-keymap-select
 
 # Use beam shape cursor on startup.
-echo -ne '\e[6 q'
+# echo -ne '\e[6 q'
 
 # Use beam shape cursor for each new prompt.
-preexec() {
-	echo -ne '\e[6 q'
-}
+# preexec() {
+# 	echo -ne '\e[6 q'
+# }
 
-_fix_cursor() {
-	echo -ne '\e[6 q'
-}
-precmd_functions+=(_fix_cursor)
+# _fix_cursor() {
+# 	echo -ne '\e[6 q'
+# }
+# precmd_functions+=(_fix_cursor)
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char

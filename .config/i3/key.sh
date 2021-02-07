@@ -1,12 +1,8 @@
 #!/bin/sh
-# sleep 10
+sleep 9
 # This script is called on startup.
 
 # Increase key speed via a rate change
-killall compton
-compton
-killall reshift
-redshift
 
 xset r rate 300 50
 

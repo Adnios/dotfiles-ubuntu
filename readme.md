@@ -1,5 +1,9 @@
 # Config
 
+# 最新进展
+
+Turn to lua with neovim.
+
 ## 交换 esc 和 caps
 
 1. 最简单的方法： nvim /etc/default/keyboard 将改行修改为这样即可
@@ -40,7 +44,9 @@ i3 合上盖子是黑屏，lightdm 合上盖子是 suspend. 在 /etc/systemd/log
 
 重新装系统以后，系统默认自动息屏，合上盖子自动 logout，但是锁屏界面比较奇怪，不
 是 lightdm。
+
 ## 蓝牙安装 blueman-manager 即可，连接一次后，以后自动连接
+
 ## 字体
 
 source code pro 字体设置。alacritty 配置中之前字体设置为 source code pro 没有任
@@ -49,22 +55,16 @@ source code pro 字体设置。alacritty 配置中之前字体设置为 source c
 
 ## 软件
 
-- i3lock xautolock lightdm 登录界面，默认的存在问题，从 i3 退出以后便无
-  法 再次进入，lightdm 配置 
-https: //randomblog.hu/customizing-the-ubuntu-18-04-login-lock-screen-with-lightdm/ ，背景图片的配置无效，直接将
-/usr/share/background 文件夹中的图
-片修改alacritty  配置文件
-在~/.config/alacritty/alacritty.yml, 参考了 https:
-- //github.com/theniceboy/.config compton 透明化，~/.config/compton.conf,pkill
+- i3lock xautolock lightdm 登录界面，默认的存在问题，从 i3 退出以后便无法再次进入，lightdm 配置 
+https://randomblog.hu/customizing-the-ubuntu-18-04-login-lock-screen-with-lightdm/ ，背景图片的配置无效，直接将
+/usr/share/background 文件夹中的图片修改alacritty 配置文件 在~/.config/alacritty/alacritty.yml, 参考了 https://github.com/theniceboy/.config compton 透明化，~/.config/compton.conf,pkill
 - compton 可以杀死该进程，透明化看视屏不好用，已删ranger, 通过 apt 安装了好多插件 catdoc docx2txt xlsx2csv w3m 等等，按照网上的博客安装的
     * trash 一个 python 文件，需要 pip install trash-cli
 - feh xfce4, xfce4-volumed, xfce4-power-manager, 音量亮度调整，通知气泡其他见
-- install.sh 文件，参考 https://github.com/unix121/i3wm-themer smplayer 视频播放
-- 器自带，[  ], 可以倍速减速sudo apt install network-manager,nmtui 连接 wlan,
+- install.sh 文件，参考 https://github.com/unix121/i3wm-themer smplayer 视频播放器自带，[  ], 可以倍速减速sudo apt install network-manager,nmtui 连接 wlan,
 - nmtui Ubuntu 自带autojump, apt 安装，添加 zsh 插件 autojump，跳转目录必须是之
 - 前访问过的。nmtui 连接 wifi foxitreader 通过 sudo 进行安装，否则找不到
-- foxitreader 命令refind 双系统引导，更新后会失效，需要`sudo refind-install`，配
-- 置文件在 /boot/efi/refind/ 目录，网上美化教程很多
+- foxitreader 命令refind 双系统引导，更新后会失效，需要`sudo refind-install`，配置文件在 /boot/efi/refind/ 目录，网上美化教程很多
 
 ## 配置
 
