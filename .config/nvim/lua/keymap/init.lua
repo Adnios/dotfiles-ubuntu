@@ -7,6 +7,7 @@ require('keymap.config')
 
 local plug_map = {
     ["i|<TAB>"]      = map_cmd('v:lua.tab_complete()'):with_expr():with_silent(),
+    ["i|<S-TAB>"]    = map_cmd('v:lua.s_tab_complete()'):with_silent():with_expr(),
     ["i|<CR>"]       = map_cmd([[compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })]]):with_noremap():with_expr():with_nowait(),
     -- person keymap
     ["n|mf"]             = map_cr("<cmd>lua require('internal.fsevent').file_event()<CR>"):with_silent():with_nowait():with_noremap();
@@ -85,6 +86,10 @@ local plug_map = {
     ["n|F"]              = map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
     ["x|F"]              = map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
     ["o|F"]              = map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
+    -- Plugin vim_niceblock
+    ["x|I"]              = map_cmd("v:lua.enhance_nice_block('I')"):with_expr(),
+    ["x|gI"]             = map_cmd("v:lua.enhance_nice_block('gI')"):with_expr(),
+    ["x|A"]              = map_cmd("v:lua.enhance_nice_block('A')"):with_expr(),
 };
 
 bind.nvim_load_mapping(plug_map)

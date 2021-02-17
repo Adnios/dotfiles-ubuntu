@@ -8,9 +8,6 @@ local packer = nil
 local Packer = {}
 Packer.__index = Packer
 
-function Packer:get_plugins_list()
-end
-
 function Packer:load_plugins()
   self.repos = {}
 
@@ -78,11 +75,6 @@ local plugins = setmetatable({}, {
 
 function plugins.ensure_plugins()
   Packer:init_ensure_plugins()
-end
-
-function plugins.install_with_compile()
-  plugins.install()
-  plugins.compile()
 end
 
 function plugins.auto_compile()

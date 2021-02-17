@@ -1,5 +1,4 @@
 local config = {}
-local api = vim.api
 
 function config.nvim_lsp()
   require('modules.completion.lspconfig')

@@ -25,6 +25,16 @@ _G.tab_complete = function()
   end
 end
 
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    return t "<S-Tab>"
+  end
+end
+
 _G.enhance_jk_move = function(key)
   if packer_plugins['accelerated-jk'] and not packer_plugins['accelerated-jk'].loaded then
     vim.cmd [[packadd accelerated-jk]]
@@ -41,6 +51,18 @@ _G.enhance_ft_move = function(key)
     f = '<Plug>(eft-f)',
     F = '<Plug>(eft-F)',
     [';'] = '<Plug>(eft-repeat)'
+  }
+  return t(map[key])
+end
+
+_G.enhance_nice_block = function (key)
+  if not packer_plugins['vim-niceblock'].loaded then
+    vim.cmd [[packadd vim-niceblock]]
+  end
+  local map = {
+    I = '<Plug>(niceblock-I)',
+    ['gI'] = '<Plug>(niceblock-gI)',
+    A = '<Plug>(niceblock-A)'
   }
   return t(map[key])
 end

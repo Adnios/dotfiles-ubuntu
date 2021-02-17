@@ -37,13 +37,13 @@ exec_always --no-startup-id compton
 # exec_always --no-startup-id xinput --disable 14
 # exec_always --no-startup-id killall redshift
 exec_always --no-startup-id redshift
-# exec_always --no-startup-id xset r rate 300 50
+exec_always --no-startup-id xset r rate 300 50
 # exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
 # exec_always --no-startup-id setxkbmap -layout us -option ctrl:nocaps
-# exec_always --no-startup-id $HOME/.config/i3/key.sh
+exec_always --no-startup-id $HOME/.config/i3/key.sh
 
 # exec --no-startup-id fcitx
 # exec --no-startup-id sogou-qimpanel

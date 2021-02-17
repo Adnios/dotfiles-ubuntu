@@ -17,19 +17,19 @@ local enhance_attach = function(client,bufnr)
   api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
-lspconfig.gopls.setup {
-  cmd = {"gopls","--remote=auto"},
-  on_attach = enhance_attach,
-  capabilities = capabilities,
-  init_options = {
-    usePlaceholders=true,
-    completeUnimported=true,
-  }
-}
+-- lspconfig.gopls.setup {
+--   cmd = {"gopls","--remote=auto"},
+--   on_attach = enhance_attach,
+--   capabilities = capabilities,
+--   init_options = {
+--     usePlaceholders=true,
+--     completeUnimported=true,
+--   }
+-- }
 
 lspconfig.sumneko_lua.setup {
   cmd = {
-    global.home.."/workstation/lua-language-server/bin/macOS/lua-language-server",
+    global.home.."/workstation/lua-language-server/bin/Linux/lua-language-server",
     "-E",
     global.home.."/workstation/lua-language-server/main.lua"
   };
@@ -37,7 +37,7 @@ lspconfig.sumneko_lua.setup {
     Lua = {
       diagnostics = {
         enable = true,
-        globals = {"vim"}
+        globals = {"vim","packer_plugins"}
       },
       runtime = {version = "LuaJIT"},
       workspace = {
@@ -47,16 +47,23 @@ lspconfig.sumneko_lua.setup {
   }
 }
 
-lspconfig.tsserver.setup {
+-- lspconfig.tsserver.setup {
+--   on_attach = function(client)
+--     client.resolved_capabilities.document_formatting = false
+--     enhance_attach(client)
+--   end
+-- }
+
+lspconfig.pyright.setup{
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
     enhance_attach(client)
   end
 }
 
-lspconfig.clangd.setup({
+lspconfig.clangd.setup{
   cmd = {
-    "clangd",
+    "clangd-9",
     "--background-index",
     "--suggest-missing-includes",
     "--clang-tidy",
@@ -65,10 +72,22 @@ lspconfig.clangd.setup({
   init_options = {
     clangdFileStatus = true
   },
-})
+}
+
+
+lspconfig.ccls.setup {
+  init_options = {
+	  compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      excludeArgs = { "-frounding-math"} ;
+    };
+  }
+}
 
 local servers = {
-  'dockerls','bashls','zls','rust_analyzer'
 }
 
 for _,server in ipairs(servers) do
