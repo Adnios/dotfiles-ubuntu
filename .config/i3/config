@@ -37,7 +37,7 @@ exec_always --no-startup-id compton
 # exec_always --no-startup-id xinput --disable 14
 # exec_always --no-startup-id killall redshift
 exec_always --no-startup-id redshift
-# exec_always --no-startup-id xset r rate 300 50
+exec_always --no-startup-id xset r rate 300 50
 # exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

@@ -1,5 +1,6 @@
 -- Load Modules:
 -- TODO set list not working in option.lua, it working when put the `list` in
+-- TODO coc-lua not work
 -- bw_local
 require("domain.core")
 -- my config
