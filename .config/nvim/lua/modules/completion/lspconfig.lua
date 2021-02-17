@@ -64,6 +64,8 @@ lspconfig.clangd.setup {
   },
 }
 
+lspconfig.pyright.setup{}
+
 local servers = {
   'dockerls','bashls','zls','rust_analyzer'
 }

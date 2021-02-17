@@ -20,6 +20,7 @@ function config.rnvimr()
   vim.g.rnvimr_enable_bw = 1
   vim.g.rnvimr_enable_picker = 1
   vim.g.rnvimr_draw_border = 0
+  vim.g.rnvimr_border_attr = {fg = 3}
   vim.g.rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
 end
 

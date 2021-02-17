@@ -7,4 +7,15 @@ my['kevinhwang91/rnvimr'] = {
   config = conf.rnvimr
 }
 
+my['lilydjwg/fcitx.vim'] = {
+  event = 'BufRead *',
+}
+
+my['airblade/vim-rooter'] = {
+  event = 'BufRead *',
+  config = function()
+    vim.g.rooter_patterns = {'.git', 'Makefile', '*.sln', 'build/env.sh'}
+  end
+}
+
 return my

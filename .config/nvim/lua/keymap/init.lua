@@ -68,7 +68,7 @@ local plug_map = {
     ["n|j"]              = map_cmd('v:lua.enhance_jk_move("j")'):with_silent():with_expr(),
     ["n|k"]              = map_cmd('v:lua.enhance_jk_move("k")'):with_silent():with_expr(),
     -- Plugin QuickRun
-    ["n|<Leader>r"]     = map_cr("<cmd> lua require'internal.quickrun'.run_command()"):with_noremap():with_silent(),
+    ["n|<Leader>R"]     = map_cr("<cmd> lua require'internal.quickrun'.run_command()"):with_noremap():with_silent(),
     -- Plugin Vista
     ["n|<Leader>v"]      = map_cu('Vista'):with_noremap():with_silent(),
     -- Plugin vim-operator-surround
@@ -88,6 +88,7 @@ local plug_map = {
     ["x|I"]              = map_cmd("v:lua.enhance_nice_block('I')"):with_expr(),
     ["x|gI"]             = map_cmd("v:lua.enhance_nice_block('gI')"):with_expr(),
     ["x|A"]              = map_cmd("v:lua.enhance_nice_block('A')"):with_expr(),
+    ["n|<Leader>r"]      = map_cu('RnvimrToggle'):with_noremap():with_silent(),
 };
 
 bind.nvim_load_mapping(plug_map)
