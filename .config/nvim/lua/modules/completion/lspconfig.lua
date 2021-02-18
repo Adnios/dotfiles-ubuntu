@@ -29,9 +29,9 @@ lspconfig.gopls.setup {
 
 lspconfig.sumneko_lua.setup {
   cmd = {
-    global.home.."/.config/coc/extensions/coc-lua-data/sumneko-lua-ls/bin/Linux/lua-language-server",
+    global.home.."/.config/coc/extensions/coc-lua-data/lua-language-server/bin/Linux/lua-language-server",
     "-E",
-    global.home.."/.config/coc/extensions/coc-lua-data/sumneko-lua-ls/main.lua"
+    global.home.."/.config/coc/extensions/coc-lua-data/lua-language-server/main.lua"
   };
   settings = {
     Lua = {
