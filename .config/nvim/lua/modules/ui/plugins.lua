@@ -21,7 +21,7 @@ ui['glepnir/dashboard-nvim'] = {
 }
 
 ui['kyazdani42/nvim-tree.lua'] = {
-  cmd = {'NvimTreeToggle','NvimTreeOpen'},
+  cmd = {'NvimTreeToggle','NvimTreeOpen', 'NvimTreeFindFile'},
   config = conf.nvim_tree,
   requires = {'kyazdani42/nvim-web-devicons'}
 }
