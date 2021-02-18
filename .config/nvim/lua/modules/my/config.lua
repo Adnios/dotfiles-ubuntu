@@ -24,4 +24,8 @@ function config.rnvimr()
   vim.g.rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
 end
 
+function config.quickrun()
+  vim.g.quickrun_no_default_key_mappings = 1
+end
+
 return config

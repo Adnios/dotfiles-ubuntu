@@ -18,4 +18,16 @@ my['airblade/vim-rooter'] = {
   end
 }
 
+my['lambdalisue/suda.vim'] = {
+  event = 'BufRead *',
+  config = function()
+    vim.g.suda_smart_edit = 1
+  end
+}
+
+my['thinca/vim-quickrun'] = {
+  cmd = 'QuickRun',
+  config = conf.quickrun
+}
+
 return my

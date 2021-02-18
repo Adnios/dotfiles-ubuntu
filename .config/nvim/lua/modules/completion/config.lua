@@ -70,4 +70,8 @@ function config.emmet()
   vim.g.user_emmet_mode = 'i'
 end
 
+function config.nvim_coc()
+  require('modules.completion.cocinit')
+end
+
 return config

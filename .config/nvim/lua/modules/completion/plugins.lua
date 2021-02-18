@@ -1,24 +1,25 @@
+-- TODO lspconfig ccls not working well compare with coc
 local completion = {}
 local conf = require('modules.completion.config')
 
-completion['neovim/nvim-lspconfig'] = {
+-- completion['neovim/nvim-lspconfig'] = {
 --   event = 'BufRead *',
-  config = conf.nvim_lsp,
-}
-
-completion['glepnir/lspsaga.nvim'] = {
-  cmd = 'Lspsaga',
-}
-
-completion['hrsh7th/nvim-compe'] = {
-  event = 'InsertEnter *',
-  config = conf.nvim_compe,
-}
-
-completion['hrsh7th/vim-vsnip'] = {
-  event = 'InsertCharPre *',
-  config = conf.vim_vsnip
-}
+--   config = conf.nvim_lsp,
+-- }
+-- 
+-- completion['glepnir/lspsaga.nvim'] = {
+--   cmd = 'Lspsaga',
+-- }
+-- 
+-- completion['hrsh7th/nvim-compe'] = {
+--   event = 'InsertEnter *',
+--   config = conf.nvim_compe,
+-- }
+-- 
+-- completion['hrsh7th/vim-vsnip'] = {
+--   event = 'InsertCharPre *',
+--   config = conf.vim_vsnip
+-- }
 
 completion['nvim-telescope/telescope.nvim'] = {
   cmd = 'Telescope',
@@ -30,16 +31,24 @@ completion['nvim-telescope/telescope.nvim'] = {
   }
 }
 
-completion['mattn/vim-sonictemplate'] = {
-  cmd = 'Template',
-  ft = {'go','typescript','lua','javascript','vim','rust','markdown'},
-  config = conf.vim_sonictemplate,
+-- completion['mattn/vim-sonictemplate'] = {
+--   cmd = 'Template',
+--   ft = {'go','typescript','lua','javascript','vim','rust','markdown'},
+--   config = conf.vim_sonictemplate,
+-- }
+
+-- completion['mattn/emmet-vim'] = {
+--   event = 'InsertEnter *',
+--   ft = {'html','css','javascript','javascriptreact','vue','typescript','typescriptreact'},
+--   config = conf.emmet,
+-- }
+
+completion['neoclide/coc.nvim'] = {
+  config = conf.nvim_coc,
 }
 
-completion['mattn/emmet-vim'] = {
-  event = 'InsertEnter *',
-  ft = {'html','css','javascript','javascriptreact','vue','typescript','typescriptreact'},
-  config = conf.emmet,
+completion['honza/vim-snippets'] = {
+  event = 'InsertEnter *'
 }
 
 return completion
