@@ -36,14 +36,14 @@ exec_always --no-startup-id compton
 # 禁用触摸板, 外接键盘时会失效, 通过xinput查看
 # exec_always --no-startup-id xinput --disable 14
 # exec_always --no-startup-id killall redshift
-exec_always --no-startup-id redshift
-exec_always --no-startup-id xset r rate 300 50
+# exec_always --no-startup-id redshift
+# exec_always --no-startup-id xset r rate 300 50
 # exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
 # exec_always --no-startup-id setxkbmap -layout us -option ctrl:nocaps
-# exec_always --no-startup-id $HOME/.config/i3/key.sh
+exec_always --no-startup-id $HOME/.config/i3/key.sh
 
 # exec --no-startup-id fcitx
 # exec --no-startup-id sogou-qimpanel
@@ -59,7 +59,7 @@ exec_always --no-startup-id feh --bg-fill --no-fehbg --randomize ~/Pictures
 # bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Return exec --no-startup-id tilix
 # bindsym $mod+Return exec --no-startup-id ~/Documents/deepin-terminal-gtk/build/deepin-terminal
-bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs
+# bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs
 
 # Window kill command
 bindsym $mod+q kill
@@ -205,7 +205,7 @@ for_window [class="korganizer"] floating enable
 for_window [urgent=latest] focus
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart

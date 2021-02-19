@@ -48,6 +48,7 @@
 !readme.md
 !.tmux.conf.local
 !.tmux.conf
+!.tmux-line.conf
 !.config/fontconfig/
 !.picgo/
 .picgo/*
