@@ -80,14 +80,14 @@
     "git.changeRemovedSign.text": "▋",
     "snippets.ultisnips.directories": [
         //"$HOME/.config/nvim/Ultisnips/",
-        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+        "$HOME/.cache/vim/dein/repos/github.com/honza/vim-snippets/UltiSnips/"
     ],
     // coc-tabnine
     "tabnine.priority": 0,
     "tabnine.disable_filetypes": ["cpp","lua"],
     "tabnine.limit": 3,
     // coc-lua
-    "Lua.runtime.version": "Lua 5.3",
+    //"Lua.runtime.version": "Lua 5.3",
     //"clangd.path": "/home/scrutiny/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
     "languageserver": {
         "ccls": {
