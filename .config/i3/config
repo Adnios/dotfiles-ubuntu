@@ -60,6 +60,7 @@ exec_always --no-startup-id feh --bg-fill --no-fehbg --randomize ~/Pictures
 bindsym $mod+Return exec --no-startup-id tilix
 # bindsym $mod+Return exec --no-startup-id ~/Documents/deepin-terminal-gtk/build/deepin-terminal
 # bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 emacs
+bindsym $mod+d exec --no-startup-id env LC_CTYPE=zh_CN.UTF-8 ~/Documents/kitty-0.19.3/kitty/launcher/kitty
 
 # Window kill command
 bindsym $mod+q kill
