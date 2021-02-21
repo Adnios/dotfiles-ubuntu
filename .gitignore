@@ -41,7 +41,7 @@
 !.local/share/autojump/
 
 !.zshrc
-!.p10k.zsh
+# !.p10k.zsh
 !.fzf.zsh
 !.gitignore
 !.pylintrc

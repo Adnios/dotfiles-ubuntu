@@ -1,5 +1,5 @@
 #!/bin/sh
-sleep 9
+# sleep 9
 # This script is called on startup.
 
 # Increase key speed via a rate change

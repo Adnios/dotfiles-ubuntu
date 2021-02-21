@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -14,8 +21,8 @@ export EDITOR
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="steeef"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="steeef"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="dpoggi"
 # ZSH_THEME="gnzh"
 # github download
@@ -179,27 +186,27 @@ fq(){
 # \e[1 block with blink
 # \e[5 beam with blink
 # \e[6 beam without blink
-# function zle-keymap-select {
-# 	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-# 		echo -ne '\e[0 q'
-# 	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
-# 		echo -ne '\e[6 q'
-#   fi
-# }
-# zle -N zle-keymap-select
+function zle-keymap-select {
+	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+		echo -ne '\e[0 q'
+	elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
+		echo -ne '\e[6 q'
+  fi
+}
+zle -N zle-keymap-select
 
 # Use beam shape cursor on startup.
-# echo -ne '\e[6 q'
+echo -ne '\e[6 q'
 
 # Use beam shape cursor for each new prompt.
-# preexec() {
-# 	echo -ne '\e[6 q'
-# }
+preexec() {
+	echo -ne '\e[6 q'
+}
 
-# _fix_cursor() {
-# 	echo -ne '\e[6 q'
-# }
-# precmd_functions+=(_fix_cursor)
+_fix_cursor() {
+	echo -ne '\e[6 q'
+}
+precmd_functions+=(_fix_cursor)
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -233,3 +240,6 @@ export PATH=/home/scrutiny/bin:$PATH
 export XDG_CURRENT_DESKTOP=KDE
 # export MXNET_HOME="/mnt/d/temp/GitHub/doing/apache-mxnet-src-1.4.1-incubating"
 # export PYTHONPATH=$MXNET_HOME/python
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
