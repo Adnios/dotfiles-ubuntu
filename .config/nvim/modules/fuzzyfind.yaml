@@ -6,6 +6,7 @@
         defaults = {
           prompt_position = 'top',
           sorting_strategy = 'ascending',
+          preview_cutoff = 20,-- bugs when there is no preview windows
           file_previewer = require'telescope.previewers'.vim_buffer_cat.new
         },
         extensions = {

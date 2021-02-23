@@ -67,3 +67,11 @@
 
 - repo: junegunn/vim-peekaboo
   on_event: BufRead
+
+# - repo: wbthomason/vim-nazgul
+#   hook_source:
+#     colorscheme nazgul
+
+# - repo: glepnir/oceanic-material
+#   hook_source:
+#     colorscheme oceanic_material

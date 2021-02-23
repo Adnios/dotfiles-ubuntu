@@ -37,7 +37,7 @@ function mapping:load_vim_define()
     ["n|<Leader>ss"] = map_cu('SessionSave'):with_noremap(),
     ["n|<Leader>sl"] = map_cu('SessionLoad'):with_noremap(),
   -- Insert
-    ["i|<C-w>"]      = map_cmd('<C-[>diwa'):with_noremap(),
+    -- ["i|<C-w>"]      = map_cmd('<C-[>diwa'):with_noremap(),
     ["i|<C-h>"]      = map_cmd('<BS>'):with_noremap(),
     ["i|<C-d>"]      = map_cmd('<Del>'):with_noremap(),
     ["i|<C-k>"]      = map_cmd('<ESC>d$a'):with_noremap(),
@@ -85,7 +85,7 @@ function mapping:load_plugin_define()
 --     ["n|<Leader>ce"]     = map_cr('Lspsaga show_line_diagnostics'):with_noremap():with_silent(),
 --     ["n|<Leader>ct"]      = map_args("Template"),
     -- dein
-    ["n|<Leader>tr"]     = map_cr("call dein#recache_runtimepath()"):with_noremap():with_silent(),
+    ["n|<Leader>tr"]     = map_cr("call dein#recache_runtimepath()"):with_noremap(),
     ["n|<Leader>dn"]     = map_cu('DashboardNewFile'):with_noremap():with_silent(),
     -- mhinz/vim-signify
 --     ["n|[g"]             = map_cmd("<plug>(signify-next-hunk)"),
