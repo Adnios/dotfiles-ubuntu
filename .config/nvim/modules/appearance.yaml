@@ -20,8 +20,8 @@
   hook_source: |
     let g:dashboard_preview_command = 'cat'
     let g:dashboard_preview_pipeline = 'lolcat'
-    let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/neovim.txt'
-    let g:dashboard_preview_file_height = 8
+    let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/pokemon.txt'
+    let g:dashboard_preview_file_height = 14
     let g:dashboard_preview_file_width = 80
     let g:dashboard_default_executive ='telescope'
     let g:dashboard_custom_section = {
@@ -40,12 +40,6 @@
       \ 'find_word'           :{
           \ 'description': ['  Find  word                              SPC c a'],
           \ 'command': 'DashboardFindWord'},
-      " \ 'find_dotfiles'       :{
-      "    \ 'description': ['  Open Personal dotfiles                  SPC f d'],
-      "    \ 'command': 'Telescope dotfiles path='.getenv('HOME').'/.dotfiles'},
-      " \ 'go_source'           :{
-      "     \ 'description': ['  Find Go Source Code                     SPC f s'],
-      "     \ 'command': 'Telescope gosource'},
       \}
 
 - repo: kyazdani42/nvim-tree.lua
