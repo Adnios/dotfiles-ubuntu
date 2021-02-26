@@ -71,3 +71,10 @@
 # - repo: glepnir/oceanic-material
 #   hook_source:
 #     colorscheme oceanic_material
+
+- repo: vim-save/vim-lastplace
+  on_event: BufRead
+  hook_source: |
+    let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+    let g:lastplace_ignore_buftype = "quickfix,nofile,help"
+    let g:lastplace_open_folds = 0

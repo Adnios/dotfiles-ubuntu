@@ -6,9 +6,9 @@
 require("domain.core")
 -- my config
 vim.api.nvim_command('autocmd CursorHold * silent! update')
-vim.api.nvim_exec([[
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-]], false)
+-- vim.api.nvim_exec([[
+--   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+-- ]], false)
 -- vim.api.nvim_command('autocmd User TelescopePreviewerLoaded setlocal number relativenumber wrap list')
 vim.g.terminal_color_0  = '#000000'
 vim.g.terminal_color_1  = '#FF5555'
