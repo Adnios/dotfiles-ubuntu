@@ -39,12 +39,6 @@ function config.dashboard()
     find_word = {
      description = {'  Find  word                              SPC f w'},
      command = 'DashboardFindWord'},
-    find_dotfiles = {
-     description = {'  Open Personal dotfiles                  SPC f d'},
-     command = 'Telescope dotfiles path=' .. home ..'/.dotfiles'},
-    go_source = {
-     description = {'  Find Go Source Code                     SPC f s'},
-     command = 'Telescope gosource'},
   }
 end
 

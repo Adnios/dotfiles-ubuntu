@@ -22,7 +22,7 @@ local function load_options()
     virtualedit    = "block";
     encoding       = "utf-8";
     viewoptions    = "folds,cursor,curdir,slash,unix";
-    sessionoptions = "curdir,help,tabpages,winsize";
+    -- sessionoptions = "curdir,help,tabpages,winsize";
     clipboard      = "unnamedplus";
     wildignorecase = true;
     wildignore     = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**";
@@ -67,7 +67,7 @@ local function load_options()
     jumpoptions    = "stack";
     showmode       = false;
     shortmess      = "aoOTIcF";
-    scrolloff      = 2;
+    scrolloff      = 3;
     sidescrolloff  = 5;
     foldlevelstart = 99;
     ruler          = false;
@@ -85,7 +85,8 @@ local function load_options()
     laststatus     = 2;
     display        = "lastline";
     showbreak      = "↳  ";
-    listchars      = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←";
+    -- listchars      = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←";
+    listchars      = "tab:¦ ,trail:▫";
     pumblend       = 10;
     winblend       = 10;
   }

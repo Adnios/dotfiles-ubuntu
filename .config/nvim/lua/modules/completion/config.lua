@@ -41,6 +41,7 @@ function config.telescope()
       prompt_prefix = '🍔 ',
       prompt_position = 'top',
       sorting_strategy = 'ascending',
+      preview_cutoff = 20,-- bugs when there is no preview windows
       file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
       grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
       qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,

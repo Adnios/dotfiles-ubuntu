@@ -85,8 +85,7 @@
     "git.topRemovedSign.text": "▔",
     "git.changeRemovedSign.text": "▋",
     "snippets.ultisnips.directories": [
-        //"$HOME/.config/nvim/Ultisnips/",
-        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+        "$HOME/.config/nvim/vim-snippets/UltiSnips/"
     ],
 
     //"clangd.path": "/home/scrutiny/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",

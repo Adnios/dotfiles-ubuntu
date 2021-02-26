@@ -58,7 +58,15 @@ function config.vim_vista()
     markdown = 'toc',
     typescript = 'nvim_lsp',
     typescriptreact =  'nvim_lsp',
+    python = 'coc',
+    cpp = 'coc',
+    cu = 'coc',
+    cc = 'coc',
   }
+  -- vim.g.vista#renderer#icons = {
+  --              function =  '\uf794',
+  --              variable = '\u0ec2',
+  -- }
 end
 
 function config.fomatter_nvim()
@@ -94,6 +102,16 @@ function config.fomatter_nvim()
         }
       }
     })
+end
+
+function config.indentLine()
+  vim.g.indentLine_enabled = 1
+  vim.g.indentLine_char='┆'
+  vim.g.indentLine_fileTypeExclude = {'defx', 'denite', 'dashboard', 'tagbar', 'vista_kind', 'vista', 'rnvimr'}
+  vim.g.indentLine_concealcursor = 'niv'
+  vim.g.indentLine_showFirstIndentLevel =1
+  vim.nvim_command('autocmd! FileType dashboard let g:indentLine_enabled = 0')
+  vim.nvim_command('autocmd BufLeave <buffer> let g:indentLine_enabled = 1')
 end
 
 return config

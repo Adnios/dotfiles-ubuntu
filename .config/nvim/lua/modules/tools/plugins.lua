@@ -20,6 +20,11 @@ tools['editorconfig/editorconfig-vim'] = {
 --   event = 'BufReadPre *'
 -- }
 
+tools['Yggdroot/indentLine'] = {
+  event = 'BufReadPre *',
+  config = conf.indetLine
+}
+
 tools['liuchengxu/vista.vim'] = {
   cmd = 'Vista',
   config = conf.vim_vista

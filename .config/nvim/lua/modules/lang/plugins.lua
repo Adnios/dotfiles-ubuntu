@@ -1,9 +1,9 @@
 local lang = {}
 local conf = require('modules.lang.config')
 
-lang['ziglang/zig.vim'] = {
-  ft = { 'zig','zir' }
-}
+-- lang['ziglang/zig.vim'] = {
+--   ft = { 'zig','zir' }
+-- }
 
 lang['nvim-treesitter/nvim-treesitter'] = {
   event = 'BufRead *',
