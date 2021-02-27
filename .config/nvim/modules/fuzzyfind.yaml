@@ -1,0 +1,81 @@
+- repo: nvim-telescope/telescope.nvim
+  on_cmd: Telescope
+  hook_source: |
+    lua <<EOF
+    require('telescope').setup {
+        defaults = {
+          prompt_position = 'top',
+          sorting_strategy = 'ascending',
+          preview_cutoff = 20,-- bugs when there is no preview windows
+          file_previewer = require'telescope.previewers'.vim_buffer_cat.new
+        },
+        extensions = {
+            fzy_native = {
+                override_generic_sorter = false,
+                override_file_sorter = true,
+            }
+        }
+    }
+    require('telescope').load_extension('fzy_native')
+    require'telescope'.load_extension('dotfiles')
+    -- require'telescope'.load_extension('gosource')
+    EOF
+
+- repo: nvim-telescope/telescope-fzy-native.nvim
+  on_source: telescope.nvim
+
+- repo: nvim-lua/popup.nvim
+  on_source: telescope.nvim
+
+- repo: nvim-lua/plenary.nvim
+  on_source: telescope.nvim
+# 
+# - repo: brooth/far.vim
+#   on_cmd: [ Far, Farp, F ]
+#   hook_source: |
+#     let g:far#source = 'rg'
+
+# - repo: liuchengxu/vim-clap
+#   merged: 0
+#   build: 'bash install.sh'
+#   on_map: { n: <Plug> }
+#   hook_add: |
+#     let g:clap_theme = 'material_design_dark'
+#     let g:clap_theme = { 'search_text': {'guifg': 'red', 'ctermfg': 'red'} }
+#     let g:clap_current_selection_sign= { 'text': '➤', 'texthl': "ClapCurrentSelectionSign", "linehl": "ClapCurrentSelection"}
+#     " let g:clap_layout = { 'relative': 'editor' }
+#     let g:clap_enable_icon = 1
+#     " some wired bugs
+#     let g:clap_search_box_border_style = 'curve'
+#     let g:clap_provider_grep_enable_icon = 1
+#     let g:clap_prompt_format = '%spinner%%forerunner_status% %provider_id%: '
+#     " A funtion to config highlight of ClapSymbol
+#     " when the background color is opactiy
+#     function! s:ClapSymbolHL() abort
+#         let s:current_bgcolor = synIDattr(hlID("Normal"), "bg")
+#         if s:current_bgcolor == ''
+#             hi ClapSymbol guibg=NONE ctermbg=NONE
+#         endif
+#     endfunction
+#     autocmd User ClapOnEnter call s:ClapSymbolHL()
+# 
+#     let g:clap_background_shadow_blend = 50
+#     let g:clap_disable_bottom_top = 0
+#     let g:clap_disable_matches_indicator = v:false
+#     let g:clap_disable_optional_async = v:false
+#     let g:clap_disable_run_rooter = v:false
+#     let g:clap_enable_background_shadow = v:false
+#     let g:clap_enable_debug = v:false
+#     let g:clap_forerunner_status_sign = {'done': '•', 'running': '!', 'using_cache': '*'}
+#     let g:clap_insert_mode_only = v:false
+#     let g:clap_layout = {'row': '20%', 'relative': 'editor'}
+#     let g:clap_multi_selection_warning_silent = 0
+#     let g:clap_no_matches_msg = 'NO MATCHES FOUND'
+#     let g:clap_open_action = {'ctrl-v': 'vsplit', 'ctrl-x': 'split', 'ctrl-t': 'tab split'}
+#     let g:clap_popup_border = 'rounded'
+#     let g:clap_preview_size = 5
+#     let g:clap_providers_relaunch_code = '@@'
+#     let g:clap_search_box_border_symbols = {'nil': ['', ''], 'curve': ['', ''], 'arrow': ['', '']}
+
+# - repo: vn-ki/coc-clap
+#   on_source: vim-clap

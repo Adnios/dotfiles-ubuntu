@@ -80,8 +80,7 @@
     "git.changeRemovedSign.text": "▋",
     "snippets.ultisnips.directories": [
         //"$HOME/.config/nvim/Ultisnips/",
-        //"$HOME/.cache/vim/dein/repos/github.com/honza/vim-snippets/UltiSnips/"
-        "$HOME/.local/share/nvim/site/pack/packer/opt/vim-snippets/UltiSnips/"
+        "$HOME/.cache/vim/dein/repos/github.com/honza/vim-snippets/UltiSnips/"
     ],
     // coc-tabnine
     "tabnine.priority": 0,
