@@ -21,7 +21,6 @@ tools['editorconfig/editorconfig-vim'] = {
 -- }
 
 tools['Yggdroot/indentLine'] = {
-  event = 'BufReadPre *',
   config = conf.indetLine
 }
 
