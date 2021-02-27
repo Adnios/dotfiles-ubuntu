@@ -12,5 +12,3 @@ create-dirs:
 
 upgrade:
 	$(nvim) -V1 -es -i NONE -N --noplugin -u init.lua -c "try | call dein#clear_state() | call dein#update() | finally | qall! | endtry"
-	# go get golang.org/x/tools/gopls@latest
-	# npm upgrade -g bash-language-server typescript typescript-language-server
