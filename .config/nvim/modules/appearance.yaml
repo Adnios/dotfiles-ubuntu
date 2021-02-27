@@ -1,3 +1,6 @@
+- repo: glepnir/zephyr-nvim
+  hook_source: colorscheme zephyr
+
 - repo: kyazdani42/nvim-web-devicons
 
 - repo: Akin909/nvim-bufferline.lua

@@ -61,7 +61,7 @@ local load_core =function()
   options:load_options()
 
   -- load my colorscheme
-  require'internal.zephyr'
+  -- require'internal.zephyr'
   dein:load_repos()
 
   require('internal.mapping')
