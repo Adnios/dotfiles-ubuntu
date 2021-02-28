@@ -43,7 +43,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # kde & i3 经常无法启动成功，kde 会映射一次按键，导致 i3 的失效
 # exec_always --no-startup-id setxkbmap -layout us -option ctrl:nocaps
-exec_always --no-startup-id $HOME/.config/i3/key.sh
+# change keyboard repeat in kde settings
+# exec_always --no-startup-id $HOME/.config/i3/key.sh
 
 # exec --no-startup-id fcitx
 # exec --no-startup-id sogou-qimpanel

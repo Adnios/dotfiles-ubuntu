@@ -78,7 +78,8 @@ function options:load_options()
     display        = "lastline";
     showbreak      = "↳  ";
     -- listchars      = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←";
-    listchars      = "tab:¦ ,trail:▫";
+    listchars      = "tab:¦ ,nbsp:+,trail:·,extends:→,precedes:←";
+    -- listchars      = "tab:¦ ,trail:▫";
     pumblend       = 10;
     winblend       = 10;
   }
