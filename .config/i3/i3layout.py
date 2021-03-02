@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# https://github.com/ziberna/i3-py
 import i3
 import re
 import subprocess
